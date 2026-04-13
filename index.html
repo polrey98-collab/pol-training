@@ -381,7 +381,52 @@ const R = {
   ]},
 };
 
-/* FIX 3 — Mapa exercise id → session type para colores correctos en progresión */
+/* FIX PROGRESIÓN — aliases de nombres históricos del Fichero 3 → id actual.
+   Los ejercicios importados usan nombres ligeramente distintos a los de la rutina.
+   Este mapa normaliza todos los variantes al id correcto. */
+const NAME_ALIASES = {
+  // Pecho
+  'press inclinado libre':          'press-inclinado',
+  'chest press technogym':          'hammer-chest',
+  'press banca máquina hammer':     'hammer-chest',
+  'press hammer strength':          'hammer-chest',
+  'cruce poleas banco':             'cruce-poleas',
+  // Tríceps
+  'fondos máquina':                 'fondos-maquina',
+  'fondos con lastre':              'fondos-maquina',
+  'extensión overhead cuerda':      'overhead-cuerda',
+  'overhead cuerda':                'overhead-cuerda',
+  'extensión polea barra neutra':   'ext-barra-neutra',
+  'extensión polea alta barra neutra': 'ext-barra-neutra',
+  // Espalda
+  'jalón al pecho neutro':          'jalon-neutro',
+  'jalón neutro':                   'jalon-neutro',
+  'remo polea sentado':             'remo-polea',
+  'remo en polea sentado':          'remo-polea',
+  'pull-over cuerda':               'pullover-cuerda',
+  'pullover cuerda':                'pullover-cuerda',
+  // Hombro
+  'landmine press unilateral':      'landmine',
+  'elevaciones laterales':          'elev-lat',
+  'face pull cuerda':               'face-pull',
+  // Extras
+  'scapular pull':                  'scapular-pull',
+  'dead hang técnico':              'dead-hang',
+  'dead hang':                      'dead-hang',
+  // Pierna
+  'prensa unilateral':              'prensa-uni',
+  'hip thrust barra libre':         'hip-thrust',
+  'hip thrust technogym':           'hip-thrust',
+  'hip thrust':                     'hip-thrust',
+  'extensión cuádriceps unilateral':'ext-cuad',
+  'curl femoral unilateral':        'curl-fem',
+  'abductor':                       'abductor',
+  'elevación gemelo unilateral':    'gemelo-uni',
+  // Bíceps
+  'curl predicador (máquina)':      'curl-pred',
+  'curl predicador':                'curl-pred',
+  'martillo mancuernas':            'martillo',
+};
 const EX_TYPE = {};
 for (const [type, rt] of Object.entries(R))
   for (const blk of rt.blocks)
@@ -825,12 +870,11 @@ function renderChart() {
   for(const s of sorted)
     for(const blk of (s.blocks||[]))
       for(const ex of (blk.exercises||[])){
-        /* Busca por id (nuevo formato) o por nombre (legacy sin id) */
-        const matchesEx = ex.id ? ex.id === exId : ex.name === exName;
-        if(!matchesEx)continue;
+        /* Resuelve el ID del ejercicio: por id directo (nuevo) o por alias de nombre (legacy) */
+        const resolvedId = ex.id || NAME_ALIASES[ex.name?.toLowerCase().trim()] || null;
+        if(resolvedId !== exId) continue;
         let maxW=null;
         if(ex.setData?.length) maxW=Math.max(...ex.setData.map(s=>parseFloat(s.weight)||0));
-        /* FIX 4 — parseW en lugar de parseFloat: "52,5kg" → 52.5 no 52 */
         else if(ex.weight){const w=parseW(ex.weight);if(w>0)maxW=w;}
         if(maxW!==null)pts.push({date:s.date,w:maxW});
       }
