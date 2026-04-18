@@ -140,6 +140,28 @@
     .empty { text-align: center; padding: 60px 20px; color: var(--text3); font-family: var(--ff-d); font-size: 14px; line-height: 1.6; }
     #prog-top { padding: 24px 16px 16px; }
     .prog-sel { width: 100%; background: var(--card); border: 1px solid var(--border); color: var(--text); padding: 12px 14px; border-radius: 12px; font-family: var(--ff-d); font-size: 14px; font-weight: 600; outline: none; appearance: none; -webkit-appearance: none; }
+    #reports-sec { margin: 0 12px 20px; }
+    .reports-lbl { font-family: var(--ff-d); font-size: 11px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--text3); margin: 0 4px 8px; }
+    .report-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; margin-bottom: 8px; border-left: 4px solid var(--accent); }
+    .report-hd { display: flex; align-items: center; padding: 13px 14px; cursor: pointer; gap: 10px; -webkit-user-select: none; user-select: none; }
+    .report-info { flex: 1; }
+    .report-title { font-family: var(--ff-d); font-size: 14px; font-weight: 700; color: var(--text); }
+    .report-period { font-size: 12px; color: var(--text3); margin-top: 2px; }
+    .report-chev { color: var(--text3); font-size: 16px; transition: transform .2s; }
+    .report-body { display: none; padding: 0 16px 16px; border-top: 1px solid var(--border); font-size: 13px; line-height: 1.6; color: var(--text2); }
+    .report-body.open { display: block; }
+    .report-body h1, .report-body h2, .report-body h3 { font-family: var(--ff-d); color: var(--text); margin: 14px 0 6px; font-weight: 800; letter-spacing: .02em; }
+    .report-body h1 { font-size: 18px; }
+    .report-body h2 { font-size: 16px; }
+    .report-body h3 { font-size: 14px; }
+    .report-body strong { color: var(--text); font-weight: 700; }
+    .report-body hr { border: none; border-top: 1px solid var(--border); margin: 14px 0; }
+    .report-body table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 12px; }
+    .report-body th, .report-body td { padding: 6px 8px; border: 1px solid var(--border); text-align: left; }
+    .report-body th { background: var(--bg3); font-family: var(--ff-d); font-weight: 700; color: var(--text); }
+    .report-body ul, .report-body ol { padding-left: 20px; margin: 8px 0; }
+    .report-body li { margin: 3px 0; }
+    .report-body code { background: var(--bg3); padding: 1px 5px; border-radius: 4px; font-size: 12px; }
     #chart-wrap { margin: 0 12px 12px; background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 16px; }
     #prog-table { margin: 0 12px 20px; background: var(--card); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
     .prog-row-item { display: flex; justify-content: space-between; align-items: center; padding: 11px 16px; border-bottom: 1px solid var(--border); }
@@ -207,6 +229,7 @@
       <div class="h1" style="margin-bottom:14px;">Progresión</div>
       <select class="prog-sel" id="prog-sel" onchange="renderChart()"></select>
     </div>
+    <div id="reports-sec"></div>
     <div id="chart-wrap"></div>
     <div id="prog-table"></div>
   </div>
@@ -217,6 +240,11 @@
       <div class="io-desc">Copia el JSON completo y pégalo en Claude. Si el botón no funciona, copia el texto del campo que aparece debajo.</div>
       <button class="btn btn-p" onclick="doExport()">Copiar JSON al portapapeles</button>
       <textarea class="io-ta" id="export-ta" readonly placeholder="El JSON aparecerá aquí..."></textarea>
+    </div>
+    <div class="io-sec">
+      <div class="io-title">⇪ Compartir / Backup</div>
+      <div class="io-desc">Guarda una copia del JSON en iCloud, envíalo por email, AirDrop o WhatsApp. Útil como backup periódico para no perder el historial si algo le pasa al móvil.</div>
+      <button class="btn btn-s" onclick="doShare()">Compartir JSON</button>
     </div>
     <div class="io-sec">
       <div class="io-title">↓ Importar de Claude</div>
@@ -367,7 +395,7 @@ const EX_TYPE={};
 for(const[type,rt]of Object.entries(R))for(const blk of rt.blocks)for(const ex of blk.exercises)EX_TYPE[ex.id]=type;
 const isTimeBased=ex=>/\d+s\b/.test(ex.scheme);
 
-let D={sessions:[],planning:[]};
+let D={sessions:[],planning:[],reports:[]};
 let AS=null,AE=null,curType=null;
 let timerIv=null,timerRem=90,timerDur=90,timerStart=0;
 
@@ -590,7 +618,54 @@ function toggleHist(i){const b=document.getElementById(`hbody-${i}`),c=document.
 function renderProg(){
   const sel=document.getElementById('prog-sel');if(!sel)return;
   sel.innerHTML=Object.entries(R).map(([type,rt])=>{const exs=rt.blocks.filter(b=>!b.warmup).flatMap(b=>b.exercises.filter(e=>e.sets>0));return`<optgroup label="${type}">${exs.map(ex=>`<option value="${ex.id}">${ex.name}</option>`).join('')}</optgroup>`;}).join('');
+  renderReports();
   renderChart();
+}
+function renderReports(){
+  const sec=document.getElementById('reports-sec');if(!sec)return;
+  const reports=D.reports||[];
+  if(!reports.length){sec.innerHTML='';return;}
+  const sorted=[...reports].sort((a,b)=>(b.period_end||'').localeCompare(a.period_end||''));
+  sec.innerHTML=`<div class="reports-lbl">📊 Informes mensuales (${reports.length})</div>`+
+    sorted.map((r,i)=>`<div class="report-card"><div class="report-hd" onclick="toggleReport(${i})"><div class="report-info"><div class="report-title">${esc(r.title||('Ciclo '+(r.cycle||i+1)))}</div>${r.period_start&&r.period_end?`<div class="report-period">${fmtD(r.period_start)} — ${fmtD(r.period_end)}</div>`:''}</div><div class="report-chev" id="rchev-${i}">▾</div></div><div class="report-body" id="rbody-${i}">${mdToHtml(r.content||'')}</div></div>`).join('');
+}
+function toggleReport(i){
+  const b=document.getElementById(`rbody-${i}`),c=document.getElementById(`rchev-${i}`);
+  if(!b)return;b.classList.toggle('open');if(c)c.style.transform=b.classList.contains('open')?'rotate(180deg)':'';
+}
+function mdToHtml(md){
+  if(!md)return'';
+  let s=esc(md);
+  const blocks=s.split(/\n\n+/);
+  return blocks.map(blk=>{
+    blk=blk.trim();if(!blk)return'';
+    if(/^####\s/.test(blk))return`<h3>${blk.replace(/^####\s/,'')}</h3>`;
+    if(/^###\s/.test(blk))return`<h3>${blk.replace(/^###\s/,'')}</h3>`;
+    if(/^##\s/.test(blk))return`<h2>${blk.replace(/^##\s/,'')}</h2>`;
+    if(/^#\s/.test(blk))return`<h1>${blk.replace(/^#\s/,'')}</h1>`;
+    if(/^---+$/.test(blk))return'<hr>';
+    if(/^\|/.test(blk)){
+      const rows=blk.split('\n').filter(r=>r.trim()&&!/^\|[\s:|-]+\|?\s*$/.test(r));
+      const html=rows.map((r,i)=>{
+        const cells=r.split('|').slice(1,-1).map(c=>c.trim());
+        const tag=i===0?'th':'td';
+        return`<tr>${cells.map(c=>`<${tag}>${applyInline(c)}</${tag}>`).join('')}</tr>`;
+      }).join('');
+      return`<table>${html}</table>`;
+    }
+    if(/^[-*]\s/m.test(blk)){
+      const items=blk.split('\n').filter(l=>l.trim()).map(l=>`<li>${applyInline(l.replace(/^[-*]\s+/,''))}</li>`).join('');
+      return`<ul>${items}</ul>`;
+    }
+    if(/^\d+\.\s/m.test(blk)){
+      const items=blk.split('\n').filter(l=>l.trim()).map(l=>`<li>${applyInline(l.replace(/^\d+\.\s+/,''))}</li>`).join('');
+      return`<ol>${items}</ol>`;
+    }
+    return`<p>${applyInline(blk.replace(/\n/g,'<br>'))}</p>`;
+  }).join('');
+}
+function applyInline(s){
+  return s.replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>').replace(/`([^`]+)`/g,'<code>$1</code>');
 }
 function renderChart(){
   const sel=document.getElementById('prog-sel');if(!sel)return;
@@ -621,6 +696,29 @@ function doExport(){
   if(navigator.clipboard){navigator.clipboard.writeText(json).then(()=>toast('✓ Copiado al portapapeles')).catch(()=>toast('Copia el texto del campo de abajo'));}
   else{const ta=document.createElement('textarea');ta.value=json;ta.style.cssText='position:fixed;opacity:0;';document.body.appendChild(ta);ta.focus();ta.select();try{document.execCommand('copy');toast('✓ JSON copiado');}catch(e){toast('Copia el texto del campo de abajo');}document.body.removeChild(ta);}
 }
+function doShare(){
+  const json=JSON.stringify(D,null,2);
+  const filename=`pol-training-${today()}.json`;
+  if(navigator.share){
+    try{
+      const file=new File([json],filename,{type:'application/json'});
+      if(navigator.canShare&&navigator.canShare({files:[file]})){
+        navigator.share({files:[file],title:'POL Training Backup'}).then(()=>toast('✓ Compartido')).catch(e=>{if(e.name!=='AbortError')toast('⚠ Error al compartir');});
+        return;
+      }
+    }catch(e){}
+    navigator.share({title:filename,text:json}).then(()=>toast('✓ Compartido')).catch(e=>{if(e.name!=='AbortError')toast('⚠ Error al compartir');});
+    return;
+  }
+  try{
+    const blob=new Blob([json],{type:'application/json'});
+    const url=URL.createObjectURL(blob);
+    const a=document.createElement('a');a.href=url;a.download=filename;
+    document.body.appendChild(a);a.click();document.body.removeChild(a);
+    setTimeout(()=>URL.revokeObjectURL(url),1000);
+    toast('✓ Descargado');
+  }catch(e){toast('⚠ Tu navegador no permite descarga. Usa copiar al portapapeles.');}
+}
 function doImport(){
   const raw=document.getElementById('import-ta').value.trim();if(!raw){toast('Pega el JSON primero');return;}
   try{
@@ -628,6 +726,7 @@ function doImport(){
     let added=0,updated=0;
     for(const s of parsed.sessions){const idx=D.sessions.findIndex(ls=>ls.id===s.id);if(idx>=0){Object.assign(D.sessions[idx],s);updated++;}else{D.sessions.push(s);added++;}}
     if(parsed.planning)D.planning=parsed.planning;
+    if(parsed.reports)D.reports=parsed.reports;
     save();document.getElementById('import-ta').value='';
     toast(`✓ ${added} nuevas · ${updated} actualizadas`);
   }catch(e){toast('⚠ JSON inválido — revisa el formato');}
@@ -635,7 +734,7 @@ function doImport(){
 function doReset(){
   if(!confirm('¿Borrar todos los datos locales? Esta acción es irreversible.'))return;
   localStorage.removeItem(SK);localStorage.removeItem(ASK);
-  D={sessions:[],planning:[]};AS=null;AE=null;
+  D={sessions:[],planning:[],reports:[]};AS=null;AE=null;
   toast('Datos borrados');go('home');
 }
 load();renderHome();if(AS)renderSess();
