@@ -168,7 +168,8 @@
     .prog-row-item:last-child { border-bottom: none; }
     .prog-row-date { font-family: var(--ff-d); font-size: 13px; color: var(--text2); font-weight: 500; }
     .prog-row-val { font-family: var(--ff-d); font-size: 18px; font-weight: 800; }
-    #io-top { padding: 24px 16px 20px; }
+    #io-top { padding: 24px 16px 20px; display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+    #version-lbl { font-family: var(--ff-d); font-size: 10px; font-weight: 700; letter-spacing: .08em; color: var(--text3); white-space: nowrap; }
     .io-sec { margin: 0 16px 16px; padding: 18px; background: var(--card); border: 1px solid var(--border); border-radius: 14px; }
     .io-title { font-family: var(--ff-d); font-size: 18px; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; margin-bottom: 6px; }
     .io-desc { font-size: 13px; color: var(--text2); line-height: 1.6; margin-bottom: 14px; }
@@ -234,7 +235,7 @@
     <div id="prog-table"></div>
   </div>
   <div id="io" class="screen">
-    <div id="io-top"><div class="h1">Datos</div></div>
+    <div id="io-top"><div class="h1">Datos</div><div id="version-lbl"></div></div>
     <div class="io-sec">
       <div class="io-title">↑ Exportar para Claude</div>
       <div class="io-desc">Copia el JSON completo y pégalo en Claude. Si el botón no funciona, copia el texto del campo que aparece debajo.</div>
@@ -292,6 +293,8 @@
   <div id="toast"></div>
 </div>
 <script>
+const APP_VERSION='2.0';
+const APP_DATE='18 abril 2026';
 const SK='pol-v2',ASK='pol-active-v2',CIRC=2*Math.PI*80;
 const COLORS={'Pecho/Trí':'#dc2626','Espalda/Hombro':'#2563eb','Pierna/Bíc':'#16a34a','Running':'#ea580c','Pádel':'#9333ea','Escalada':'#ca8a04','Otro':'#6b7280'};
 const DAYS=['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'];
@@ -737,7 +740,9 @@ function doReset(){
   D={sessions:[],planning:[],reports:[]};AS=null;AE=null;
   toast('Datos borrados');go('home');
 }
-load();renderHome();if(AS)renderSess();
+load();
+document.getElementById('version-lbl').textContent=`v${APP_VERSION} · ${APP_DATE}`;
+renderHome();if(AS)renderSess();
 </script>
 </body>
 </html>
