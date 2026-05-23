@@ -147,6 +147,16 @@
     .prog-sel{width:100%;background:var(--card);border:1px solid var(--border);color:var(--text);padding:12px 14px;border-radius:12px;font-family:var(--ff-d);font-size:14px;font-weight:600;outline:none;appearance:none;-webkit-appearance:none}
     #reports-sec{margin:0 12px 20px}
     .reports-lbl{font-family:var(--ff-d);font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--text3);margin:0 4px 8px}
+    #cycle-status{margin:0 12px 16px}
+    .cycle-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px 16px}
+    .cycle-card.ready{border-color:#16a34a;background:#16a34a18}
+    .cycle-hd{font-family:var(--ff-d);font-size:15px;font-weight:800;color:var(--text);margin-bottom:6px}
+    .cycle-sub{font-size:12px;color:var(--text2);line-height:1.5}
+    .cycle-bars{display:flex;flex-direction:column;gap:8px;margin-top:10px}
+    .cycle-bar{display:flex;align-items:center;gap:10px}
+    .cycle-bar-lbl{font-family:var(--ff-d);font-size:12px;font-weight:700;color:var(--text2);width:64px}
+    .cycle-bar-dots{display:flex;gap:6px}
+    .cdot{width:16px;height:16px;border-radius:50%;border:1.5px solid var(--border);background:var(--bg3);transition:all .2s}
     .report-card{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-bottom:8px;border-left:4px solid var(--accent)}
     .report-hd{display:flex;align-items:center;padding:13px 14px;cursor:pointer;gap:10px;-webkit-user-select:none;user-select:none}
     .report-info{flex:1}
@@ -237,6 +247,7 @@
       <div class="h1" style="margin-bottom:14px">Progresión</div>
       <select class="prog-sel" id="prog-sel" onchange="renderChart()"></select>
     </div>
+    <div id="cycle-status"></div>
     <div id="reports-sec"></div>
     <div id="chart-wrap"></div>
     <div id="prog-table"></div>
@@ -764,7 +775,23 @@ function toggleHist(i){const b=document.getElementById(`hbody-${i}`),c=document.
 function renderProg(){
   const sel=document.getElementById('prog-sel');if(!sel)return;
   sel.innerHTML=Object.entries(R).map(([type,rt])=>{const exs=rt.blocks.filter(b=>!b.warmup).flatMap(b=>b.exercises.filter(e=>e.sets>0));return`<optgroup label="${type}">${exs.map(ex=>`<option value="${ex.id}">${ex.name}</option>`).join('')}</optgroup>`;}).join('');
-  renderReports();renderChart();
+  renderCycleStatus();renderReports();renderChart();
+}
+function renderCycleStatus(){
+  const sec=document.getElementById('cycle-status');if(!sec)return;
+  const meta=D.cycle_meta||{};
+  const since=meta.last_cycle_close||'0000-00-00';
+  const cycleN=meta.current_cycle||'?';
+  const TYPES=['Pecho/Trí','Espalda/Hombro','Pierna/Bíc'];
+  const cnt={'Pecho/Trí':0,'Espalda/Hombro':0,'Pierna/Bíc':0};
+  for(const s of D.sessions){if(s.date>since&&cnt[s.type]!==undefined)cnt[s.type]++;}
+  const done=TYPES.every(t=>cnt[t]>=4);
+  const total=TYPES.reduce((n,t)=>n+Math.min(cnt[t],4),0);
+  if(done){
+    sec.innerHTML=`<div class="cycle-card ready"><div class="cycle-hd">✅ Ciclo ${cycleN} completo</div><div class="cycle-sub">4 de cada tipo alcanzadas — toca generar informe. Exporta el JSON y pídeselo a Claude.</div></div>`;
+  }else{
+    sec.innerHTML=`<div class="cycle-card"><div class="cycle-hd">Ciclo ${cycleN} en curso · ${total}/12</div><div class="cycle-bars">${TYPES.map(t=>`<div class="cycle-bar"><div class="cycle-bar-lbl">${t.split('/')[0]}</div><div class="cycle-bar-dots">${[0,1,2,3].map(i=>`<span class="cdot${i<cnt[t]?' on':''}" style="${i<cnt[t]?'background:'+col(t)+';border-color:'+col(t)+';':''}"></span>`).join('')}</div></div>`).join('')}</div></div>`;
+  }
 }
 function renderReports(){
   const sec=document.getElementById('reports-sec');if(!sec)return;
@@ -822,7 +849,7 @@ function renderIO(){
   if(info){
     const types=Object.keys(R);
     const exCount=types.reduce((n,t)=>n+R[t].blocks.reduce((m,b)=>m+b.exercises.length,0),0);
-    info.textContent=`${types.length} tipos de sesión · ${exCount} ejercicios · Ciclo 3`;
+    info.textContent=`${types.length} tipos de sesión · ${exCount} ejercicios · Ciclo ${(D.cycle_meta&&D.cycle_meta.current_cycle)||3}`;
   }
   const ghTok=getGHToken();
   if(ghTok){
@@ -862,6 +889,7 @@ function doImport(){
     for(const s of parsed.sessions){const idx=D.sessions.findIndex(ls=>ls.id===s.id);if(idx>=0){Object.assign(D.sessions[idx],s);updated++;}else{D.sessions.push(s);added++;}}
     if(parsed.planning)D.planning=parsed.planning;
     if(parsed.reports)D.reports=parsed.reports;
+    if(parsed.cycle_meta)D.cycle_meta=parsed.cycle_meta;
     save();
     // Import routines if present
     let routinesUpdated=false;
