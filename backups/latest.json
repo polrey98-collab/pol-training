@@ -1,11 +1,219 @@
 {
   "sessions": [
     {
+      "id": "2026-06-01_pecho-trí_1780333606742",
+      "date": "2026-06-01",
+      "weekday": "Lunes",
+      "type": "Pecho/Trí",
+      "general_feeling": "Sin valoración",
+      "blocks": [
+        {
+          "name": "PECHO",
+          "exercises": [
+            {
+              "id": "press-inclinado-db",
+              "name": "Press inclinado mancuernas",
+              "skipped": false,
+              "weight": "28kg/mano",
+              "sets": "S1: 28kg/mano×9 / S2: 28kg/mano×9 / S3: 28kg/mano×8 / S4: 28kg/mano×8",
+              "notes": "Me noto fatal con muñeca izquierda, yo creo que es mejor barra el agarre.\nNoto como si ahora viene mas del centro de muñeca, antebrazo. Como muleca debil.\nEn todas la series he sufrido, creo que es mejor barra",
+              "setData": [
+                {
+                  "weight": 28,
+                  "reps": 9
+                },
+                {
+                  "weight": 28,
+                  "reps": 9
+                },
+                {
+                  "weight": 28,
+                  "reps": 8
+                },
+                {
+                  "weight": 28,
+                  "reps": 8
+                }
+              ]
+            },
+            {
+              "id": "hammer-chest",
+              "name": "Press Hammer Strength",
+              "skipped": false,
+              "weight": "55kg/lado",
+              "sets": "S1: 55kg/lado×8 / S2: 55kg/lado×8 / S3: 55kg/lado×8",
+              "notes": "Voy sin muñequera, mejor sensación pero al finalizar noto un poco de molestia en exterior de muñeca (donde siempre)\nUltima serie tensa",
+              "setData": [
+                {
+                  "weight": 55,
+                  "reps": 8
+                },
+                {
+                  "weight": 55,
+                  "reps": 8
+                },
+                {
+                  "weight": 55,
+                  "reps": 8
+                }
+              ]
+            },
+            {
+              "id": "cruce-poleas",
+              "name": "Cruce poleas banco",
+              "skipped": false,
+              "weight": "13.75kg",
+              "sets": "S1: 13.75kg×10 / S2: 13.75kg×10 / S3: 13.75kg×10",
+              "notes": "Ultima serie bastante tensa",
+              "setData": [
+                {
+                  "weight": 13.75,
+                  "reps": 10
+                },
+                {
+                  "weight": 13.75,
+                  "reps": 10
+                },
+                {
+                  "weight": 13.75,
+                  "reps": 10
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "TRÍCEPS",
+          "exercises": [
+            {
+              "id": "fondos-maquina",
+              "name": "Fondos máquina",
+              "skipped": false,
+              "weight": "180kg",
+              "sets": "S1: 180kg×10 / S2: 180kg×9 / S3: 170kg×10",
+              "notes": "Bastante tensa ultimas repes 1a serie\nUltima serie tensa pero mejor, tenia que haber hecho 170 en las 3 creo, menos forzado\n",
+              "setData": [
+                {
+                  "weight": 180,
+                  "reps": 10
+                },
+                {
+                  "weight": 180,
+                  "reps": 9
+                },
+                {
+                  "weight": 170,
+                  "reps": 10
+                }
+              ]
+            },
+            {
+              "id": "overhead-cuerda",
+              "name": "Extensión overhead cuerda",
+              "skipped": false,
+              "weight": "20kg",
+              "sets": "S1: 20kg×12 / S2: 20kg×12 / S3: 20kg×10",
+              "notes": "La 2a serie tensa.\nMe noto un poco de mala postura en lumbar al acabar pero no es molestia, ha sido sensación. Seguramente el incremento de peso.\nEso si triceps ya locura",
+              "setData": [
+                {
+                  "weight": 20,
+                  "reps": 12
+                },
+                {
+                  "weight": 20,
+                  "reps": 12
+                },
+                {
+                  "weight": 20,
+                  "reps": 10
+                }
+              ]
+            },
+            {
+              "id": "ext-barra-neutra",
+              "name": "Extensión polea barra neutra",
+              "skipped": false,
+              "weight": "22.5kg",
+              "sets": "S1: 22.5kg×12 / S2: 22.5kg×12 / S3: 22.5kg×12",
+              "notes": "",
+              "setData": [
+                {
+                  "weight": 22.5,
+                  "reps": 12
+                },
+                {
+                  "weight": 22.5,
+                  "reps": 12
+                },
+                {
+                  "weight": 22.5,
+                  "reps": 12
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "AGARRE / TENDÓN",
+          "exercises": [
+            {
+              "id": "iso-zass-empuje",
+              "name": "Isométrico Zass empuje (rack)",
+              "skipped": false,
+              "weight": "20kg",
+              "sets": "S1: 20kg×10 / S2: 20kg×10 / S3: 20kg×10",
+              "notes": "",
+              "setData": [
+                {
+                  "weight": 20,
+                  "reps": 10
+                },
+                {
+                  "weight": 20,
+                  "reps": 10
+                },
+                {
+                  "weight": 20,
+                  "reps": 10
+                }
+              ]
+            },
+            {
+              "id": "plate-pinch",
+              "name": "Plate pinch",
+              "skipped": false,
+              "weight": "15kg",
+              "sets": "S1: 15kg×30 / S2: 15kg×35 / S3: 15kg×35",
+              "notes": "",
+              "setData": [
+                {
+                  "weight": 15,
+                  "reps": 30
+                },
+                {
+                  "weight": 15,
+                  "reps": 35
+                },
+                {
+                  "weight": 15,
+                  "reps": 35
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "deviations": [],
+      "patterns": [],
+      "decisions": [],
+      "raw_notes": ""
+    },
+    {
       "id": "2026-05-30_pierna-bíc_1780135808046",
       "date": "2026-05-30",
       "weekday": "Sábado",
       "type": "Pierna/Bíc",
-      "general_feeling": "Hoy me he notado con menos energia, creo que por no tener tsntos hidratos de la cena. Porque al iniciar el entreno tenia hambre y todo… \nPuede influir haber comido chicle despues de desayunar y previo al gym?",
+      "general_feeling": "Sesión con menos energía por déficit de hidratos en cena previa (hambre al iniciar). Pese al contexto, sesión COMPLETA sin recortes: primera Pierna/Bíc del Ciclo 3 con todo al 100%. Ext cuádriceps 3×10 limpio (asimetría NO aparece). Wall sit 5×45s segunda limpia. Chin-up 90kg 8/8/7 — progresando.",
       "blocks": [
         {
           "name": "PIERNA",
@@ -207,10 +415,34 @@
           ]
         }
       ],
-      "deviations": [],
-      "patterns": [],
-      "decisions": [],
-      "raw_notes": ""
+      "deviations": [
+        "Contexto: menos energía por déficit de hidratos en cena previa. Hambre al iniciar.",
+        "Pese al contexto → sesión COMPLETA sin recortes. Primera Pierna/Bíc del Ciclo 3 al 100%.",
+        "Ext cuádriceps 3×10 LIMPIO — asimetría D>I NO aparece hoy (16/05: 10/10/9, 23/05: 10/10/9, hoy: 10/10/10).",
+        "Hip thrust 80kg 3×15 COMPLETO — primera vez 3 series completas en Ciclo 3 (16/05: 3×15 con lumbar S1, 23/05: 2×15).",
+        "Wall sit 10kg 5×45s COMPLETO — segunda sesión limpia (primera: 16/05).",
+        "Chin-up 90kg (10kg lastre) 8/8/7 — mejora vs 16/05 (8/7/7). S3 aún a 7.",
+        "Curl inclinado 16kg 8/8/6 al fallo — patrón de caída por pre-fatiga chin-up confirmado (3ª sesión consecutiva).",
+        "Prensa 140kg 3×10: Pol pregunta si subir. Siente que puede 150kg."
+      ],
+      "patterns": [
+        "✅ SESIÓN COMPLETA PESE A BAJA ENERGÍA — contraste con 23/05 (post-fiesta, recortes). Hoy sin excusas, todo al 100%. Madurez de gestión.",
+        "✅ EXT CUÁDRICEPS 3×10 LIMPIO — asimetría D>I NO aparece. Primera vez en 3 sesiones de Ciclo 3. Puede ser que la sesión anterior post-fiesta + la del 16/05 con lumbar en hip thrust afectaran. Dato positivo pero no se puede descartar el patrón todavía.",
+        "✅ HIP THRUST 80kg 3×15 PRIMERA COMPLETA en Ciclo 3. Sin lumbar. Sin glúteo/cadera. Consolidado.",
+        "✅ WALL SIT 10kg 5×45s — segunda sesión limpia. Una más → valorar 15kg.",
+        "✅ CHIN-UP 90kg 8/8/7 — progresión: 16/05 fue 8/7/7, hoy 8/8/7. Tendencia clara hacia 3×8.",
+        "⚠️ CURL INCLINADO 16kg 8/8/6 — tercera sesión consecutiva al fallo con caída en S3. Histórico: 9/8/6 (16/05), 10/8/7 (23/05 post-fiesta), 8/8/6 (hoy). El chin-up pre-fatiga demasiado para sostener 16kg en 3×10. DECISIÓN NECESARIA.",
+        "PRENSA 140kg: Pol siente que puede 150kg. Lleva 140kg×3×10 desde el inicio (marzo). Sobreconsolidado. Pero la regla dice: no cambiar scheme hasta que ejercicios nuevos estén asentados."
+      ],
+      "decisions": [
+        "Prensa: NO subir todavía. Los ejercicios nuevos (chin-up, wall sit) aún están calibrándose. Cuando el ciclo 3 se cierre con 4-4-4 y hagamos informe → valorar 4×8 a 150kg o mantener 3×10 subiendo a 145-150kg. La fuerza está, la paciencia también.",
+        "Curl inclinado: BAJAR a 14kg/mano. Tres sesiones al fallo con caída progresiva confirman que 16kg no es sostenible post chin-up. 14kg buscando 3×10 limpio. Actualizar rutina.",
+        "Chin-up: mantener 90kg (10kg lastre). Una sesión más a 8/8/7-8 → si sale 3×8 → +2.5kg lastre.",
+        "Wall sit: una sesión más 5×45s limpia → subir a 15kg.",
+        "Hip thrust: base 3×15 a 80kg confirmada.",
+        "Ext cuádriceps: dato positivo hoy (3×10 limpio) pero no descartar asimetría como patrón."
+      ],
+      "raw_notes": "Pierna/Bíc completa pese a baja energía. Ext cuádriceps sin asimetría hoy. Hip thrust 3×15 primera completa Ciclo 3. Wall sit segunda 5×45s. Chin-up 8/8/7 progresando. Curl inclinado confirma necesidad de bajar a 14kg. Prensa: Pol quiere subir — aplazar hasta cierre ciclo."
     },
     {
       "id": "2026-05-28_espalda-hombro_1779987708180",
@@ -5006,18 +5238,11 @@
   ],
   "planning": [
     {
-      "id": "plan-2026-05-28",
-      "date": "2026-05-28",
-      "weekday": "Jueves",
-      "type": "Espalda/Hombro",
-      "notes": "Completado ✓ (28/05). Jalón 77.5kg 4×(8/8/7/8) — superó 4×6 planificado. Landmine arranca a 25kg otra vez. Elevaciones 7.5kg sin isométrico. Zona derecha limpia."
-    },
-    {
       "id": "plan-2026-05-30",
       "date": "2026-05-30",
       "weekday": "Sábado",
       "type": "Pierna/Bíc",
-      "notes": "Sesión fresca. Chin-up 90kg (10kg lastre) buscar 3×8. Curl inclinado: decidir 14kg o 16kg. Wall sit 10kg 5×45s completo. Monitorizar asimetría pierna derecha."
+      "notes": "Completado ✓ (30/05). Sesión completa pese a baja energía. Ext cuádriceps 3×10 limpio. Hip thrust 3×15 completo. Wall sit 5×45s segunda limpia. Chin-up 8/8/7. Curl inclinado al fallo → bajado a 14kg base."
     },
     {
       "id": "plan-2026-06-01",
@@ -5031,7 +5256,14 @@
       "date": "2026-06-03",
       "weekday": "Miércoles",
       "type": "Espalda/Hombro",
-      "notes": "Jalón 77.5kg buscar 4×8 limpio. Remo 75kg. Landmine: ARRANCAR A 22.5kg (cambiar manualmente). Elevaciones: VOLVER a 6.25kg con isométrico. Dead hang 90kg 3×40-45s."
+      "notes": "Jalón 77.5kg buscar 4×8 limpio. Remo 75kg. Landmine 22.5kg (verificar antes de cargar). Elevaciones 6.25kg con isométrico. Dead hang 90kg subir a 45s."
+    },
+    {
+      "id": "plan-2026-06-06",
+      "date": "2026-06-06",
+      "weekday": "Sábado",
+      "type": "Pierna/Bíc",
+      "notes": "Curl inclinado a 14kg (primer test). Chin-up 90kg buscar 3×8. Wall sit 10kg 5×45s — si tercera limpia → 15kg próxima. Prensa 140kg mantener."
     }
   ],
   "reports": [
@@ -5059,7 +5291,7 @@
     "current_count": {
       "Pecho/Trí": 2,
       "Espalda/Hombro": 2,
-      "Pierna/Bíc": 1
+      "Pierna/Bíc": 2
     }
   },
   "routines": {
@@ -5098,8 +5330,8 @@
               "tips": [
                 "ANCLA de empuje — doble progresión",
                 "Muñeca NEUTRA todo el recorrido",
-                "⚠️ Muñequera izquierda ANTES de coger — SIN EXCEPCIÓN",
-                "⚠️ HANDLING es el problema: técnica transición desde rodillas",
+                "⚠️ Muñequera izquierda ANTES — SIN EXCEPCIÓN",
+                "⚠️ HANDLING: técnica transición desde rodillas",
                 "A nivel pecho fuerza de sobra para 30kg"
               ]
             },
@@ -5114,7 +5346,6 @@
               "tips": [
                 "Brazos independientes",
                 "Pausa corta abajo",
-                "Hombros abajo y atrás",
                 "✅ Base 55kg CONFIRMADA"
               ]
             },
@@ -5128,7 +5359,6 @@
               "rest": 90,
               "tips": [
                 "Brazos semiflexionados",
-                "Siente el pecho, no el hombro",
                 "✅ Base 13.75kg consolidada"
               ]
             }
@@ -5147,9 +5377,8 @@
               "rest": 120,
               "tips": [
                 "Controla la bajada",
-                "Tronco ligeramente inclinado",
-                "⚠️ Base 170kg. 180kg alcanzable 2 sets pero no sostenido",
-                "Vigila muñeca izquierda en extensión"
+                "⚠️ Base 170kg",
+                "Vigila muñeca izquierda"
               ]
             },
             {
@@ -5161,8 +5390,7 @@
               "unit": "kg",
               "rest": 90,
               "tips": [
-                "Abdomen firme",
-                "Codos CERRADOS y hacia adelante",
+                "Codos CERRADOS",
                 "⚠️ Vigila zona derecha"
               ]
             },
@@ -5175,8 +5403,8 @@
               "unit": "kg",
               "rest": 90,
               "tips": [
-                "Tempo controlado 3-1-2",
-                "Base 22.5kg — próxima valorar 25kg"
+                "Tempo 3-1-2",
+                "Próxima valorar 25kg"
               ]
             }
           ]
@@ -5193,9 +5421,8 @@
               "unit": "PC",
               "rest": 60,
               "tips": [
-                "Barra bloqueada contra pins",
-                "8s intención máxima",
-                "Respira"
+                "Barra contra pins",
+                "8s intención máxima"
               ]
             },
             {
@@ -5207,7 +5434,6 @@
               "unit": "kg disco",
               "rest": 60,
               "tips": [
-                "Coge disco por el canto",
                 "Compara manos",
                 "⚠️ Mano izquierda falla — capsulitis + TFCC"
               ]
@@ -5227,8 +5453,7 @@
               "unit": "",
               "tips": [
                 "Pronación/supinación theraband o mancuerna 1-2kg",
-                "Muñeca neutra",
-                "⚠️ OBLIGATORIO — llevar theraband al gym"
+                "⚠️ OBLIGATORIO — llevar theraband"
               ]
             }
           ]
@@ -5269,11 +5494,9 @@
               "rest": 180,
               "tips": [
                 "ANCLA de tracción",
-                "Deprimir escápula ANTES de tirar",
-                "Exhala al tirar",
-                "Agarre suave (ganchos)",
-                "✅ 77.5kg 4×8 primera sesión (28/05) — scheme actualizado de 4×6 a 4×8",
-                "Consolidar 4×8 limpio 2-3 sesiones → valorar 80kg"
+                "Deprimir escápula ANTES",
+                "✅ 77.5kg 4×8 (28/05)",
+                "Consolidar 2-3 sesiones → 80kg"
               ]
             },
             {
@@ -5287,8 +5510,7 @@
               "tips": [
                 "CERO inercia",
                 "Pausa 1s atrás",
-                "Tiro con codos",
-                "⚠️ Mantener 75kg — consolidar técnica"
+                "Mantener 75kg"
               ]
             },
             {
@@ -5301,8 +5523,7 @@
               "rest": 90,
               "tips": [
                 "Movimiento largo",
-                "Brazos casi estirados",
-                "⚠️ 3×10 el 28/05 — posible fatiga del jalón más pesado. Monitorizar"
+                "⚠️ Monitorizar 3×10 vs 3×12"
               ]
             }
           ]
@@ -5319,9 +5540,8 @@
               "unit": "kg",
               "rest": 90,
               "tips": [
-                "⚠️ PRIMERO en bloque hombro — fijo",
-                "Pausa 1s atrás",
-                "Escápulas juntas + abajo"
+                "⚠️ PRIMERO — fijo",
+                "Pausa 1s atrás"
               ]
             },
             {
@@ -5334,9 +5554,7 @@
               "rest": 120,
               "tips": [
                 "Deprimir escápula ANTES",
-                "Costillas abajo",
-                "Core activo",
-                "⚠️ Base 22.5kg — CAMBIAR MANUALMENTE en app antes de empezar (precarga 25kg de última sesión)"
+                "⚠️ Base 22.5kg — verificar peso antes de cargar"
               ]
             },
             {
@@ -5348,9 +5566,8 @@
               "unit": "kg",
               "rest": 90,
               "tips": [
-                "Activar abdomen ANTES",
-                "⚠️ Pausa isométrica 1s arriba — NO subir a 7.5kg sin pausa",
-                "Base 6.25kg con isométrico (validado 20/05)"
+                "Pausa isométrica 1s arriba",
+                "Base 6.25kg"
               ]
             }
           ]
@@ -5367,7 +5584,6 @@
               "unit": "PC",
               "rest": 60,
               "tips": [
-                "Cuelga con brazos estirados",
                 "Deprime escápulas SIN doblar codos"
               ]
             },
@@ -5380,10 +5596,8 @@
               "unit": "kg",
               "rest": 90,
               "tips": [
-                "Hombros ligeramente abajo",
-                "Agarre relajado pero firme",
-                "⚠️ PESO TOTAL: PC (~80kg) + lastre. Base 90kg",
-                "Segunda sesión a 40s consolidada → próxima subir a 45s"
+                "Base 90kg (PC+10)",
+                "Consolidado a 40s → próxima subir a 45s"
               ]
             },
             {
@@ -5395,10 +5609,7 @@
               "unit": "kg/mano",
               "rest": 90,
               "tips": [
-                "Hombros abajo y atrás",
-                "Agarre firme sin crispación",
-                "Core activo",
-                "⚠️ Mínimo 90s descanso post dead hang"
+                "⚠️ 90s descanso post dead hang"
               ]
             }
           ]
@@ -5442,8 +5653,8 @@
               "tips": [
                 "ANCLA de pierna",
                 "Empuja desde talón",
-                "Rodilla alineada",
-                "Baja controlado"
+                "Baja controlado",
+                "⚠️ Sobreconsolidado — progresión aplazada hasta cierre Ciclo 3"
               ]
             },
             {
@@ -5455,9 +5666,8 @@
               "unit": "kg",
               "rest": 120,
               "tips": [
-                "Banco pegado a la pared",
                 "Empuja talones, pelvis neutra, pausa 2s arriba",
-                "⚠️ Si glúteo/cadera señala → glute bridge pausa 3s"
+                "✅ 3×15 limpio confirmado 30/05"
               ]
             },
             {
@@ -5470,8 +5680,7 @@
               "rest": 120,
               "tips": [
                 "Pausa arriba",
-                "Control en bajada",
-                "⚠️ Asimetría D>I patrón estable"
+                "⚠️ Asimetría D>I: no apareció 30/05 pero sí 16/05 y 23/05 — seguir monitorizando"
               ]
             },
             {
@@ -5483,7 +5692,7 @@
               "unit": "kg",
               "rest": 120,
               "tips": [
-                "Control total en excéntrica",
+                "Control excéntrica",
                 "No arquear lumbar"
               ]
             },
@@ -5496,8 +5705,8 @@
               "unit": "kg",
               "rest": 90,
               "tips": [
-                "Torso ligeramente inclinado",
-                "Foco en glúteo medio"
+                "Torso inclinado",
+                "Foco glúteo medio"
               ]
             }
           ]
@@ -5514,9 +5723,9 @@
               "unit": "kg disco",
               "rest": 90,
               "tips": [
-                "Espalda plana en la pared",
                 "Rodillas ~60°",
-                "2-3 sesiones 5×45s limpias → 15kg"
+                "✅ Segunda sesión 5×45s limpia (16/05 y 30/05)",
+                "Una sesión más → subir a 15kg"
               ]
             }
           ]
@@ -5534,10 +5743,9 @@
               "rest": 180,
               "tips": [
                 "ANCLA bíceps — agarre neutro",
-                "Codos a costillas, barbilla arriba",
                 "Bajada controlada 2-3s",
                 "⚠️ PESO TOTAL: PC (~80kg) + lastre. Base 90kg",
-                "3×8 en 2 sesiones → +2.5kg lastre"
+                "Progresión: 8/7/7 → 8/8/7. Una sesión más a 3×8 → +2.5kg"
               ]
             },
             {
@@ -5545,14 +5753,15 @@
               "name": "Curl inclinado mancuernas",
               "scheme": "3×10",
               "sets": 3,
-              "base": 16,
+              "base": 14,
               "unit": "kg/mano",
               "rest": 90,
               "tips": [
                 "Banco a 45°",
                 "Máxima elongación abajo",
                 "Muñeca semi-neutra",
-                "⚠️ Chin-up pre-fatiga mucho — valorar 14kg"
+                "✅ Bajado de 16kg a 14kg — 3 sesiones al fallo confirmaron que 16kg no es sostenible post chin-up",
+                "Buscar 3×10 limpio a 14kg"
               ]
             }
           ]
@@ -5573,7 +5782,6 @@
               "unit": "PC",
               "rest": 60,
               "tips": [
-                "Barra fijada inamovible",
                 "Empuja máxima intención 6s"
               ]
             },
@@ -5586,7 +5794,6 @@
               "unit": "PC",
               "rest": 60,
               "tips": [
-                "Cuélgate de barra fija",
                 "Tira máxima intención 6s"
               ]
             },
@@ -5599,7 +5806,6 @@
               "unit": "PC",
               "rest": 60,
               "tips": [
-                "Toalla en barra",
                 "Alterna lados"
               ]
             }
@@ -5629,7 +5835,6 @@
               "unit": "PC",
               "rest": 60,
               "tips": [
-                "Levanta un pie",
                 "30s por pierna"
               ]
             },
@@ -5642,7 +5847,6 @@
               "unit": "kg",
               "rest": 60,
               "tips": [
-                "15kg base",
                 "Compara manos"
               ]
             },
@@ -5655,7 +5859,6 @@
               "unit": "kg lastre",
               "rest": 120,
               "tips": [
-                "Controla la bajada",
                 "Base: 30kg lastre (110kg total)"
               ]
             }
@@ -5673,7 +5876,7 @@
               "unit": "PC",
               "rest": 60,
               "tips": [
-                "Lumbar pegada al suelo SIEMPRE"
+                "Lumbar pegada al suelo"
               ]
             },
             {
@@ -5685,7 +5888,6 @@
               "unit": "kg",
               "rest": 60,
               "tips": [
-                "Polea a altura pecho",
                 "Resistir rotación"
               ]
             },
