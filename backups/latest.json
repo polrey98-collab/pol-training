@@ -1,11 +1,220 @@
 {
   "sessions": [
     {
+      "id": "2026-06-03_espalda-hombro_1780508120381",
+      "date": "2026-06-03",
+      "weekday": "Miércoles",
+      "type": "Espalda/Hombro",
+      "general_feeling": "Hoy no he podido porque estaba ocupado m sitio y no habia las pesas de farmer carrt",
+      "blocks": [
+        {
+          "name": "ESPALDA",
+          "exercises": [
+            {
+              "id": "jalon-neutro",
+              "name": "Jalón al pecho neutro",
+              "skipped": false,
+              "weight": "77.5kg",
+              "sets": "S1: 77.5kg×8 / S2: 77.5kg×8 / S3: 77.5kg×8 / S4: 77.5kg×8",
+              "notes": "3a tensa",
+              "setData": [
+                {
+                  "weight": 77.5,
+                  "reps": 8
+                },
+                {
+                  "weight": 77.5,
+                  "reps": 8
+                },
+                {
+                  "weight": 77.5,
+                  "reps": 8
+                },
+                {
+                  "weight": 77.5,
+                  "reps": 8
+                }
+              ]
+            },
+            {
+              "id": "remo-polea",
+              "name": "Remo polea sentado",
+              "skipped": false,
+              "weight": "75kg",
+              "sets": "S1: 75kg×8 / S2: 75kg×8 / S3: 75kg×8",
+              "notes": "",
+              "setData": [
+                {
+                  "weight": 75,
+                  "reps": 8
+                },
+                {
+                  "weight": 75,
+                  "reps": 8
+                },
+                {
+                  "weight": 75,
+                  "reps": 8
+                }
+              ]
+            },
+            {
+              "id": "pullover-cuerda",
+              "name": "Pull-over cuerda",
+              "skipped": false,
+              "weight": "18.75kg",
+              "sets": "S1: 18.75kg×12 / S2: 18.75kg×12 / S3: 18.75kg×12",
+              "notes": "",
+              "setData": [
+                {
+                  "weight": 18.75,
+                  "reps": 12
+                },
+                {
+                  "weight": 18.75,
+                  "reps": 12
+                },
+                {
+                  "weight": 18.75,
+                  "reps": 12
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "HOMBRO",
+          "exercises": [
+            {
+              "id": "face-pull",
+              "name": "Face pull cuerda",
+              "skipped": false,
+              "weight": "26.25kg",
+              "sets": "S1: 26.25kg×15 / S2: 26.25kg×15",
+              "notes": "Tensas",
+              "setData": [
+                {
+                  "weight": 26.25,
+                  "reps": 15
+                },
+                {
+                  "weight": 26.25,
+                  "reps": 15
+                }
+              ]
+            },
+            {
+              "id": "landmine",
+              "name": "Landmine press unilateral",
+              "skipped": false,
+              "weight": "22.5kg",
+              "sets": "S1: 22.5kg×10 / S2: 22.5kg×10 / S3: 22.5kg×10",
+              "notes": "Es como que cuando lo hago con el hombro izquierdo, no me noto tan estable a nivel ejecución",
+              "setData": [
+                {
+                  "weight": 22.5,
+                  "reps": 10
+                },
+                {
+                  "weight": 22.5,
+                  "reps": 10
+                },
+                {
+                  "weight": 22.5,
+                  "reps": 10
+                }
+              ]
+            },
+            {
+              "id": "elev-lat",
+              "name": "Elevaciones laterales",
+              "skipped": false,
+              "weight": "6.25kg",
+              "sets": "S1: 6.25kg×15 / S2: 6.25kg×15",
+              "notes": "Podria 7,5\nAunque 2a serie tensa",
+              "setData": [
+                {
+                  "weight": 6.25,
+                  "reps": 15
+                },
+                {
+                  "weight": 6.25,
+                  "reps": 15
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "TENDÓN + AGARRE",
+          "exercises": [
+            {
+              "id": "scapular-pull",
+              "name": "Scapular pull",
+              "skipped": false,
+              "weight": "80kg",
+              "sets": "S1: 80kg×8 / S2: 80kg×8 / S3: 80kg×8",
+              "notes": "",
+              "setData": [
+                {
+                  "weight": 80,
+                  "reps": 8
+                },
+                {
+                  "weight": 80,
+                  "reps": 8
+                },
+                {
+                  "weight": 80,
+                  "reps": 8
+                }
+              ]
+            },
+            {
+              "id": "dead-hang-lastre",
+              "name": "Dead hang con lastre",
+              "skipped": false,
+              "weight": "90kg",
+              "sets": "S1: 90kg×38 / S2: 90kg×36 / S3: 90kg×35",
+              "notes": "Ultimas 2 series acabo ya con antebrazo rebentado",
+              "setData": [
+                {
+                  "weight": 90,
+                  "reps": 38
+                },
+                {
+                  "weight": 90,
+                  "reps": 36
+                },
+                {
+                  "weight": 90,
+                  "reps": 35
+                }
+              ]
+            },
+            {
+              "id": "farmer-carry",
+              "name": "Farmer's carry",
+              "skipped": true,
+              "weight": "—",
+              "sets": "Saltado",
+              "notes": "",
+              "setData": []
+            }
+          ]
+        }
+      ],
+      "deviations": [],
+      "patterns": [],
+      "decisions": [],
+      "raw_notes": ""
+    },
+    {
       "id": "2026-06-01_pecho-trí_1780333606742",
       "date": "2026-06-01",
       "weekday": "Lunes",
       "type": "Pecho/Trí",
-      "general_feeling": "Sin valoración",
+      "general_feeling": "Muñeca izquierda peor que nunca con mancuernas — dolor centro muñeca/antebrazo (diferente al TFCC cubital habitual). Sensación de 'muñeca débil'. Sufriendo todas las series. Pol quiere volver a barra. Overhead subido a 20kg sin consultar — lumbar leve. Plate pinch gran mejora (capsulitis mejorando). Fondos sigue arrancando a 180kg.",
       "blocks": [
         {
           "name": "PECHO",
@@ -203,10 +412,32 @@
           ]
         }
       ],
-      "deviations": [],
-      "patterns": [],
-      "decisions": [],
-      "raw_notes": ""
+      "deviations": [
+        "Press inclinado 28kg 9/9/8/8 — rendimiento de pecho MEJOR que 27/05 (8/8/9/8), pero muñeca peor. Dolor centro muñeca/antebrazo (NO cubital habitual). Sensación de 'muñeca débil'. Sufrimiento todas las series. Pol quiere volver a barra.",
+        "Hammer 55kg 3×8 TERCERA sesión limpia — pero hoy nota molestia exterior muñeca al acabar (zona TFCC habitual), primera vez que Hammer genera señal.",
+        "Overhead SUBIDO a 20kg vs base 17.5kg — sin consultar. 12/12/10 con sensación lumbar al acabar.",
+        "Fondos 180kg S1-S2 OTRA VEZ vs base 170kg — S2 cae a 9 reps. Pol reconoce que tendría que haber hecho 170 en las 3.",
+        "Plate pinch 15kg 30/35/35 — MEJORA ENORME vs 27/05 (30/15/20). Capsulitis mejorando.",
+        "Iso Zass 3×10s vs base 3×8s — subido.",
+        "Prehab TFCC: NO mencionado otra vez."
+      ],
+      "patterns": [
+        "⚠️ MUÑECA IZQUIERDA — SEÑAL NUEVA Y DIFERENTE: el dolor ya no es solo TFCC cubital (exterior). Hoy es CENTRO de muñeca/antebrazo, sensación de debilidad. Esto puede ser: (1) TFCC irritado que irradia diferente, (2) fatiga del estabilizador por grip neutro forzado, (3) nuevo problema. Aparece con mancuernas Y ahora también leve con Hammer. NECESITA FISIO.",
+        "⚠️ OVERHEAD SUBIDO SIN CONSULTAR: 20kg vs base 17.5kg. Ha dado 12/12/10 pero con sensación lumbar. Patrón de subir peso por su cuenta sin consolidar primero (como landmine y elevaciones). La lumbar con overhead es señal de que el core no compensa el peso extra.",
+        "⚠️ FONDOS 180kg: tercera Pecho/Trí consecutiva arrancando por encima de base 170kg. S2 cae a 9 (27/05 S3 bajó a 170, hoy S2 ya flojea a 180). La base real es 170kg — el 180 no se sostiene 3×10.",
+        "✅ PRESS MANCUERNAS 9/9/8/8 — a nivel pecho la mejor sesión. La fuerza está. El limitante es la muñeca, no el músculo.",
+        "✅ PLATE PINCH 30/35/35 — salto enorme. La capsulitis del dedo mejora (de 30/15/20 a 30/35/35 en una semana).",
+        "✅ EXT BARRA NEUTRA 22.5kg 3×12 — cuarta sesión consecutiva limpia. Consolidadísimo."
+      ],
+      "decisions": [
+        "MUÑECA — DECISIÓN CRÍTICA PENDIENTE: Pol quiere volver a barra. La barra está CERRADA por diagnóstico fisio (pronación fija + TFCC). Pero hoy la mancuerna genera un dolor DIFERENTE al TFCC habitual. Esto necesita fisio ANTES de decidir. No es tan simple como 'barra mejor' — puede ser peor de otra forma.",
+        "Overhead: VOLVER a 17.5kg. La subida a 20kg genera sensación lumbar y no estaba acordada. Consolidar 3×12 limpio a 17.5kg → luego 20kg.",
+        "Fondos: HACER 170kg en las 3 series. Pol mismo lo dice. No arrancar a 180.",
+        "Ext barra neutra: cuarta 3×12 limpia → probar 25kg próxima sesión.",
+        "Plate pinch: progresión real, mantener 15kg buscando 3×30s sostenido.",
+        "Prehab TFCC: ¿se hizo? Tercer Pecho/Trí sin confirmación."
+      ],
+      "raw_notes": "Pecho/Trí con muñeca peor que nunca — dolor diferente (centro muñeca, no cubital). Pol quiere barra. Overhead subido a 20kg sin consultar (lumbar). Fondos a 180 otra vez. Plate pinch gran mejora. Prehab no mencionado."
     },
     {
       "id": "2026-05-30_pierna-bíc_1780135808046",
@@ -5238,32 +5469,32 @@
   ],
   "planning": [
     {
-      "id": "plan-2026-05-30",
-      "date": "2026-05-30",
-      "weekday": "Sábado",
-      "type": "Pierna/Bíc",
-      "notes": "Completado ✓ (30/05). Sesión completa pese a baja energía. Ext cuádriceps 3×10 limpio. Hip thrust 3×15 completo. Wall sit 5×45s segunda limpia. Chin-up 8/8/7. Curl inclinado al fallo → bajado a 14kg base."
-    },
-    {
       "id": "plan-2026-06-01",
       "date": "2026-06-01",
       "weekday": "Lunes",
       "type": "Pecho/Trí",
-      "notes": "Probar técnica transición mancuernas desde rodillas. Muñequera ANTES. Hammer 55kg. Cruce 13.75kg. Llevar theraband — prehab TFCC obligatorio."
+      "notes": "Completado ✓ (01/06). Muñeca dolor diferente (centro, no cubital). Press 9/9/8/8 pecho bien pero muñeca fatal. Overhead subido a 20kg (lumbar). Plate pinch mejora enorme. Necesita fisio para decidir mancuerna vs barra."
     },
     {
       "id": "plan-2026-06-03",
       "date": "2026-06-03",
       "weekday": "Miércoles",
       "type": "Espalda/Hombro",
-      "notes": "Jalón 77.5kg buscar 4×8 limpio. Remo 75kg. Landmine 22.5kg (verificar antes de cargar). Elevaciones 6.25kg con isométrico. Dead hang 90kg subir a 45s."
+      "notes": "Jalón 77.5kg buscar 4×8 limpio. Remo 75kg. Landmine 22.5kg (verificar). Elevaciones 6.25kg isométrico. Dead hang 90kg subir a 45s."
     },
     {
       "id": "plan-2026-06-06",
       "date": "2026-06-06",
       "weekday": "Sábado",
       "type": "Pierna/Bíc",
-      "notes": "Curl inclinado a 14kg (primer test). Chin-up 90kg buscar 3×8. Wall sit 10kg 5×45s — si tercera limpia → 15kg próxima. Prensa 140kg mantener."
+      "notes": "Curl inclinado a 14kg (primer test). Chin-up 90kg buscar 3×8. Wall sit 5×45s tercera limpia → 15kg próxima."
+    },
+    {
+      "id": "plan-2026-06-08",
+      "date": "2026-06-08",
+      "weekday": "Lunes",
+      "type": "Pecho/Trí",
+      "notes": "PENDIENTE DECISIÓN MUÑECA: fisio antes de esta sesión. Overhead VOLVER a 17.5kg. Fondos 170kg×3. Ext barra neutra probar 25kg."
     }
   ],
   "reports": [
@@ -5289,7 +5520,7 @@
     "last_cycle_close": "2026-05-16",
     "report_rule": "4 Pecho/Trí + 4 Espalda/Hombro + 4 Pierna/Bíc desde last_cycle_close",
     "current_count": {
-      "Pecho/Trí": 2,
+      "Pecho/Trí": 3,
       "Espalda/Hombro": 2,
       "Pierna/Bíc": 2
     }
@@ -5331,8 +5562,8 @@
                 "ANCLA de empuje — doble progresión",
                 "Muñeca NEUTRA todo el recorrido",
                 "⚠️ Muñequera izquierda ANTES — SIN EXCEPCIÓN",
-                "⚠️ HANDLING: técnica transición desde rodillas",
-                "A nivel pecho fuerza de sobra para 30kg"
+                "⚠️ PENDIENTE FISIO: dolor centro muñeca (01/06) diferente a TFCC cubital. No decidir mancuerna vs barra sin valoración",
+                "A nivel pecho: 9/9/8/8 — fuerza de sobra, el limitante es la muñeca"
               ]
             },
             {
@@ -5346,7 +5577,8 @@
               "tips": [
                 "Brazos independientes",
                 "Pausa corta abajo",
-                "✅ Base 55kg CONFIRMADA"
+                "✅ Base 55kg — tercera 3×8 limpia",
+                "⚠️ 01/06: molestia exterior muñeca al acabar (primera vez en Hammer)"
               ]
             },
             {
@@ -5377,8 +5609,7 @@
               "rest": 120,
               "tips": [
                 "Controla la bajada",
-                "⚠️ Base 170kg",
-                "Vigila muñeca izquierda"
+                "⚠️ Base 170kg — HACER 170 EN LAS 3 SERIES. No arrancar a 180"
               ]
             },
             {
@@ -5391,7 +5622,7 @@
               "rest": 90,
               "tips": [
                 "Codos CERRADOS",
-                "⚠️ Vigila zona derecha"
+                "⚠️ Base 17.5kg — NO subir a 20kg (lumbar el 01/06). Consolidar 3×12 limpio primero"
               ]
             },
             {
@@ -5404,7 +5635,7 @@
               "rest": 90,
               "tips": [
                 "Tempo 3-1-2",
-                "Próxima valorar 25kg"
+                "✅ Cuarta 3×12 limpia consecutiva — probar 25kg próxima sesión"
               ]
             }
           ]
@@ -5426,6 +5657,21 @@
               ]
             },
             {
+              "id": "prehab-tfcc",
+              "name": "Prehab TFCC — disco 2.5kg",
+              "scheme": "2×15 cada dirección",
+              "sets": 2,
+              "base": 2.5,
+              "unit": "kg",
+              "rest": 30,
+              "tips": [
+                "⚠️ OBLIGATORIO — no saltar",
+                "Antebrazo en muslo, mano colgando, disco 2.5kg",
+                "Pronación 15 reps → supinación 15 reps → repetir",
+                "Lento y controlado — no forzar rango"
+              ]
+            },
+            {
               "id": "plate-pinch",
               "name": "Plate pinch",
               "scheme": "3×30s",
@@ -5435,25 +5681,7 @@
               "rest": 60,
               "tips": [
                 "Compara manos",
-                "⚠️ Mano izquierda falla — capsulitis + TFCC"
-              ]
-            }
-          ]
-        },
-        {
-          "name": "PREHAB POST-SESIÓN",
-          "warmup": true,
-          "exercises": [
-            {
-              "id": "prehab-tfcc",
-              "name": "Prehab TFCC (2-3 min)",
-              "scheme": "2×15 cada dirección",
-              "sets": 0,
-              "base": null,
-              "unit": "",
-              "tips": [
-                "Pronación/supinación theraband o mancuerna 1-2kg",
-                "⚠️ OBLIGATORIO — llevar theraband"
+                "✅ 30/35/35 el 01/06 — capsulitis mejorando"
               ]
             }
           ]
@@ -5667,7 +5895,7 @@
               "rest": 120,
               "tips": [
                 "Empuja talones, pelvis neutra, pausa 2s arriba",
-                "✅ 3×15 limpio confirmado 30/05"
+                "✅ 3×15 limpio confirmado"
               ]
             },
             {
@@ -5680,7 +5908,7 @@
               "rest": 120,
               "tips": [
                 "Pausa arriba",
-                "⚠️ Asimetría D>I: no apareció 30/05 pero sí 16/05 y 23/05 — seguir monitorizando"
+                "⚠️ Asimetría D>I: monitorizar"
               ]
             },
             {
@@ -5724,8 +5952,8 @@
               "rest": 90,
               "tips": [
                 "Rodillas ~60°",
-                "✅ Segunda sesión 5×45s limpia (16/05 y 30/05)",
-                "Una sesión más → subir a 15kg"
+                "✅ Segunda 5×45s limpia",
+                "Una sesión más → 15kg"
               ]
             }
           ]
@@ -5745,7 +5973,7 @@
                 "ANCLA bíceps — agarre neutro",
                 "Bajada controlada 2-3s",
                 "⚠️ PESO TOTAL: PC (~80kg) + lastre. Base 90kg",
-                "Progresión: 8/7/7 → 8/8/7. Una sesión más a 3×8 → +2.5kg"
+                "Una sesión más a 3×8 → +2.5kg"
               ]
             },
             {
@@ -5759,9 +5987,7 @@
               "tips": [
                 "Banco a 45°",
                 "Máxima elongación abajo",
-                "Muñeca semi-neutra",
-                "✅ Bajado de 16kg a 14kg — 3 sesiones al fallo confirmaron que 16kg no es sostenible post chin-up",
-                "Buscar 3×10 limpio a 14kg"
+                "✅ Bajado a 14kg — buscar 3×10 limpio"
               ]
             }
           ]
