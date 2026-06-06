@@ -1,6 +1,218 @@
 {
   "sessions": [
     {
+      "id": "2026-06-06_pierna-bíc_1780744778134",
+      "date": "2026-06-06",
+      "weekday": "Sábado",
+      "type": "Pierna/Bíc",
+      "general_feeling": "Sin valoración",
+      "blocks": [
+        {
+          "name": "PIERNA",
+          "exercises": [
+            {
+              "id": "prensa-uni",
+              "name": "Prensa unilateral",
+              "skipped": false,
+              "weight": "140kg",
+              "sets": "S1: 140kg×10 / S2: 140kg×10 / S3: 140kg×10",
+              "notes": "",
+              "setData": [
+                {
+                  "weight": 140,
+                  "reps": 10
+                },
+                {
+                  "weight": 140,
+                  "reps": 10
+                },
+                {
+                  "weight": 140,
+                  "reps": 10
+                }
+              ]
+            },
+            {
+              "id": "hip-thrust",
+              "name": "Hip thrust barra libre",
+              "skipped": false,
+              "weight": "80kg",
+              "sets": "S1: 80kg×15 / S2: 80kg×15 / S3: 80kg×15",
+              "notes": "",
+              "setData": [
+                {
+                  "weight": 80,
+                  "reps": 15
+                },
+                {
+                  "weight": 80,
+                  "reps": 15
+                },
+                {
+                  "weight": 80,
+                  "reps": 15
+                }
+              ]
+            },
+            {
+              "id": "ext-cuad",
+              "name": "Extensión cuádriceps unilateral",
+              "skipped": false,
+              "weight": "65kg",
+              "sets": "S1: 65kg×10 / S2: 65kg×10 / S3: 65kg×9",
+              "notes": "3a serie descanso menos y llego 9/10 la 10 muy tensa por eso decido no contarla, muy apurada ",
+              "setData": [
+                {
+                  "weight": 65,
+                  "reps": 10
+                },
+                {
+                  "weight": 65,
+                  "reps": 10
+                },
+                {
+                  "weight": 65,
+                  "reps": 9
+                }
+              ]
+            },
+            {
+              "id": "curl-fem",
+              "name": "Curl femoral unilateral",
+              "skipped": false,
+              "weight": "32.5kg",
+              "sets": "S1: 32.5kg×10 / S2: 32.5kg×10 / S3: 32.5kg×10",
+              "notes": "Buaaa femoral derecho queda tieso jajaj \nAunque izquierdo tambien esta fatigado, pero no a ese nivel",
+              "setData": [
+                {
+                  "weight": 32.5,
+                  "reps": 10
+                },
+                {
+                  "weight": 32.5,
+                  "reps": 10
+                },
+                {
+                  "weight": 32.5,
+                  "reps": 10
+                }
+              ]
+            },
+            {
+              "id": "abductor",
+              "name": "Abductor",
+              "skipped": false,
+              "weight": "65kg",
+              "sets": "S1: 65kg×15 / S2: 65kg×15 / S3: 65kg×15",
+              "notes": "",
+              "setData": [
+                {
+                  "weight": 65,
+                  "reps": 15
+                },
+                {
+                  "weight": 65,
+                  "reps": 15
+                },
+                {
+                  "weight": 65,
+                  "reps": 15
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "TENDÓN BILATERAL",
+          "exercises": [
+            {
+              "id": "wall-sit",
+              "name": "Wall sit con disco",
+              "skipped": false,
+              "weight": "10kg",
+              "sets": "S1: 10kg×45 / S2: 10kg×45 / S3: 10kg×45 / S4: 10kg×45 / S5: 10kg×45",
+              "notes": "",
+              "setData": [
+                {
+                  "weight": 10,
+                  "reps": 45
+                },
+                {
+                  "weight": 10,
+                  "reps": 45
+                },
+                {
+                  "weight": 10,
+                  "reps": 45
+                },
+                {
+                  "weight": 10,
+                  "reps": 45
+                },
+                {
+                  "weight": 10,
+                  "reps": 45
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "BÍCEPS",
+          "exercises": [
+            {
+              "id": "chin-up-neutro",
+              "name": "Chin-up neutro lastrado",
+              "skipped": false,
+              "weight": "90kg",
+              "sets": "S1: 90kg×8 / S2: 90kg×8 / S3: 90kg×8",
+              "notes": "Bastante tensa 2a serie\n3a serie muerte, la ultima ha estado mega luchada\nHoy lo he hecho con anillas de gimanstica de estas de madera y guay",
+              "setData": [
+                {
+                  "weight": 90,
+                  "reps": 8
+                },
+                {
+                  "weight": 90,
+                  "reps": 8
+                },
+                {
+                  "weight": 90,
+                  "reps": 8
+                }
+              ]
+            },
+            {
+              "id": "curl-inclinado",
+              "name": "Curl inclinado mancuernas",
+              "skipped": false,
+              "weight": "14kg/mano",
+              "sets": "S1: 14kg/mano×10 / S2: 14kg/mano×10 / S3: 14kg/mano×10",
+              "notes": "Buaaa tensas ehh pero llegando a la 10 \nSe me tensa y carga antes biceps izquierdo",
+              "setData": [
+                {
+                  "weight": 14,
+                  "reps": 10
+                },
+                {
+                  "weight": 14,
+                  "reps": 10
+                },
+                {
+                  "weight": 14,
+                  "reps": 10
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "deviations": [],
+      "patterns": [],
+      "decisions": [],
+      "raw_notes": ""
+    },
+    {
       "id": "2026-06-03_espalda-hombro_1780508120381",
       "date": "2026-06-03",
       "weekday": "Miércoles",
