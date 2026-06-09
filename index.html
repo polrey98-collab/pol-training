@@ -267,7 +267,7 @@
     </div>
     <div class="io-sec">
       <div class="io-title">↓ Importar de Claude</div>
-      <div class="io-desc">Pega el JSON enriquecido. Se fusionan sesiones y, si incluye rutinas actualizadas, se aplican automáticamente.</div>
+      <div class="io-desc">Pega el JSON enriquecido. Se fusionan sesiones y, si incluye rutinas actualizadas, se aplican automáticamente (merge por tipo — las rutinas no incluidas se conservan).</div>
       <textarea class="io-ta" id="import-ta" placeholder="Pega el JSON aquí..."></textarea>
       <button class="btn btn-p" onclick="doImport()">Importar JSON</button>
     </div>
@@ -304,8 +304,8 @@
   <div id="toast"></div>
 </div>
 <script>
-const APP_VERSION='3.0';
-const APP_DATE='12 mayo 2026';
+const APP_VERSION='3.2';
+const APP_DATE='9 junio 2026';
 const SK='pol-v2',ASK='pol-active-v2',RK='pol-routines-v2',GHK='pol-gh-token',GHSK='pol-gh-sha',CIRC=2*Math.PI*80;
 const COLORS={'Pecho/Trí':'#dc2626','Espalda/Hombro':'#2563eb','Pierna/Bíc':'#16a34a','Complementario':'#64748b','Running':'#ea580c','Pádel':'#9333ea','Escalada':'#ca8a04','Otro':'#6b7280'};
 const DAYS=['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'];
@@ -483,7 +483,18 @@ function load(){
 function loadRoutines(){
   try{
     const r=localStorage.getItem(RK);
-    if(r){R=JSON.parse(r);}
+    if(r){
+      R=JSON.parse(r);
+      // ─── AUTO-REPARACIÓN: si falta alguna rutina base, la rellena desde DEFAULT_R ───
+      let repaired=false;
+      for(const type of Object.keys(DEFAULT_R)){
+        if(!R[type]||!R[type].blocks||!R[type].blocks.length){
+          R[type]=JSON.parse(JSON.stringify(DEFAULT_R[type]));
+          repaired=true;
+        }
+      }
+      if(repaired)saveRoutines();
+    }
     else{R=JSON.parse(JSON.stringify(DEFAULT_R));saveRoutines();}
   }catch(e){R=JSON.parse(JSON.stringify(DEFAULT_R));saveRoutines();}
   buildExType();
@@ -891,13 +902,17 @@ function doImport(){
     if(parsed.reports)D.reports=parsed.reports;
     if(parsed.cycle_meta)D.cycle_meta=parsed.cycle_meta;
     save();
-    // Import routines if present
-    let routinesUpdated=false;
+    // Import routines if present — MERGE por tipo de sesión (NO reemplazar todo el objeto)
+    // Así, si el JSON solo trae una rutina, las demás se conservan intactas.
+    let routinesUpdated=false,routinesMerged=0;
     if(parsed.routines&&typeof parsed.routines==='object'&&Object.keys(parsed.routines).length>0){
-      R=parsed.routines;saveRoutines();buildExType();routinesUpdated=true;
+      for(const[type,routine]of Object.entries(parsed.routines)){
+        if(routine&&routine.blocks&&routine.blocks.length){R[type]=routine;routinesMerged++;}
+      }
+      if(routinesMerged>0){saveRoutines();buildExType();routinesUpdated=true;}
     }
     document.getElementById('import-ta').value='';
-    toast(`✓ ${added} nuevas · ${updated} actualizadas${routinesUpdated?' · Rutinas actualizadas':''}`);
+    toast(`✓ ${added} nuevas · ${updated} actualizadas${routinesUpdated?' · '+routinesMerged+' rutina(s)':''}`);
   }catch(e){toast('⚠ JSON inválido — revisa el formato');}
 }
 function resetRoutines(){
