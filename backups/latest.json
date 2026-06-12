@@ -1,11 +1,233 @@
 {
   "sessions": [
     {
+      "id": "2026-06-12_espalda-hombro_1781278456268",
+      "date": "2026-06-12",
+      "weekday": "Viernes",
+      "type": "Espalda/Hombro",
+      "general_feeling": "Antebrazo fatigado jajaja",
+      "blocks": [
+        {
+          "name": "ESPALDA",
+          "exercises": [
+            {
+              "id": "jalon-neutro",
+              "name": "Jalón al pecho neutro",
+              "skipped": false,
+              "weight": "77.5kg",
+              "sets": "S1: 77.5kg×8 / S2: 77.5kg×8 / S3: 77.5kg×8 / S4: 77.5kg×8",
+              "notes": "",
+              "setData": [
+                {
+                  "weight": 77.5,
+                  "reps": 8
+                },
+                {
+                  "weight": 77.5,
+                  "reps": 8
+                },
+                {
+                  "weight": 77.5,
+                  "reps": 8
+                },
+                {
+                  "weight": 77.5,
+                  "reps": 8
+                }
+              ]
+            },
+            {
+              "id": "remo-polea",
+              "name": "Remo polea sentado",
+              "skipped": false,
+              "weight": "75kg",
+              "sets": "S1: 75kg×8 / S2: 75kg×8 / S3: 75kg×8",
+              "notes": "",
+              "setData": [
+                {
+                  "weight": 75,
+                  "reps": 8
+                },
+                {
+                  "weight": 75,
+                  "reps": 8
+                },
+                {
+                  "weight": 75,
+                  "reps": 8
+                }
+              ]
+            },
+            {
+              "id": "pullover-cuerda",
+              "name": "Pull-over cuerda",
+              "skipped": false,
+              "weight": "20kg",
+              "sets": "S1: 20kg×12 / S2: 20kg×12 / S3: 20kg×12",
+              "notes": "Acabando fatigado pero muy good, consolidados",
+              "setData": [
+                {
+                  "weight": 20,
+                  "reps": 12
+                },
+                {
+                  "weight": 20,
+                  "reps": 12
+                },
+                {
+                  "weight": 20,
+                  "reps": 12
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "HOMBRO",
+          "exercises": [
+            {
+              "id": "face-pull",
+              "name": "Face pull cuerda",
+              "skipped": false,
+              "weight": "25kg",
+              "sets": "S1: 25kg×15 / S2: 25kg×15",
+              "notes": "",
+              "setData": [
+                {
+                  "weight": 25,
+                  "reps": 15
+                },
+                {
+                  "weight": 25,
+                  "reps": 15
+                }
+              ]
+            },
+            {
+              "id": "landmine",
+              "name": "Landmine press unilateral",
+              "skipped": false,
+              "weight": "22.5kg",
+              "sets": "S1: 22.5kg×10 / S2: 20kg×15 / S3: 20kg×15",
+              "notes": "He probado con 45kg (25kg) y he notado con brazo izquierdo que la mano no aguantaba bien, bajo a 40kg",
+              "setData": [
+                {
+                  "weight": 22.5,
+                  "reps": 10
+                },
+                {
+                  "weight": 20,
+                  "reps": 15
+                },
+                {
+                  "weight": 20,
+                  "reps": 15
+                }
+              ]
+            },
+            {
+              "id": "elev-lat",
+              "name": "Elevaciones laterales",
+              "skipped": false,
+              "weight": "6.25kg",
+              "sets": "S1: 6.25kg×15 / S2: 6.25kg×15",
+              "notes": "",
+              "setData": [
+                {
+                  "weight": 6.25,
+                  "reps": 15
+                },
+                {
+                  "weight": 6.25,
+                  "reps": 15
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "TENDÓN + AGARRE",
+          "exercises": [
+            {
+              "id": "scapular-pull",
+              "name": "Scapular pull",
+              "skipped": false,
+              "weight": "80kg",
+              "sets": "S1: 80kg×8 / S2: 80kg×7 / S3: 80kg×7",
+              "notes": "Ya estaba fatigado\ndescanso 1 min - 1:30 ",
+              "setData": [
+                {
+                  "weight": 80,
+                  "reps": 8
+                },
+                {
+                  "weight": 80,
+                  "reps": 7
+                },
+                {
+                  "weight": 80,
+                  "reps": 7
+                }
+              ]
+            },
+            {
+              "id": "dead-hang-lastre",
+              "name": "Dead hang con lastre",
+              "skipped": false,
+              "weight": "90kg",
+              "sets": "S1: 90kg×40 / S2: 90kg×30 / S3: 90kg×35",
+              "notes": "Empieza a quemar bastante antebrazo\nDescanso 1 min - 1:30\nEn 3a serie he descanso hasta 2 min",
+              "setData": [
+                {
+                  "weight": 90,
+                  "reps": 40
+                },
+                {
+                  "weight": 90,
+                  "reps": 30
+                },
+                {
+                  "weight": 90,
+                  "reps": 35
+                }
+              ]
+            },
+            {
+              "id": "farmer-carry",
+              "name": "Farmer's carry",
+              "skipped": false,
+              "weight": "24kg/mano",
+              "sets": "S1: 24kg/mano×40 / S2: 24kg/mano×40 / S3: 24kg/mano×40",
+              "notes": "Descanso 1:30",
+              "setData": [
+                {
+                  "weight": 24,
+                  "reps": 40
+                },
+                {
+                  "weight": 24,
+                  "reps": 40
+                },
+                {
+                  "weight": 24,
+                  "reps": 40
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "deviations": [],
+      "patterns": [],
+      "decisions": [],
+      "raw_notes": ""
+    },
+    {
       "id": "2026-06-10_pierna-bíc_1781197256944",
       "date": "2026-06-10",
       "weekday": "Jueves",
       "type": "Pierna/Bíc",
-      "general_feeling": "Sin valoración",
+      "general_feeling": "Sesión post-trabajo completa pese a extracción de sangre matutina y cervical/trapecio activo del día anterior. Pierna sólida — ext cuádriceps 3×10 PRIMERA VEZ COMPLETO en Ciclo 3. Wall sit 15kg debut con 5×50s (por encima del target 45s). Chin-up 92.5kg debut sólido 7/7/6. Curl inclinado bíceps izquierdo se intensifica. Hip thrust lumbar leve.",
       "blocks": [
         {
           "name": "PIERNA",
@@ -207,10 +429,32 @@
           ]
         }
       ],
-      "deviations": [],
-      "patterns": [],
-      "decisions": [],
-      "raw_notes": ""
+      "deviations": [
+        "Wall sit 15kg 5×50s vs target 5×45s — DEBUT a 15kg con 5s extra por serie. Sobrerendimiento.",
+        "Ext cuádriceps 65kg 3×10 COMPLETO — primera vez en Ciclo 3 sin caída en S3. Última rep S3 muy luchada pero contada.",
+        "Chin-up 92.5kg 7/7/6 — DEBUT sólido dentro del rango 3×6-8.",
+        "Curl inclinado 14kg 10/9/9 — caída S2-S3 con bíceps izquierdo señalando primero y más intenso que nunca ('muere', 'clavado en 9').",
+        "Hip thrust 80kg 3×15 — completo pero lumbar leve reaparece.",
+        "Cervical/trapecio derecho del día anterior NO afectó la sesión."
+      ],
+      "patterns": [
+        "✅ CHIN-UP 92.5kg DEBUT — 7/7/6 dentro del rango. Progresión textbook: 90kg (8/7/7 → 8/8/7 → 8/8/8) → 92.5kg (7/7/6). Doble progresión funcionando.",
+        "✅ WALL SIT 15kg 5×50s DEBUT — superó 45s target en todas las series. Primera sesión a 15kg y ya 50s. Consolidar antes de subir.",
+        "✅ EXT CUÁDRICEPS 3×10 PRIMERA VEZ COMPLETO CICLO 3 — patrón de caída S3 roto (16/05: 9, 23/05: 9, 30/05: 10, 06/06: 9, 10/06: 10). Con 2min descanso es suficiente. Última rep luchada pero completada.",
+        "⚠️ BÍCEPS IZQUIERDO INTENSIFICÁNDOSE — tercera sesión con señal, hoy la más clara. De 10/10/10 (06/06 con chin-up 90kg) a 10/9/9 (10/06 con chin-up 92.5kg). El chin-up más pesado pre-fatiga más, pero el izquierdo muere siempre primero. Conexión TFCC/muñeca → reclutamiento alterado.",
+        "HIP THRUST LUMBAR INTERMITENTE — reaparece sin running previo. Patrón: 16/05 lumbar, 30/05 limpio, 06/06 limpio, 10/06 leve. No impide completar 3×15. Monitorizar.",
+        "✅ CERVICAL/TRAPECIO NO AGRAVADO — pese a señal el día anterior en press, chin-up y pierna no lo han tocado."
+      ],
+      "decisions": [
+        "Chin-up: mantener 92.5kg. Buscar 3×7-8. Cuando 3×8 → +2.5kg (95kg).",
+        "Wall sit: consolidar 15kg a 5×45s como base estándar (no perseguir los 50s). Si 2-3 sesiones limpias → considerar 20kg.",
+        "Curl inclinado: mantener 14kg. Bíceps izquierdo dato claro para el traumatólogo.",
+        "Ext cuádriceps: dato positivo. Mantener 65kg con 120s descanso.",
+        "Hip thrust: mantener 80kg. Si lumbar sigue apareciendo → revisar glute bridge calentamiento.",
+        "Trapecio derecho: sigue 3/3. FISIO OBLIGATORIO. No afectó hoy pero sigue activo.",
+        "Mañana Espalda/Hombro: CUIDADO con cervical/trapecio. Valorar jalón y landmine in situ."
+      ],
+      "raw_notes": "4ª Pierna/Bíc Ciclo 3. Ext cuádriceps 3×10 primera completa. Wall sit 15kg 5×50s debut. Chin-up 92.5kg 7/7/6 debut. Bíceps izquierdo intensifica. Cervical no afectó."
     },
     {
       "id": "2026-06-09_pecho-trí_1781025102549",
@@ -6177,25 +6421,18 @@
   ],
   "planning": [
     {
-      "id": "plan-2026-06-09",
-      "date": "2026-06-09",
-      "weekday": "Martes",
-      "type": "Pecho/Trí",
-      "notes": "Completado ✓ (09/06). Press 30kg 4×10 milestone. Ext neutra 25kg confirmado. Overhead respetado."
-    },
-    {
       "id": "plan-2026-06-10",
       "date": "2026-06-10",
-      "weekday": "Miércoles",
+      "weekday": "Jueves",
       "type": "Pierna/Bíc",
-      "notes": "4ª PIERNA/BÍC CICLO 3. Chin-up 92.5kg debut. Wall sit 15kg debut. Curl inclinado 14kg mantener. Ext cuádriceps 120s descanso. Comer bien a mediodía."
+      "notes": "Completado ✓ (10/06). Chin-up 92.5kg debut 7/7/6. Wall sit 15kg 5×50s. Ext cuádriceps 3×10 primera completa."
     },
     {
       "id": "plan-2026-06-12",
       "date": "2026-06-12",
       "weekday": "Viernes",
       "type": "Espalda/Hombro",
-      "notes": "4ª ESPALDA/HOMBRO → CIERRE CICLO 3 (4-4-4). Jalón 77.5kg tercera 4×8. Dead hang reconsolidar 3×40s. Face pull 25kg. Farmer's carry recuperar. Elevaciones 6.25kg CON isométrico."
+      "notes": "4ª ESPALDA/HOMBRO → CIERRE CICLO 3 (4-4-4). ⚠️ TRAPECIO 3/3 ACTIVO — valorar cervical antes de empezar. Depresión escapular extra en calentamiento. Jalón 77.5kg tercera 4×8. Dead hang reconsolidar 3×40s. Face pull 25kg. Farmer's carry recuperar 24kg. Elevaciones 6.25kg CON isométrico. Landmine 22.5kg — cue escapular obligatorio."
     }
   ],
   "reports": [],
@@ -6206,7 +6443,7 @@
     "current_count": {
       "Pecho/Trí": 4,
       "Espalda/Hombro": 3,
-      "Pierna/Bíc": 3
+      "Pierna/Bíc": 4
     }
   },
   "routines": {
@@ -6547,7 +6784,7 @@
               "rest": 180,
               "tips": [
                 "ANCLA pierna",
-                "⚠️ Progresión aplazada hasta cierre Ciclo 3"
+                "⚠️ Progresión en informe Ciclo 3"
               ]
             },
             {
@@ -6560,7 +6797,7 @@
               "rest": 120,
               "tips": [
                 "Pausa 2s arriba",
-                "✅ Consolidado"
+                "Lumbar intermitente — monitorizar"
               ]
             },
             {
@@ -6572,7 +6809,7 @@
               "unit": "kg",
               "rest": 120,
               "tips": [
-                "⚠️ Respetar 120s descanso"
+                "✅ 3×10 completo (10/06) — primera vez Ciclo 3"
               ]
             },
             {
@@ -6613,7 +6850,8 @@
               "unit": "kg disco",
               "rest": 90,
               "tips": [
-                "✅ SUBIR a 15kg — debut"
+                "✅ 15kg debut 5×50s (10/06)",
+                "Consolidar 45s como base"
               ]
             }
           ]
@@ -6631,7 +6869,8 @@
               "rest": 180,
               "tips": [
                 "ANCLA bíceps",
-                "⚠️ 92.5kg debut (PC+12.5kg)"
+                "✅ 92.5kg debut 7/7/6 (10/06)",
+                "Buscar 3×7-8 → cuando 3×8 subir"
               ]
             },
             {
@@ -6643,8 +6882,7 @@
               "unit": "kg/mano",
               "rest": 90,
               "tips": [
-                "✅ 14kg validado",
-                "Monitorizar bíceps izquierdo"
+                "⚠️ Bíceps izquierdo señala primero — dato para traumatólogo"
               ]
             }
           ]
