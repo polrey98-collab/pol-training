@@ -1,11 +1,202 @@
 {
   "sessions": [
     {
+      "id": "2026-06-20_pierna-bíc_1781952266946",
+      "date": "2026-06-20",
+      "weekday": "Sábado",
+      "type": "Pierna/Bíc",
+      "general_feeling": "Sin valoración",
+      "blocks": [
+        {
+          "name": "PIERNA",
+          "exercises": [
+            {
+              "id": "rdl-bilateral",
+              "name": "Peso muerto rumano (RDL) bilateral",
+              "skipped": false,
+              "weight": "60kg",
+              "sets": "S1: 60kg×12 / S2: 60kg×12 / S3: 60kg×12",
+              "notes": "Barra 20kg + 40kg\nMuy buenas sensaciones y bastante easy. \nAlgo a comentar es que bajando, tocaba antes el disco al suelo del brazo derecho que izquierdo",
+              "setData": [
+                {
+                  "weight": 60,
+                  "reps": 12
+                },
+                {
+                  "weight": 60,
+                  "reps": 12
+                },
+                {
+                  "weight": 60,
+                  "reps": 12
+                }
+              ]
+            },
+            {
+              "id": "prensa-uni",
+              "name": "Prensa unilateral",
+              "skipped": false,
+              "weight": "150kg",
+              "sets": "S1: 150kg×10 / S2: 150kg×10 / S3: 150kg×10",
+              "notes": "Noto mas potencia en pierna derechaa",
+              "setData": [
+                {
+                  "weight": 150,
+                  "reps": 10
+                },
+                {
+                  "weight": 150,
+                  "reps": 10
+                },
+                {
+                  "weight": 150,
+                  "reps": 10
+                }
+              ]
+            },
+            {
+              "id": "hip-thrust",
+              "name": "Hip thrust barra libre",
+              "skipped": false,
+              "weight": "80kg",
+              "sets": "S1: 80kg×15 / S2: 80kg×15 / S3: 80kg×15",
+              "notes": "Se empieza a notar fatiga cardio",
+              "setData": [
+                {
+                  "weight": 80,
+                  "reps": 15
+                },
+                {
+                  "weight": 80,
+                  "reps": 15
+                },
+                {
+                  "weight": 80,
+                  "reps": 15
+                }
+              ]
+            },
+            {
+              "id": "ext-cuad",
+              "name": "Extensión cuádriceps unilateral",
+              "skipped": false,
+              "weight": "65kg",
+              "sets": "S1: 65kg×10 / S2: 65kg×10 / S3: 65kg×10",
+              "notes": "",
+              "setData": [
+                {
+                  "weight": 65,
+                  "reps": 10
+                },
+                {
+                  "weight": 65,
+                  "reps": 10
+                },
+                {
+                  "weight": 65,
+                  "reps": 10
+                }
+              ]
+            },
+            {
+              "id": "abductor",
+              "name": "Abductor",
+              "skipped": false,
+              "weight": "65kg",
+              "sets": "S1: 65kg×15 / S2: 65kg×15 / S3: 65kg×15",
+              "notes": "",
+              "setData": [
+                {
+                  "weight": 65,
+                  "reps": 15
+                },
+                {
+                  "weight": 65,
+                  "reps": 15
+                },
+                {
+                  "weight": 65,
+                  "reps": 15
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "TENDÓN BILATERAL",
+          "exercises": [
+            {
+              "id": "wall-sit",
+              "name": "Wall sit con disco",
+              "skipped": true,
+              "weight": "—",
+              "sets": "Saltado",
+              "notes": "",
+              "setData": []
+            }
+          ]
+        },
+        {
+          "name": "BÍCEPS",
+          "exercises": [
+            {
+              "id": "chin-up-neutro",
+              "name": "Chin-up neutro lastrado",
+              "skipped": false,
+              "weight": "92.5kg",
+              "sets": "S1: 92.5kg×8 / S2: 92.5kg×8 / S3: 92.5kg×6",
+              "notes": "",
+              "setData": [
+                {
+                  "weight": 92.5,
+                  "reps": 8
+                },
+                {
+                  "weight": 92.5,
+                  "reps": 8
+                },
+                {
+                  "weight": 92.5,
+                  "reps": 6
+                }
+              ]
+            },
+            {
+              "id": "curl-inclinado",
+              "name": "Curl inclinado mancuernas",
+              "skipped": false,
+              "weight": "14kg/mano",
+              "sets": "S1: 14kg/mano×10 / S2: 14kg/mano×10 / S3: 14kg/mano×8",
+              "notes": "2a serie llego al fallooo dde vd jajajajaj brazo izquierdo ha tirado su ultima \n3a serie muerte",
+              "setData": [
+                {
+                  "weight": 14,
+                  "reps": 10
+                },
+                {
+                  "weight": 14,
+                  "reps": 10
+                },
+                {
+                  "weight": 14,
+                  "reps": 8
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "deviations": [],
+      "patterns": [],
+      "decisions": [],
+      "raw_notes": ""
+    },
+    {
       "id": "2026-06-18_espalda-hombro_1781802379617",
       "date": "2026-06-18",
       "weekday": "Jueves",
       "type": "Espalda/Hombro",
-      "general_feeling": "Sin valoración",
+      "general_feeling": "Primera Espalda/Hombro Ciclo 4. Jalón 80kg DEBUT 4×8 — plan era 4×6, sobrepasado como en 77.5. Landmine y remo en base limpios. Dedo molesta en agarre face pull. Elevaciones S1 a 7.5 (rompe tempo), baja a 6.25. Dead hang 30/40/40 — S1 bajo pero S2-S3 a target. Orden hombro cambiado (landmine antes de face pull). Hombro izquierdo, trapecio y muñeca: limpios.",
       "blocks": [
         {
           "name": "ESPALDA",
@@ -217,10 +408,34 @@
           ]
         }
       ],
-      "deviations": [],
-      "patterns": [],
-      "decisions": [],
-      "raw_notes": ""
+      "deviations": [
+        "Jalón 80kg 4×8 vs plan 4×6 — SOBREPASÓ scheme en debut. S4 tensa pero completada. Mismo patrón que 77.5kg debut.",
+        "Landmine hecho ANTES de face pull — orden cambiado vs regla fija (face pull primero).",
+        "Elevaciones S1 a 7.5kg vs base 6.25 — rompe tempo 3-1-2 a ese peso. Baja a 6.25 en S2.",
+        "Dead hang 30/40/40 — S1 por debajo, S2-S3 a target. Patrón inverso al habitual.",
+        "Dedo izquierdo molesta en agarre de cuerda face pull — capsulitis extendiéndose a más ejercicios.",
+        "Face pull 25kg, landmine 22.5kg, remo 75kg, pull-over 20kg, scapular pull, farmer's carry: todo en base."
+      ],
+      "patterns": [
+        "✅ JALÓN 80kg DEBUT 4×8 — MONSTRUOSO. Plan era 4×6 y sale 4×8 (S4 tensa). Mismo patrón que 77.5kg: overconsolidado en peso anterior → debut y excede scheme. Progresión: 75kg 4×8 ×5 sesiones → 77.5kg debut 8/8/7/8 → 77.5 consolidado 4×8 ×3 → 80kg debut 4×8. Listo para consolidar directamente a 4×8.",
+        "✅ LANDMINE 22.5kg 3×10 LIMPIO — en base, sin señal de hombro izquierdo. Cuarta sesión sin señal desde 03/06.",
+        "✅ HOMBRO IZQUIERDO NO SEÑALA — ni en landmine ni post-sesión. Patrón de Ciclo 3 no se ha repetido.",
+        "✅ TRAPECIO/ZONA DERECHA LIMPIA — contador sigue 2/3.",
+        "✅ SCAPULAR PULL 3×8 COMPLETO — recuperado vs 8/7/7 del 12/06.",
+        "⚠️ ORDEN HOMBRO CAMBIADO — landmine antes de face pull. La regla es face pull PRIMERO para proteger hombro. No es grave hoy pero no debe ser hábito.",
+        "⚠️ ELEVACIONES 7.5kg OTRA VEZ S1 — tercer intento a 7.5 sin isométrico (28/05, 18/06). El tempo 3-1-2 se rompe. A 6.25 con isométrico el estímulo es mejor.",
+        "⚠️ DEDO IZQUIERDO EXTENDIÉNDOSE — ahora también molesta en face pull (cuerda). Ya limitaba plate pinch (16/06). Semana 3 de 6.",
+        "DEAD HANG 30/40/40 — S1 baja (30s) pero S2-S3 a target (40s). Patrón inverso: posible grip frío en S1 o agarre mal colocado. Mejor que 40/30/35 (12/06) y 38/36/35 (03/06) en promedio."
+      ],
+      "decisions": [
+        "Jalón: 80kg 4×8 directamente — no hace falta pasar por 4×6. Consolidar 2-3 sesiones → valorar 82.5.",
+        "Orden hombro: RECUPERAR face pull primero. Es protección, no negociable.",
+        "Elevaciones: 6.25kg. Deja de probar 7.5 — el tempo se rompe cada vez.",
+        "Dead hang: S2-S3 a 40s es progreso. La clave es S1 — si el grip arranca frío, hacer un cuelgue de 10s sin lastre antes.",
+        "Dedo: monitorizar extensión a más ejercicios. Resonancia muñeca el domingo 21/06 — mencionar el dedo también.",
+        "CICLO 4: 1-1-0."
+      ],
+      "raw_notes": "1ª Espalda/Hombro Ciclo 4. Jalón 80 debut 4×8 (plan era 4×6). Landmine limpio pero antes de face pull. Elevaciones 7.5 S1 otra vez. Dead hang 30/40/40. Dedo en face pull. Hombro izq y trapecio limpios."
     },
     {
       "id": "2026-06-16_pecho-trí_1781609474836",
@@ -6904,11 +7119,11 @@
   ],
   "planning": [
     {
-      "id": "plan-ciclo4-w1",
-      "date": "2026-06-16",
-      "weekday": "Martes",
-      "type": "Pecho/Trí",
-      "notes": "✓ Completado. Hammer 57.5 debut 8/8/6. Jueves Espalda/Hombro: jalón 80kg debut. Sábado Pierna/Bíc: prensa 150kg debut + RDL 40kg debut (NUEVO)."
+      "id": "plan-ciclo4-w1b",
+      "date": "2026-06-18",
+      "weekday": "Jueves",
+      "type": "Espalda/Hombro",
+      "notes": "✓ Completado. Jalón 80 4×8 debut. Sábado Pierna/Bíc: prensa 150kg + RDL 40kg debuts. Domingo 21/06: resonancia muñeca."
     }
   ],
   "reports": [],
@@ -6918,7 +7133,7 @@
     "report_rule": "4 Pecho/Trí + 4 Espalda/Hombro + 4 Pierna/Bíc desde last_cycle_close",
     "current_count": {
       "Pecho/Trí": 1,
-      "Espalda/Hombro": 0,
+      "Espalda/Hombro": 1,
       "Pierna/Bíc": 0
     }
   },
@@ -7008,13 +7223,12 @@
               "name": "Extensión overhead cuerda",
               "scheme": "3×10-12",
               "sets": 3,
-              "base": 17.5,
+              "base": 18.75,
               "unit": "kg",
               "rest": 90,
               "tips": [
                 "Codos cerrados",
-                "✅ Consolidado",
-                "⚠️ NO subir sin consultar — 18.75 sin acordar el 16/06"
+                "✅ 18.75kg confirmado (16/06)"
               ]
             },
             {
@@ -7055,8 +7269,7 @@
               "unit": "kg disco",
               "rest": 60,
               "tips": [
-                "✅ Capsulitis confirmada — sin restricción",
-                "⚠️ Dedo izq puede limitar — bajar a 10kg si hace de stopper"
+                "✅ Capsulitis confirmada — sin restricción"
               ]
             },
             {
@@ -7068,7 +7281,7 @@
               "unit": "kg disco",
               "rest": 0,
               "tips": [
-                "🏥 OBLIGATORIO — 5 sesiones saltado, pendiente cambio de formato"
+                "🏥 OBLIGATORIO — 4 sesiones saltado"
               ]
             }
           ]
@@ -7102,7 +7315,7 @@
             {
               "id": "jalon-neutro",
               "name": "Jalón al pecho neutro",
-              "scheme": "4×6",
+              "scheme": "4×8",
               "sets": 4,
               "base": 80,
               "unit": "kg",
@@ -7110,7 +7323,7 @@
               "tips": [
                 "ANCLA tracción",
                 "Deprimir escápula ANTES",
-                "Ciclo 4: debut 80kg — consolidar 4×6, luego buscar 4×8"
+                "✅ 80kg debut 4×8 (18/06) — consolidar, luego valorar 82.5"
               ]
             },
             {
