@@ -1,11 +1,228 @@
 {
   "sessions": [
     {
+      "id": "2026-06-22_pecho-trí_1782146752656",
+      "date": "2026-06-22",
+      "weekday": "Lunes",
+      "type": "Pecho/Trí",
+      "general_feeling": "Sin valoración",
+      "blocks": [
+        {
+          "name": "PECHO",
+          "exercises": [
+            {
+              "id": "press-inclinado-db",
+              "name": "Press inclinado mancuernas",
+              "skipped": false,
+              "weight": "30kg/mano",
+              "sets": "S1: 30kg/mano×8 / S2: 30kg/mano×8 / S3: 30kg/mano×8 / S4: 30kg/mano×8",
+              "notes": "Molestia en dedo e incluso muñeca, pero con la muñequera soportable",
+              "setData": [
+                {
+                  "weight": 30,
+                  "reps": 8
+                },
+                {
+                  "weight": 30,
+                  "reps": 8
+                },
+                {
+                  "weight": 30,
+                  "reps": 8
+                },
+                {
+                  "weight": 30,
+                  "reps": 8
+                }
+              ]
+            },
+            {
+              "id": "hammer-chest",
+              "name": "Press Hammer Strength",
+              "skipped": false,
+              "weight": "57.5kg/lado",
+              "sets": "S1: 57.5kg/lado×8 / S2: 57.5kg/lado×8 / S3: 57.5kg/lado×8",
+              "notes": "Ultima bastante tensa",
+              "setData": [
+                {
+                  "weight": 57.5,
+                  "reps": 8
+                },
+                {
+                  "weight": 57.5,
+                  "reps": 8
+                },
+                {
+                  "weight": 57.5,
+                  "reps": 8
+                }
+              ]
+            },
+            {
+              "id": "cruce-poleas",
+              "name": "Cruce poleas banco",
+              "skipped": false,
+              "weight": "15kg",
+              "sets": "S1: 15kg×10 / S2: 15kg×9 / S3: 15kg×9",
+              "notes": "Subo a 15kg porque no encuentro las pesas de 1,25kg y era eso hacerlo con 12,5kg\nEn 2a serie ya noto fatiga muscular",
+              "setData": [
+                {
+                  "weight": 15,
+                  "reps": 10
+                },
+                {
+                  "weight": 15,
+                  "reps": 9
+                },
+                {
+                  "weight": 15,
+                  "reps": 9
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "TRÍCEPS",
+          "exercises": [
+            {
+              "id": "fondos-maquina",
+              "name": "Fondos máquina",
+              "skipped": false,
+              "weight": "170kg",
+              "sets": "S1: 170kg×12 / S2: 170kg×10 / S3: 170kg×10",
+              "notes": "Tensa la primera al llegar a 12\n3a llegando al fallo en ultima repe",
+              "setData": [
+                {
+                  "weight": 170,
+                  "reps": 12
+                },
+                {
+                  "weight": 170,
+                  "reps": 10
+                },
+                {
+                  "weight": 170,
+                  "reps": 10
+                }
+              ]
+            },
+            {
+              "id": "overhead-cuerda",
+              "name": "Extensión overhead cuerda",
+              "skipped": false,
+              "weight": "18.75kg",
+              "sets": "S1: 18.75kg×12 / S2: 18.75kg×12 / S3: 18.75kg×12",
+              "notes": "Ultima serie bastante tensa",
+              "setData": [
+                {
+                  "weight": 18.75,
+                  "reps": 12
+                },
+                {
+                  "weight": 18.75,
+                  "reps": 12
+                },
+                {
+                  "weight": 18.75,
+                  "reps": 12
+                }
+              ]
+            },
+            {
+              "id": "ext-barra-neutra",
+              "name": "Extensión polea barra neutra",
+              "skipped": false,
+              "weight": "25kg",
+              "sets": "S1: 25kg×12 / S2: 25kg×12 / S3: 25kg×12",
+              "notes": "",
+              "setData": [
+                {
+                  "weight": 25,
+                  "reps": 12
+                },
+                {
+                  "weight": 25,
+                  "reps": 12
+                },
+                {
+                  "weight": 25,
+                  "reps": 12
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "AGARRE / TENDÓN",
+          "exercises": [
+            {
+              "id": "iso-zass-empuje",
+              "name": "Isométrico Zass empuje (rack)",
+              "skipped": false,
+              "weight": "20kg",
+              "sets": "S1: 20kg×8 / S2: 20kg×8 / S3: 20kg×8",
+              "notes": "",
+              "setData": [
+                {
+                  "weight": 20,
+                  "reps": 8
+                },
+                {
+                  "weight": 20,
+                  "reps": 8
+                },
+                {
+                  "weight": 20,
+                  "reps": 8
+                }
+              ]
+            },
+            {
+              "id": "plate-pinch",
+              "name": "Plate pinch",
+              "skipped": false,
+              "weight": "15kg",
+              "sets": "S1: 15kg×27 / S2: 15kg×30 / S3: 15kg×40",
+              "notes": "Al estar caliente, el dedo a mejorado en 2a y 3a serie",
+              "setData": [
+                {
+                  "weight": 15,
+                  "reps": 27
+                },
+                {
+                  "weight": 15,
+                  "reps": 30
+                },
+                {
+                  "weight": 15,
+                  "reps": 40
+                }
+              ]
+            },
+            {
+              "id": "prehab-tfcc",
+              "name": "Prehab TFCC (disco)",
+              "skipped": true,
+              "weight": "—",
+              "sets": "Saltado",
+              "notes": "",
+              "setData": []
+            }
+          ]
+        }
+      ],
+      "deviations": [],
+      "patterns": [],
+      "decisions": [],
+      "raw_notes": ""
+    },
+    {
       "id": "2026-06-20_pierna-bíc_1781952266946",
       "date": "2026-06-20",
       "weekday": "Sábado",
       "type": "Pierna/Bíc",
-      "general_feeling": "Sin valoración",
+      "general_feeling": "Primera Pierna/Bíc Ciclo 4 — RDL debut + prensa 150 debut. RDL a 60kg vs base 40kg (subida sin consultar), 3×12 easy pero ASIMETRÍA detectada: disco derecho toca suelo antes que izquierdo. Prensa 150 3×10 limpia, más potencia pierna derecha. Hip thrust 80 3×15 completo SIN lumbar pese al RDL previo. Ext cuád 3×10 limpio. Chin-up 92.5 8/8/6 progresando. Wall sit saltado. Curl inclinado bíceps izquierdo sigue muriendo primero.",
       "blocks": [
         {
           "name": "PIERNA",
@@ -186,10 +403,35 @@
           ]
         }
       ],
-      "deviations": [],
-      "patterns": [],
-      "decisions": [],
-      "raw_notes": ""
+      "deviations": [
+        "RDL 60kg 3×12 vs base 40kg 3×8-10 — DEBUT con +20kg y +2-4 reps por serie sin consultar. 'Bastante easy'. ASIMETRÍA: disco derecho toca suelo antes que izquierdo en la bajada.",
+        "Prensa 150kg 3×10 — DEBUT limpio. Pierna derecha con más potencia (D>I esperada).",
+        "Hip thrust 80kg 3×15 — completo, SIN lumbar. Fatiga cardio al final. Dato clave: el RDL previo NO comprometió la lumbar.",
+        "Ext cuádriceps 65kg 3×10 — limpio. Segunda consecutiva completa.",
+        "Wall sit SALTADO — sin nota. Primera vez que salta wall sit.",
+        "Chin-up 92.5kg 8/8/6 — progresión vs 7/7/6 (10/06). S1-S2 suben a 8.",
+        "Curl inclinado 14kg 10/10/8 — S2 al fallo (brazo izquierdo tira última), S3 cae a 8."
+      ],
+      "patterns": [
+        "✅ RDL DEBUT — TÉCNICA FUNCIONAL, ASIMETRÍA PRESENTE. El patrón bisagra se ejecuta, las sensaciones son buenas. Pero el disco derecho toca suelo antes que el izquierdo = la barra baja asimétrica. Posibles causas: (1) shift de cadera hacia la pierna fuerte (derecha, alza), (2) diferencia de longitud funcional por la alza, (3) agarre asimétrico. Es exactamente el dato que buscábamos al introducir un bilateral — y el motivo por el que la base era 40kg: detectar estas cosas a peso bajo.",
+        "✅ PRENSA 150kg DEBUT LIMPIO — 3×10 primera sesión. Pierna derecha más potente = patrón D>I consistente con todo el historial. Sobreconsolidado a 140 durante meses → el salto ha sido limpio.",
+        "✅ HIP THRUST SIN LUMBAR POST-RDL — la preocupación principal (doble carga posterior) no se ha materializado. Dato muy positivo para la convivencia RDL + hip thrust en la misma sesión.",
+        "✅ EXT CUÁDRICEPS 3×10 SEGUNDA CONSECUTIVA — patrón de S3 a 9 roto definitivamente.",
+        "✅ CHIN-UP 92.5kg 8/8/6 — S1-S2 suben de 7 a 8. Progresión clara: 10/06 (7/7/6) → 20/06 (8/8/6). S3 sigue a 6 — la pre-fatiga del RDL grip (straps) no afectó, buen dato.",
+        "⚠️ RDL 60kg SIN CONSULTAR — base 40kg, hizo 60. Mismo patrón de siempre. Que sea easy no justifica saltar 20kg en un ejercicio nuevo donde la técnica es la prioridad. La asimetría que detectó es exactamente el tipo de señal que requiere peso controlado para corregir.",
+        "⚠️ WALL SIT SALTADO — sin motivo anotado. Primera vez. ¿Tiempo? ¿Fatiga por sesión más larga con RDL? No es patrón todavía pero señalar.",
+        "⚠️ BÍCEPS IZQUIERDO SIGUE MURIENDO PRIMERO — cuarta sesión consecutiva. S2 al fallo real (brazo izquierdo 'ha tirado su última'). 10/10/8 vs 10/9/9 (10/06): S1-S2 mejoran pero S3 cae más. El chin-up más fuerte (8/8) pre-fatiga más para S3."
+      ],
+      "decisions": [
+        "RDL base: acepto 60kg como punto de partida real (40kg era demasiado ligero para su nivel de fuerza). PERO: la asimetría disco D>I es la prioridad técnica. Próxima sesión: mismos 60kg, FOCO en corregir la inclinación. Grabar con móvil si puede. No subir hasta que la barra baje simétrica.",
+        "Prensa 150kg: CONSOLIDADA como nueva base. Mantener 3×10.",
+        "Hip thrust post-RDL: funciona sin lumbar. Orden confirmado: RDL → prensa → hip thrust.",
+        "Wall sit: ¿por qué se saltó? Preguntar. Si fue tiempo/fatiga → valorar si la sesión necesita reordenarse con el RDL añadido.",
+        "Chin-up: progresando. Buscar 3×8. Cuando S3 suba a 7-8 → 95kg.",
+        "Curl inclinado: mantener 14kg. El patrón izquierdo es dato para la visita post-resonancia.",
+        "CICLO 4: 1-1-1."
+      ],
+      "raw_notes": "1ª Pierna/Bíc Ciclo 4. RDL debut 60kg 3×12 (base 40, sin consultar) — asimetría D>I detectada. Prensa 150 debut limpio. Hip thrust sin lumbar post-RDL. Ext cuád 3×10 limpio. Chin-up 8/8/6 progresando. Wall sit saltado. Bíceps izquierdo sigue primero."
     },
     {
       "id": "2026-06-18_espalda-hombro_1781802379617",
@@ -7119,11 +7361,11 @@
   ],
   "planning": [
     {
-      "id": "plan-ciclo4-w1b",
-      "date": "2026-06-18",
-      "weekday": "Jueves",
-      "type": "Espalda/Hombro",
-      "notes": "✓ Completado. Jalón 80 4×8 debut. Sábado Pierna/Bíc: prensa 150kg + RDL 40kg debuts. Domingo 21/06: resonancia muñeca."
+      "id": "plan-ciclo4-w2",
+      "date": "2026-06-20",
+      "weekday": "Sábado",
+      "type": "Pierna/Bíc",
+      "notes": "✓ Completado. RDL debut 60kg, prensa 150 debut. Domingo 21/06: resonancia muñeca. Lunes Pecho/Trí."
     }
   ],
   "reports": [],
@@ -7134,7 +7376,7 @@
     "current_count": {
       "Pecho/Trí": 1,
       "Espalda/Hombro": 1,
-      "Pierna/Bíc": 0
+      "Pierna/Bíc": 1
     }
   },
   "routines": {
@@ -7471,18 +7713,17 @@
               "name": "Peso muerto rumano (RDL) bilateral",
               "scheme": "3×8-10",
               "sets": 3,
-              "base": 40,
+              "base": 60,
               "unit": "kg",
               "rest": 120,
               "tips": [
-                "NUEVO — primer bilateral post-cruzado, autorizado fisio 16/06",
-                "Bisagra de CADERA: cadera atrás, rodilla casi fija — no es sentadilla",
-                "Espalda neutra TODO el rango — si la lumbar redondea, has bajado de más",
+                "Autorizado fisio 16/06 — primer bilateral post-cruzado",
+                "Bisagra de CADERA: cadera atrás, rodilla casi fija",
+                "Espalda neutra TODO el rango",
                 "Straps + muñeca neutra (TFCC) — NADA de grip mixto",
-                "Aprieta glúteo arriba, no hiperextiendas lumbar",
+                "⚠️ ASIMETRÍA DETECTADA: disco D toca suelo antes que I — corregir antes de subir",
                 "⚠️ Vigila lumbar — RDL + hip thrust = doble carga posterior",
-                "⚠️ Carga ambos lados por igual — vigila que no compense el fuerte",
-                "Técnica primero — progresión cuando 3×10 limpio"
+                "NO subir hasta barra simétrica en bajada"
               ]
             },
             {
