@@ -1,6 +1,228 @@
 {
   "sessions": [
     {
+      "id": "2026-06-23_espalda-hombro_1782227415372",
+      "date": "2026-06-23",
+      "weekday": "Martes",
+      "type": "Espalda/Hombro",
+      "general_feeling": "Sin valoración",
+      "blocks": [
+        {
+          "name": "ESPALDA",
+          "exercises": [
+            {
+              "id": "jalon-neutro",
+              "name": "Jalón al pecho neutro",
+              "skipped": false,
+              "weight": "80kg",
+              "sets": "S1: 80kg×8 / S2: 80kg×8 / S3: 80kg×8 / S4: 80kg×8",
+              "notes": "",
+              "setData": [
+                {
+                  "weight": 80,
+                  "reps": 8
+                },
+                {
+                  "weight": 80,
+                  "reps": 8
+                },
+                {
+                  "weight": 80,
+                  "reps": 8
+                },
+                {
+                  "weight": 80,
+                  "reps": 8
+                }
+              ]
+            },
+            {
+              "id": "remo-polea",
+              "name": "Remo polea sentado",
+              "skipped": false,
+              "weight": "75kg",
+              "sets": "S1: 75kg×8 / S2: 75kg×8 / S3: 75kg×8",
+              "notes": "Hoy hago agarre mas ancho (ver foto)",
+              "setData": [
+                {
+                  "weight": 75,
+                  "reps": 8
+                },
+                {
+                  "weight": 75,
+                  "reps": 8
+                },
+                {
+                  "weight": 75,
+                  "reps": 8
+                }
+              ]
+            },
+            {
+              "id": "pullover-cuerda",
+              "name": "Pull-over cuerda",
+              "skipped": false,
+              "weight": "20kg",
+              "sets": "S1: 20kg×12 / S2: 20kg×12 / S3: 20kg×12",
+              "notes": "",
+              "setData": [
+                {
+                  "weight": 20,
+                  "reps": 12
+                },
+                {
+                  "weight": 20,
+                  "reps": 12
+                },
+                {
+                  "weight": 20,
+                  "reps": 12
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "HOMBRO",
+          "exercises": [
+            {
+              "id": "face-pull",
+              "name": "Face pull cuerda",
+              "skipped": false,
+              "weight": "25kg",
+              "sets": "S1: 25kg×15 / S2: 25kg×15",
+              "notes": "",
+              "setData": [
+                {
+                  "weight": 25,
+                  "reps": 15
+                },
+                {
+                  "weight": 25,
+                  "reps": 15
+                }
+              ]
+            },
+            {
+              "id": "landmine",
+              "name": "Landmine press unilateral",
+              "skipped": false,
+              "weight": "22.5kg",
+              "sets": "S1: 22.5kg×10 / S2: 22.5kg×10 / S3: 22.5kg×10",
+              "notes": "Un poco de molestia en muñeca, zona externa",
+              "setData": [
+                {
+                  "weight": 22.5,
+                  "reps": 10
+                },
+                {
+                  "weight": 22.5,
+                  "reps": 10
+                },
+                {
+                  "weight": 22.5,
+                  "reps": 10
+                }
+              ]
+            },
+            {
+              "id": "elev-lat",
+              "name": "Elevaciones laterales",
+              "skipped": false,
+              "weight": "6.25kg",
+              "sets": "S1: 6.25kg×15 / S2: 6.25kg×15",
+              "notes": "Muy fresco hoy. Pero he notado mas trabajo en hombro derecho no se porque",
+              "setData": [
+                {
+                  "weight": 6.25,
+                  "reps": 15
+                },
+                {
+                  "weight": 6.25,
+                  "reps": 15
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "TENDÓN + AGARRE",
+          "exercises": [
+            {
+              "id": "scapular-pull",
+              "name": "Scapular pull",
+              "skipped": false,
+              "weight": "80kg",
+              "sets": "S1: 80kg×8 / S2: 80kg×8 / S3: 80kg×8",
+              "notes": "",
+              "setData": [
+                {
+                  "weight": 80,
+                  "reps": 8
+                },
+                {
+                  "weight": 80,
+                  "reps": 8
+                },
+                {
+                  "weight": 80,
+                  "reps": 8
+                }
+              ]
+            },
+            {
+              "id": "dead-hang-lastre",
+              "name": "Dead hang con lastre",
+              "skipped": false,
+              "weight": "90kg",
+              "sets": "S1: 90kg×40 / S2: 90kg×38 / S3: 90kg×20",
+              "notes": "1 min de descanso\nAl acabar segunda ya he fatigo mucho el antebrazo",
+              "setData": [
+                {
+                  "weight": 90,
+                  "reps": 40
+                },
+                {
+                  "weight": 90,
+                  "reps": 38
+                },
+                {
+                  "weight": 90,
+                  "reps": 20
+                }
+              ]
+            },
+            {
+              "id": "farmer-carry",
+              "name": "Farmer's carry",
+              "skipped": false,
+              "weight": "24kg/mano",
+              "sets": "S1: 24kg/mano×40 / S2: 24kg/mano×40 / S3: 24kg/mano×40",
+              "notes": "",
+              "setData": [
+                {
+                  "weight": 24,
+                  "reps": 40
+                },
+                {
+                  "weight": 24,
+                  "reps": 40
+                },
+                {
+                  "weight": 24,
+                  "reps": 40
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "deviations": [],
+      "patterns": [],
+      "decisions": [],
+      "raw_notes": ""
+    },
+    {
       "id": "2026-06-22_pecho-trí_1782146752656",
       "date": "2026-06-22",
       "weekday": "Lunes",
