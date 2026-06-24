@@ -304,8 +304,8 @@
   <div id="toast"></div>
 </div>
 <script>
-const APP_VERSION='3.2';
-const APP_DATE='9 junio 2026';
+const APP_VERSION='3.3';
+const APP_DATE='24 junio 2026';
 const SK='pol-v2',ASK='pol-active-v2',RK='pol-routines-v2',GHK='pol-gh-token',GHSK='pol-gh-sha',CIRC=2*Math.PI*80;
 const COLORS={'Pecho/Trí':'#dc2626','Espalda/Hombro':'#2563eb','Pierna/Bíc':'#16a34a','Complementario':'#64748b','Running':'#ea580c','Pádel':'#9333ea','Escalada':'#ca8a04','Otro':'#6b7280'};
 const DAYS=['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'];
@@ -515,7 +515,7 @@ function saveGHToken(){
 }
 function ghStatus(msg,cls){const el=document.getElementById('gh-status');if(el){el.textContent=msg;el.className='gh-status'+(cls?' '+cls:'');}}
 async function githubBackup(){
-  const token=getGHToken();if(!token)return;
+  const token=getGHToken();if(!token){ghStatus('⚠️ Token no configurado','err');return;}
   const fullData={...D,routines:R};
   const content=btoa(unescape(encodeURIComponent(JSON.stringify(fullData,null,2))));
   const url=`https://api.github.com/repos/${GH_REPO}/contents/${GH_PATH}`;
@@ -533,12 +533,12 @@ async function githubBackup(){
     if(putR.ok||putR.status===201){
       const d=await putR.json();
       localStorage.setItem(GHSK,d.content.sha);
-      ghStatus(`Último backup: ${new Date().toLocaleString('es-ES',{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'})}`,'ok');
+      ghStatus(`Último backup: ${new Date().toLocaleString('es-ES',{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'})}`,'ok');toast('✓ Backup GitHub');
     }else{
       const err=await putR.json().catch(()=>({}));
-      ghStatus(`Error: ${err.message||putR.status}`,'err');
+      ghStatus(`Error: ${err.message||putR.status}`,'err');toast('⚠️ Backup GitHub falló: '+(err.message||putR.status));
     }
-  }catch(e){ghStatus(`Error de red: ${e.message}`,'err');}
+  }catch(e){ghStatus(`Error de red: ${e.message}`,'err');toast('⚠️ Backup GitHub falló: red');}
 }
 
 // ─── HELPERS ─────────────────────────────────────────────────────────────────
@@ -899,7 +899,7 @@ function doImport(){
     let added=0,updated=0;
     for(const s of parsed.sessions){const idx=D.sessions.findIndex(ls=>ls.id===s.id);if(idx>=0){Object.assign(D.sessions[idx],s);updated++;}else{D.sessions.push(s);added++;}}
     if(parsed.planning)D.planning=parsed.planning;
-    if(parsed.reports)D.reports=parsed.reports;
+    if(parsed.reports&&parsed.reports.length){const rm=new Map((D.reports||[]).map(r=>[r.cycle,r]));parsed.reports.forEach(r=>rm.set(r.cycle,r));D.reports=[...rm.values()].sort((a,b)=>a.cycle-b.cycle);}
     if(parsed.cycle_meta)D.cycle_meta=parsed.cycle_meta;
     save();
     // Import routines if present — MERGE por tipo de sesión (NO reemplazar todo el objeto)
