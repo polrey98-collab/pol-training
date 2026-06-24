@@ -304,9 +304,9 @@
   <div id="toast"></div>
 </div>
 <script>
-const APP_VERSION='3.3';
+const APP_VERSION='3.4';
 const APP_DATE='24 junio 2026';
-const SK='pol-v2',ASK='pol-active-v2',RK='pol-routines-v2',GHK='pol-gh-token',GHSK='pol-gh-sha',CIRC=2*Math.PI*80;
+const SK='pol-v2',ASK='pol-active-v2',RK='pol-routines-v2',GHK='pol-gh-token',GHSK='pol-gh-sha',GHLAST='pol-gh-last-ok',CIRC=2*Math.PI*80;
 const COLORS={'Pecho/Trí':'#dc2626','Espalda/Hombro':'#2563eb','Pierna/Bíc':'#16a34a','Complementario':'#64748b','Running':'#ea580c','Pádel':'#9333ea','Escalada':'#ca8a04','Otro':'#6b7280'};
 const DAYS=['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'];
 const MESES=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
@@ -533,7 +533,34 @@ async function githubBackup(){
     if(putR.ok||putR.status===201){
       const d=await putR.json();
       localStorage.setItem(GHSK,d.content.sha);
-      ghStatus(`Último backup: ${new Date().toLocaleString('es-ES',{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'})}`,'ok');toast('✓ Backup GitHub');
+      // F1: histórico con fecha — backups/historico/YYYY-MM-DD.json (uno por día)
+      const fecha=new Date().toISOString().split('T')[0];
+      const hPath=`backups/historico/${fecha}.json`;
+      const hUrl=`https://api.github.com/repos/${GH_REPO}/contents/${hPath}`;
+      try{
+        let hSha=null;
+        const hGet=await fetch(hUrl,{headers});
+        if(hGet.ok){const hd=await hGet.json();hSha=hd.sha;}
+        const hBody={message:`Histórico ${fecha}`,content};
+        if(hSha)hBody.sha=hSha;
+        await fetch(hUrl,{method:'PUT',headers,body:JSON.stringify(hBody)});
+      }catch(e){}
+      // F4: verificar que lo subido coincide con local (nº sesiones)
+      try{
+        const vGet=await fetch(url+'?t='+Date.now(),{headers,cache:'no-store'});
+        if(vGet.ok){
+          const vd=await vGet.json();
+          const remoteJson=JSON.parse(decodeURIComponent(escape(atob(vd.content))));
+          const localN=D.sessions.length, remoteN=(remoteJson.sessions||[]).length;
+          if(localN!==remoteN){
+            ghStatus(`⚠️ Backup subió pero NO coincide: local ${localN} vs GitHub ${remoteN}`,'err');
+            toast(`⚠️ Backup discrepante: ${localN}≠${remoteN} sesiones`);
+            return;
+          }
+        }
+      }catch(e){}
+      ghStatus(`Último backup: ${new Date().toLocaleString('es-ES',{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'})} ✓ verificado`,'ok');toast('✓ Backup GitHub verificado');
+      localStorage.setItem(GHLAST,Date.now().toString());
     }else{
       const err=await putR.json().catch(()=>({}));
       ghStatus(`Error: ${err.message||putR.status}`,'err');toast('⚠️ Backup GitHub falló: '+(err.message||putR.status));
@@ -866,8 +893,19 @@ function renderIO(){
   if(ghTok){
     document.getElementById('gh-token-inp').placeholder='Token configurado ✓';
     const lastSha=localStorage.getItem(GHSK);
-    if(lastSha)ghStatus('Token configurado — backup activo','ok');
-    else ghStatus('Token configurado — pendiente primer backup','ok');
+    // F6: avisar si llevas >7 días sin backup verificado
+    const lastOk=parseInt(localStorage.getItem(GHLAST)||'0',10);
+    const dias=lastOk?Math.floor((Date.now()-lastOk)/86400000):null;
+    if(lastOk&&dias>=7){
+      ghStatus(`⚠️ ¡${dias} días sin backup! Revisa el token`,'err');
+      toast(`⚠️ ${dias} días sin backup correcto`);
+    }else if(lastOk){
+      ghStatus(`Backup activo · último OK hace ${dias===0?'<1':dias} día(s)`,'ok');
+    }else if(lastSha){
+      ghStatus('Token configurado — backup activo','ok');
+    }else{
+      ghStatus('Token configurado — pendiente primer backup','ok');
+    }
   }
 }
 function doExport(){
