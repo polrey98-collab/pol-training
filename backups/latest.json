@@ -1,11 +1,233 @@
 {
   "sessions": [
     {
+      "id": "2026-06-30_espalda-hombro_1782838130986",
+      "date": "2026-06-30",
+      "weekday": "Martes",
+      "type": "Espalda/Hombro",
+      "general_feeling": "Sin valoración",
+      "blocks": [
+        {
+          "name": "ESPALDA",
+          "exercises": [
+            {
+              "id": "jalon-neutro",
+              "name": "Jalón al pecho neutro",
+              "skipped": false,
+              "weight": "80kg",
+              "sets": "S1: 80kg×8 / S2: 80kg×8 / S3: 80kg×8 / S4: 80kg×8",
+              "notes": "",
+              "setData": [
+                {
+                  "weight": 80,
+                  "reps": 8
+                },
+                {
+                  "weight": 80,
+                  "reps": 8
+                },
+                {
+                  "weight": 80,
+                  "reps": 8
+                },
+                {
+                  "weight": 80,
+                  "reps": 8
+                }
+              ]
+            },
+            {
+              "id": "remo-polea",
+              "name": "Remo polea sentado",
+              "skipped": false,
+              "weight": "75kg",
+              "sets": "S1: 75kg×8 / S2: 75kg×8 / S3: 75kg×8",
+              "notes": "",
+              "setData": [
+                {
+                  "weight": 75,
+                  "reps": 8
+                },
+                {
+                  "weight": 75,
+                  "reps": 8
+                },
+                {
+                  "weight": 75,
+                  "reps": 8
+                }
+              ]
+            },
+            {
+              "id": "pullover-cuerda",
+              "name": "Pull-over cuerda",
+              "skipped": false,
+              "weight": "20kg",
+              "sets": "S1: 20kg×12 / S2: 20kg×12 / S3: 20kg×12",
+              "notes": "",
+              "setData": [
+                {
+                  "weight": 20,
+                  "reps": 12
+                },
+                {
+                  "weight": 20,
+                  "reps": 12
+                },
+                {
+                  "weight": 20,
+                  "reps": 12
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "HOMBRO",
+          "exercises": [
+            {
+              "id": "face-pull",
+              "name": "Face pull cuerda",
+              "skipped": false,
+              "weight": "25kg",
+              "sets": "S1: 25kg×15 / S2: 25kg×15",
+              "notes": "2a serie bastante tensa por fatiga",
+              "setData": [
+                {
+                  "weight": 25,
+                  "reps": 15
+                },
+                {
+                  "weight": 25,
+                  "reps": 15
+                }
+              ]
+            },
+            {
+              "id": "landmine",
+              "name": "Landmine press unilateral",
+              "skipped": false,
+              "weight": "22.5kg",
+              "sets": "S1: 22.5kg×10 / S2: 22.5kg×10 / S3: 22.5kg×10",
+              "notes": "Muy bieeen hoy izquierdo, ambos lados igual. \nPuede ser que esta mejora se deba al incorporar el peso muerto?",
+              "setData": [
+                {
+                  "weight": 22.5,
+                  "reps": 10
+                },
+                {
+                  "weight": 22.5,
+                  "reps": 10
+                },
+                {
+                  "weight": 22.5,
+                  "reps": 10
+                }
+              ]
+            },
+            {
+              "id": "elev-lat",
+              "name": "Elevaciones laterales",
+              "skipped": false,
+              "weight": "6.25kg",
+              "sets": "S1: 6.25kg×15 / S2: 6.25kg×15",
+              "notes": "",
+              "setData": [
+                {
+                  "weight": 6.25,
+                  "reps": 15
+                },
+                {
+                  "weight": 6.25,
+                  "reps": 15
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "TENDÓN + AGARRE",
+          "exercises": [
+            {
+              "id": "scapular-pull",
+              "name": "Scapular pull",
+              "skipped": false,
+              "weight": "80kg",
+              "sets": "S1: 80kg×8 / S2: 80kg×8 / S3: 80kg×8",
+              "notes": "",
+              "setData": [
+                {
+                  "weight": 80,
+                  "reps": 8
+                },
+                {
+                  "weight": 80,
+                  "reps": 8
+                },
+                {
+                  "weight": 80,
+                  "reps": 8
+                }
+              ]
+            },
+            {
+              "id": "dead-hang-lastre",
+              "name": "Dead hang con lastre",
+              "skipped": false,
+              "weight": "90kg",
+              "sets": "S1: 90kg×45 / S2: 90kg×40 / S3: 90kg×30",
+              "notes": "2a serie ya llego a la fatiga antebrazo\nYa luego no puedo mas",
+              "setData": [
+                {
+                  "weight": 90,
+                  "reps": 45
+                },
+                {
+                  "weight": 90,
+                  "reps": 40
+                },
+                {
+                  "weight": 90,
+                  "reps": 30
+                }
+              ]
+            },
+            {
+              "id": "farmer-carry",
+              "name": "Farmer's carry",
+              "skipped": false,
+              "weight": "24kg/mano",
+              "sets": "S1: 24kg/mano×40 / S2: 24kg/mano×40 / S3: 24kg/mano×40",
+              "notes": "",
+              "setData": [
+                {
+                  "weight": 24,
+                  "reps": 40
+                },
+                {
+                  "weight": 24,
+                  "reps": 40
+                },
+                {
+                  "weight": 24,
+                  "reps": 40
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "deviations": [],
+      "patterns": [],
+      "decisions": [],
+      "raw_notes": ""
+    },
+    {
       "id": "2026-06-29_pecho-trí_1782752325103",
       "date": "2026-06-29",
       "weekday": "Lunes",
       "type": "Pecho/Trí",
-      "general_feeling": "Sin valoración",
+      "general_feeling": "Tercera Pecho/Trí Ciclo 4. Press 30kg 4×10 tercera por encima del scheme — 'se me quedan cortos'. Dedo molesta en handling precalentamiento pero no en series. Hammer 57.5 regresión 8/7/7 (vs 8/8/8 el 22/06). Fondos 170 3×10 cuarta consecutiva. Overhead 18.75 tercera 3×12 limpia. Ext barra neutra señal romboide/escápula derecha (nueva). Plate pinch 22/25/30 — dedo limita S1-S2. Prehab saltado: no entiende la ejecución.",
       "blocks": [
         {
           "name": "PECHO",
@@ -212,10 +434,37 @@
           ]
         }
       ],
-      "deviations": [],
-      "patterns": [],
-      "decisions": [],
-      "raw_notes": ""
+      "deviations": [
+        "Press 30kg 4×10 vs scheme 4×6-8 — tercera sesión consecutiva por encima del scheme (16/06: 4×8, 22/06: 4×8, 29/06: 4×10). 'Se me quedan cortos'. Dedo molesta en handling precalentamiento, no en series.",
+        "Hammer 57.5kg 8/7/7 — REGRESIÓN vs 8/8/8 (22/06). S1 rep 8 muy tensa, S2-S3 caen a 7.",
+        "Fondos 170kg 3×10 — cuarta consecutiva en base. S3 tensa, pierde estabilidad piernas (segunda vez tras 09/06).",
+        "Overhead 18.75kg 3×12 — TERCERA consecutiva limpia. Sin tensión.",
+        "Ext barra neutra 25kg 3×12 — molestia romboide/escápula derecha (señal nueva en este ejercicio).",
+        "Plate pinch 15kg 22/25/30 — S1-S2 bajo target, S3 llega a 30s con buen agarre. Dedo limita inicio.",
+        "Prehab TFCC SALTADO — MOTIVO: 'no acabo de entender cómo hacer el ejercicio'. SÉPTIMA+ consecutiva.",
+        "Iso Zass 3×10s vs base 3×8s."
+      ],
+      "patterns": [
+        "✅ PRESS 30kg 4×10 TERCERA POR ENCIMA — la fuerza de pecho excede 30kg claramente. Trayectoria: 16/06 4×8, 22/06 4×8, 29/06 4×10. Progresión a 32kg bloqueada por MRI pendiente.",
+        "✅ FONDOS 170kg CUARTA CONSECUTIVA — disciplina de base consolidada definitivamente. Estabilidad piernas reaparece (gemelo/poplíteo derecho).",
+        "✅ OVERHEAD 18.75kg TERCERA 3×12 LIMPIA — zona de progresión. Tres sesiones en tope del rango sin tensión. 20kg posible con precaución (generó lumbar 01/06).",
+        "⚠️ HAMMER 57.5kg REGRESIÓN 8/7/7 — primera 3×8 fue el 22/06, hoy cae a 8/7/7. Causa probable: press 4×10 genera más fatiga total de pecho que 4×8 → Hammer recibe más pre-fatiga. No es regresión de fuerza, es efecto del mayor volumen previo.",
+        "⚠️ ROMBOIDE/ESCÁPULA DERECHA EN EXT BARRA NEUTRA — señal nueva en este ejercicio. Zona derecha (romboide, no trapecio). Conecta con historial de zona derecha. Trapecio sigue 2/3 — este es romboide, diferente pero mismo territorio.",
+        "⚠️ PREHAB TFCC — POR FIN EL MOTIVO: no entiende la ejecución. No es falta de voluntad ni olvido — es que no sabe cómo hacerlo. 7+ sesiones saltadas por un problema de comunicación solucionable.",
+        "⚠️ DEDO EN HANDLING — sigue activo en precalentamiento. Estamos en semana ~6 de la ventana de 6 semanas (golpe ~27/05). Si persiste → fisio."
+      ],
+      "decisions": [
+        "Press 30kg: MRI bloqueante. Tercera 4×10 confirma que 30kg es insuficiente. Cuando MRI llegue y sea ok → 32kg.",
+        "Hammer 57.5: mantener. La regresión viene del press 4×10 pre-fatigando más. Necesita consolidación.",
+        "Overhead 18.75: tercera 3×12 limpia → probar 20kg próxima sesión. VIGILAR lumbar activamente (20kg dio señal 01/06). Si lumbar → volver a 18.75.",
+        "Romboide/escápula derecha: monitorizar. Si persiste → conectar con trapecio 2/3.",
+        "Prehab TFCC: EXPLICAR EJECUCIÓN a Pol — es pronación/supinación de muñeca con disco ligero. Resolver en este chat.",
+        "Fondos: estabilidad piernas → considerar ajustar posición pies en la máquina.",
+        "Dedo: semana ~6. Si sigue → fisio.",
+        "MRI: ¿RESULTADOS?",
+        "CICLO 4: 3-2-2."
+      ],
+      "raw_notes": "3ª Pecho/Trí C4. Press 30 4×10 tercera sobre scheme. Hammer 57.5 regresión 8/7/7. Fondos 170 cuarta limpia. Overhead 18.75 tercera 3×12. Romboide ext neutra. Prehab: no entiende ejercicio. Dedo semana 6."
     },
     {
       "id": "2026-06-27_pierna-bíc_1782556730080",
@@ -8087,25 +8336,25 @@
   ],
   "planning": [
     {
-      "id": "plan-ciclo4-w4-pecho",
-      "date": "2026-06-29",
-      "weekday": "Lunes",
-      "type": "Pecho/Trí",
-      "notes": "Ciclo 4 sesión 3. Press 30: tercera 4×8 (condicionada MRI). Hammer 57.5 buscar segunda 3×8. Overhead 18.75: tercera 3×12 → si limpia valorar 20kg. Preguntar resonancia."
-    },
-    {
       "id": "plan-ciclo4-w4-espalda",
       "date": "2026-07-01",
       "weekday": "Miércoles",
       "type": "Espalda/Hombro",
-      "notes": "Ciclo 4 sesión 3. Jalón 80: tercera 4×8 → si limpia abrir 82.5. Dead hang ENFORCE 2 min. Landmine muñeca externa monitorizar."
+      "notes": "Ciclo 4 sesión 3. Jalón 80: tercera 4×8 → si limpia abrir 82.5. Dead hang ENFORCE 2 min. Landmine muñeca monitorizar."
     },
     {
       "id": "plan-ciclo4-w4-pierna",
       "date": "2026-07-04",
       "weekday": "Sábado",
       "type": "Pierna/Bíc",
-      "notes": "Ciclo 4 sesión 3. RDL 70kg debut 3×10 — GRABARSE de frente S1. Chin-up buscar 3×8. Wall sit mantener 5×45s."
+      "notes": "Ciclo 4 sesión 3. RDL 70kg debut 3×10 — GRABARSE de frente S1. Chin-up buscar 3×8. Wall sit mantener."
+    },
+    {
+      "id": "plan-ciclo4-w5-pecho",
+      "date": "2026-07-06",
+      "weekday": "Lunes",
+      "type": "Pecho/Trí",
+      "notes": "Ciclo 4 sesión 4 (ÚLTIMA). Overhead: ¿20kg debut? Press 30 pendiente MRI. Hammer consolidar 57.5."
     }
   ],
   "reports": [
@@ -8139,7 +8388,7 @@
     "last_cycle_close": "2026-06-12",
     "report_rule": "4 Pecho/Trí + 4 Espalda/Hombro + 4 Pierna/Bíc desde last_cycle_close",
     "current_count": {
-      "Pecho/Trí": 2,
+      "Pecho/Trí": 3,
       "Espalda/Hombro": 2,
       "Pierna/Bíc": 2
     }
@@ -8180,8 +8429,8 @@
               "tips": [
                 "ANCLA de empuje",
                 "Muñequera izquierda SIEMPRE",
-                "✅ 30kg 4×8 segunda consecutiva (22/06)",
-                "⚠️ Monitorizar hombro izquierdo + dedo"
+                "✅ 30kg 4×10 tercera sobre scheme (29/06) — peso insuficiente",
+                "⚠️ Progresión a 32kg bloqueada hasta MRI"
               ]
             },
             {
@@ -8193,7 +8442,7 @@
               "unit": "kg/lado",
               "rest": 120,
               "tips": [
-                "✅ Primera 3×8 completa (22/06) — consolidar 1-2 más"
+                "⚠️ 57.5kg 8/7/7 (29/06) — regresión por pre-fatiga press 4×10. Consolidar."
               ]
             },
             {
@@ -8235,7 +8484,7 @@
               "rest": 90,
               "tips": [
                 "Codos cerrados",
-                "✅ 18.75kg segunda 3×12 (22/06)"
+                "✅ 18.75kg TERCERA 3×12 (29/06) — probar 20kg próxima con vigilancia lumbar"
               ]
             },
             {
@@ -8288,7 +8537,7 @@
               "unit": "kg disco",
               "rest": 0,
               "tips": [
-                "🏥 Pendiente conversación formato"
+                "Disco 2.5kg en mano, codo doblado 90°, gira muñeca palma arriba→abajo. 2×15 cada dirección."
               ]
             }
           ]
