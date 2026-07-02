@@ -1,11 +1,184 @@
 {
   "sessions": [
     {
+      "id": "2026-07-02_pierna-bíc_1783011948768",
+      "date": "2026-07-02",
+      "weekday": "Jueves",
+      "type": "Pierna/Bíc",
+      "general_feeling": "Sin valoración",
+      "blocks": [
+        {
+          "name": "PIERNA",
+          "exercises": [
+            {
+              "id": "rdl-bilateral",
+              "name": "Peso muerto rumano (RDL) bilateral",
+              "skipped": true,
+              "weight": "—",
+              "sets": "Saltado",
+              "notes": "",
+              "setData": []
+            },
+            {
+              "id": "prensa-uni",
+              "name": "Prensa unilateral",
+              "skipped": true,
+              "weight": "—",
+              "sets": "Saltado",
+              "notes": "",
+              "setData": []
+            },
+            {
+              "id": "hip-thrust",
+              "name": "Hip thrust barra libre",
+              "skipped": true,
+              "weight": "—",
+              "sets": "Saltado",
+              "notes": "",
+              "setData": []
+            },
+            {
+              "id": "ext-cuad",
+              "name": "Extensión cuádriceps unilateral",
+              "skipped": false,
+              "weight": "65kg",
+              "sets": "S1: 65kg×10 / S2: 65kg×10 / S3: 65kg×10",
+              "notes": "",
+              "setData": [
+                {
+                  "weight": 65,
+                  "reps": 10
+                },
+                {
+                  "weight": 65,
+                  "reps": 10
+                },
+                {
+                  "weight": 65,
+                  "reps": 10
+                }
+              ]
+            },
+            {
+              "id": "abductor",
+              "name": "Abductor",
+              "skipped": false,
+              "weight": "65kg",
+              "sets": "S1: 65kg×15 / S2: 65kg×15 / S3: 65kg×15",
+              "notes": "",
+              "setData": [
+                {
+                  "weight": 65,
+                  "reps": 15
+                },
+                {
+                  "weight": 65,
+                  "reps": 15
+                },
+                {
+                  "weight": 65,
+                  "reps": 15
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "TENDÓN BILATERAL",
+          "exercises": [
+            {
+              "id": "wall-sit",
+              "name": "Wall sit con disco",
+              "skipped": false,
+              "weight": "15kg",
+              "sets": "S1: 15kg×45 / S2: 15kg×45 / S3: 15kg×45 / S4: 15kg×45 / S5: 15kg×45",
+              "notes": "",
+              "setData": [
+                {
+                  "weight": 15,
+                  "reps": 45
+                },
+                {
+                  "weight": 15,
+                  "reps": 45
+                },
+                {
+                  "weight": 15,
+                  "reps": 45
+                },
+                {
+                  "weight": 15,
+                  "reps": 45
+                },
+                {
+                  "weight": 15,
+                  "reps": 45
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "BÍCEPS",
+          "exercises": [
+            {
+              "id": "chin-up-neutro",
+              "name": "Chin-up neutro lastrado",
+              "skipped": false,
+              "weight": "92.5kg",
+              "sets": "S1: 92.5kg×8 / S2: 92.5kg×8 / S3: 92.5kg×8",
+              "notes": "No se que hago en la cervical que he notado un pinchazo heavy… :S\nLa 3a mega tensa ultima repe",
+              "setData": [
+                {
+                  "weight": 92.5,
+                  "reps": 8
+                },
+                {
+                  "weight": 92.5,
+                  "reps": 8
+                },
+                {
+                  "weight": 92.5,
+                  "reps": 8
+                }
+              ]
+            },
+            {
+              "id": "curl-inclinado",
+              "name": "Curl inclinado mancuernas",
+              "skipped": false,
+              "weight": "14kg/mano",
+              "sets": "S1: 14kg/mano×10 / S2: 14kg/mano×10 / S3: 14kg/mano×9",
+              "notes": "Fallo en ultima",
+              "setData": [
+                {
+                  "weight": 14,
+                  "reps": 10
+                },
+                {
+                  "weight": 14,
+                  "reps": 10
+                },
+                {
+                  "weight": 14,
+                  "reps": 9
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "deviations": [],
+      "patterns": [],
+      "decisions": [],
+      "raw_notes": ""
+    },
+    {
       "id": "2026-06-30_espalda-hombro_1782838130986",
       "date": "2026-06-30",
       "weekday": "Martes",
       "type": "Espalda/Hombro",
-      "general_feeling": "Sin valoración",
+      "general_feeling": "Tercera Espalda/Hombro Ciclo 4 (martes, 24h post Pecho/Trí). Jalón 80kg TERCERA 4×8 limpia — consolidado, abre 82.5. Landmine izquierdo = derecho por primera vez (Pol conecta con RDL). Dead hang S1 récord 45s pero S3 colapsa a 30s. Todo en base. Zona derecha y trapecio limpios.",
       "blocks": [
         {
           "name": "ESPALDA",
@@ -217,10 +390,30 @@
           ]
         }
       ],
-      "deviations": [],
-      "patterns": [],
-      "decisions": [],
-      "raw_notes": ""
+      "deviations": [
+        "Jalón 80kg 4×8 — TERCERA consecutiva limpia. Sin notas, sin tensión.",
+        "Landmine 22.5kg 3×10 — 'ambos lados igual'. Primera vez sin asimetría izquierda. Pol conecta mejora con RDL.",
+        "Dead hang 90kg 45/40/30 — S1 récord con lastre (45s). S2 a target. S3 colapsa a 30s por fatiga antebrazo.",
+        "Face pull S2 tensa por fatiga — en base, orden correcto (primero).",
+        "Sesión MARTES — segunda consecutiva en este horario (24h post Pecho/Trí)."
+      ],
+      "patterns": [
+        "✅ JALÓN 80kg TERCERA 4×8 LIMPIA — CONSOLIDADO. Trayectoria: 18/06 (S4 tensa) → 23/06 (limpia) → 30/06 (limpia sin notas). Misma progresión que 77.5: 3 sesiones limpias → subir. → 82.5kg 4×6.",
+        "✅ LANDMINE IZQUIERDO = DERECHO — PRIMERA VEZ. Hombro izquierdo no señala desde 09/06 (4 sesiones). La hipótesis de Pol sobre el RDL es plausible: el bilateral fortalece cadena posterior y estabilidad core, que alimenta la estabilización del press unilateral.",
+        "✅ ORDEN HOMBRO CORRECTO — face pull primero. Tercera consecutiva respetándolo.",
+        "✅ ZONA DERECHA Y TRAPECIO LIMPIOS — contador sigue 2/3. Sin señales en todo el Ciclo 4.",
+        "✅ MUÑECA EN LANDMINE — la señal zona externa del 23/06 NO se repite hoy. Puntual.",
+        "✅ ELEVACIONES 6.25kg — base respetada sin intentar 7.5.",
+        "⚠️ DEAD HANG S1 45s RÉCORD PERO S3 COLAPSA — patrón crónico confirmado: la fuerza base está (45s récord), el problema es sostenibilidad entre series. Secuencia: 45/40/30 (30/06) vs 40/38/20 (23/06). S1 mejora, S3 sigue cayendo. Causa: fatiga grip acumulada + sesión 24h post Pecho/Trí."
+      ],
+      "decisions": [
+        "Jalón: CONSOLIDADO 80kg 4×8. → 82.5kg 4×6 próxima sesión. Actualizar base.",
+        "Landmine: izquierdo = derecho. Hombro izquierdo resuelto. La conexión RDL es dato interesante para el informe de ciclo.",
+        "Dead hang: el problema no es fuerza (45s S1) sino recuperación inter-series. Opciones: (1) 2:30 min descanso, (2) mover dead hang antes de scapular pull, (3) aceptar que en martes post Pecho/Trí S3 va a sufrir.",
+        "Plate pinch: BAJAR BASE a 10kg — fractura trabecular 4º metacarpiano + lesión ligamento parcial (RM 06/06). Hasta ok traumatólogo.",
+        "CICLO 4: 3-3-2."
+      ],
+      "raw_notes": "3ª Espalda/Hombro C4. Jalón 80 tercera 4×8 → 82.5. Landmine izq=der primera vez. Dead hang 45/40/30 S1 récord. Zona derecha limpia."
     },
     {
       "id": "2026-06-29_pecho-trí_1782752325103",
@@ -8336,25 +8529,25 @@
   ],
   "planning": [
     {
-      "id": "plan-ciclo4-w4-espalda",
-      "date": "2026-07-01",
-      "weekday": "Miércoles",
-      "type": "Espalda/Hombro",
-      "notes": "Ciclo 4 sesión 3. Jalón 80: tercera 4×8 → si limpia abrir 82.5. Dead hang ENFORCE 2 min. Landmine muñeca monitorizar."
-    },
-    {
       "id": "plan-ciclo4-w4-pierna",
       "date": "2026-07-04",
       "weekday": "Sábado",
       "type": "Pierna/Bíc",
-      "notes": "Ciclo 4 sesión 3. RDL 70kg debut 3×10 — GRABARSE de frente S1. Chin-up buscar 3×8. Wall sit mantener."
+      "notes": "Ciclo 4 sesión 3. RDL 70kg debut 3×10 — GRABARSE S1. Chin-up buscar 3×8. Wall sit mantener."
     },
     {
       "id": "plan-ciclo4-w5-pecho",
       "date": "2026-07-06",
       "weekday": "Lunes",
       "type": "Pecho/Trí",
-      "notes": "Ciclo 4 sesión 4 (ÚLTIMA). Overhead: ¿20kg debut? Press 30 pendiente MRI. Hammer consolidar 57.5."
+      "notes": "Ciclo 4 sesión 4 (ÚLTIMA). Overhead 20kg debut. Press 30 pendiente traumatólogo. Plate pinch 10kg."
+    },
+    {
+      "id": "plan-ciclo4-w5-espalda",
+      "date": "2026-07-08",
+      "weekday": "Miércoles",
+      "type": "Espalda/Hombro",
+      "notes": "Ciclo 4 sesión 4 (ÚLTIMA). Jalón 82.5kg DEBUT 4×6. Dead hang enforce descanso."
     }
   ],
   "reports": [
@@ -8389,7 +8582,7 @@
     "report_rule": "4 Pecho/Trí + 4 Espalda/Hombro + 4 Pierna/Bíc desde last_cycle_close",
     "current_count": {
       "Pecho/Trí": 3,
-      "Espalda/Hombro": 2,
+      "Espalda/Hombro": 3,
       "Pierna/Bíc": 2
     }
   },
@@ -8521,11 +8714,12 @@
               "name": "Plate pinch",
               "scheme": "3×30s",
               "sets": 3,
-              "base": 15,
+              "base": 10,
               "unit": "kg disco",
               "rest": 60,
               "tips": [
-                "Capsulitis mejora con calor — S1 puede estar limitado"
+                "⚠️ Bajado a 10kg — fractura trabecular + lesión ligamento 4º metacarpiano (RM 06/06)",
+                "Hasta ok traumatólogo. NO subir."
               ]
             },
             {
@@ -8571,15 +8765,16 @@
             {
               "id": "jalon-neutro",
               "name": "Jalón al pecho neutro",
-              "scheme": "4×8",
+              "scheme": "4×6",
               "sets": 4,
-              "base": 80,
+              "base": 82.5,
               "unit": "kg",
               "rest": 180,
               "tips": [
                 "ANCLA tracción",
                 "Deprimir escápula ANTES",
-                "✅ 80kg segunda 4×8 limpia (23/06) — una más → 82.5"
+                "✅ 80kg CONSOLIDADO 3×4×8 → 82.5kg 4×6 debut",
+                "Buscar consolidar 4×6 → luego 4×8"
               ]
             },
             {
@@ -8634,7 +8829,7 @@
               "rest": 120,
               "tips": [
                 "⚠️ NO arrancar a 25kg",
-                "⚠️ Muñeca zona externa señaló 23/06 — monitorizar"
+                "✅ Izquierdo = derecho (30/06) — hombro izq resuelto"
               ]
             },
             {
