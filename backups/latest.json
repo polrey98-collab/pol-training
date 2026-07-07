@@ -1,11 +1,228 @@
 {
   "sessions": [
     {
+      "id": "2026-07-07_pecho-trí_1783442936958",
+      "date": "2026-07-07",
+      "weekday": "Martes",
+      "type": "Pecho/Trí",
+      "general_feeling": "Sin valoración",
+      "blocks": [
+        {
+          "name": "PECHO",
+          "exercises": [
+            {
+              "id": "press-inclinado-db",
+              "name": "Press inclinado mancuernas",
+              "skipped": false,
+              "weight": "32kg/mano",
+              "sets": "S1: 32kg/mano×8 / S2: 32kg/mano×8 / S3: 32kg/mano×8 / S4: 32kg/mano×8",
+              "notes": "Podria hacer mas repes - 1a serie y 2a serie\n3a si que quizas 1 extra pero bastante tensa seria\n4a llego tenso\n",
+              "setData": [
+                {
+                  "weight": 32,
+                  "reps": 8
+                },
+                {
+                  "weight": 32,
+                  "reps": 8
+                },
+                {
+                  "weight": 32,
+                  "reps": 8
+                },
+                {
+                  "weight": 32,
+                  "reps": 8
+                }
+              ]
+            },
+            {
+              "id": "hammer-chest",
+              "name": "Press Hammer Strength",
+              "skipped": false,
+              "weight": "57.5kg/lado",
+              "sets": "S1: 57.5kg/lado×8 / S2: 57.5kg/lado×8 / S3: 57.5kg/lado×7",
+              "notes": "2a bastante tensa",
+              "setData": [
+                {
+                  "weight": 57.5,
+                  "reps": 8
+                },
+                {
+                  "weight": 57.5,
+                  "reps": 8
+                },
+                {
+                  "weight": 57.5,
+                  "reps": 7
+                }
+              ]
+            },
+            {
+              "id": "cruce-poleas",
+              "name": "Cruce poleas banco",
+              "skipped": false,
+              "weight": "13.75kg",
+              "sets": "S1: 13.75kg×10 / S2: 13.75kg×10 / S3: 13.75kg×10",
+              "notes": "Podria haber hecho 12 pero no lo he visto\nEn 2a no lo he visto nada claro hacer extra",
+              "setData": [
+                {
+                  "weight": 13.75,
+                  "reps": 10
+                },
+                {
+                  "weight": 13.75,
+                  "reps": 10
+                },
+                {
+                  "weight": 13.75,
+                  "reps": 10
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "TRÍCEPS",
+          "exercises": [
+            {
+              "id": "fondos-maquina",
+              "name": "Fondos máquina",
+              "skipped": false,
+              "weight": "170kg",
+              "sets": "S1: 170kg×10 / S2: 170kg×10 / S3: 170kg×10",
+              "notes": "Bastante tensa la 3a serie ultima repe\nNoto tension del femoral derecho, puede ser por la alza? ",
+              "setData": [
+                {
+                  "weight": 170,
+                  "reps": 10
+                },
+                {
+                  "weight": 170,
+                  "reps": 10
+                },
+                {
+                  "weight": 170,
+                  "reps": 10
+                }
+              ]
+            },
+            {
+              "id": "overhead-cuerda",
+              "name": "Extensión overhead cuerda",
+              "skipped": false,
+              "weight": "18.75kg",
+              "sets": "S1: 18.75kg×12 / S2: 18.75kg×12 / S3: 18.75kg×12",
+              "notes": "",
+              "setData": [
+                {
+                  "weight": 18.75,
+                  "reps": 12
+                },
+                {
+                  "weight": 18.75,
+                  "reps": 12
+                },
+                {
+                  "weight": 18.75,
+                  "reps": 12
+                }
+              ]
+            },
+            {
+              "id": "ext-barra-neutra",
+              "name": "Extensión polea barra neutra",
+              "skipped": false,
+              "weight": "25kg",
+              "sets": "S1: 25kg×12 / S2: 25kg×12 / S3: 25kg×12",
+              "notes": "3a bastante tensa",
+              "setData": [
+                {
+                  "weight": 25,
+                  "reps": 12
+                },
+                {
+                  "weight": 25,
+                  "reps": 12
+                },
+                {
+                  "weight": 25,
+                  "reps": 12
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "AGARRE / TENDÓN",
+          "exercises": [
+            {
+              "id": "iso-zass-empuje",
+              "name": "Isométrico Zass empuje (rack)",
+              "skipped": false,
+              "weight": "20kg",
+              "sets": "S1: 20kg×10 / S2: 20kg×10 / S3: 20kg×10",
+              "notes": "",
+              "setData": [
+                {
+                  "weight": 20,
+                  "reps": 10
+                },
+                {
+                  "weight": 20,
+                  "reps": 10
+                },
+                {
+                  "weight": 20,
+                  "reps": 10
+                }
+              ]
+            },
+            {
+              "id": "plate-pinch",
+              "name": "Plate pinch",
+              "skipped": false,
+              "weight": "10kg",
+              "sets": "S1: 10kg×30 / S2: 10kg×30 / S3: 10kg×30",
+              "notes": "",
+              "setData": [
+                {
+                  "weight": 10,
+                  "reps": 30
+                },
+                {
+                  "weight": 10,
+                  "reps": 30
+                },
+                {
+                  "weight": 10,
+                  "reps": 30
+                }
+              ]
+            },
+            {
+              "id": "prehab-tfcc",
+              "name": "Prehab TFCC (disco)",
+              "skipped": true,
+              "weight": "—",
+              "sets": "Saltado",
+              "notes": "",
+              "setData": []
+            }
+          ]
+        }
+      ],
+      "deviations": [],
+      "patterns": [],
+      "decisions": [],
+      "raw_notes": ""
+    },
+    {
       "id": "2026-07-02_complementario_1783013305169",
       "date": "2026-07-02",
       "weekday": "Jueves",
       "type": "Complementario",
-      "general_feeling": "Sin valoración",
+      "general_feeling": "Sesión soporte split Pierna/Bíc. Core: dead bug 15kg 3×8/lado + pallof 17.5kg 3×12 (sobre scheme 3×10).",
       "blocks": [
         {
           "name": "OVERCOMING — elige 2",
@@ -139,17 +356,28 @@
           ]
         }
       ],
-      "deviations": [],
-      "patterns": [],
-      "decisions": [],
-      "raw_notes": ""
+      "deviations": [
+        "Dead bug 15kg disco vs base PC — 3×8/lado completo.",
+        "Pallof press 17.5kg 3×12 vs scheme 3×10.",
+        "Overcoming y Yielding saltados (sesión soporte split)."
+      ],
+      "patterns": [
+        "✅ DEAD BUG 15kg — progresión core real.",
+        "✅ PALLOF 3×12 — sobre scheme. Si se repite → 20kg.",
+        "✅ CORE EN SPLIT — funciona."
+      ],
+      "decisions": [
+        "Dead bug: 15kg confirmado.",
+        "Pallof: si 3×12 repite → 20kg."
+      ],
+      "raw_notes": "Complementario soporte split. Dead bug 15kg. Pallof 17.5 3×12."
     },
     {
       "id": "2026-07-02_pierna-bíc_1783011948768",
       "date": "2026-07-02",
       "weekday": "Jueves",
       "type": "Pierna/Bíc",
-      "general_feeling": "Sin valoración",
+      "general_feeling": "Split jueves: quad + bíceps (3ª Pierna/Bíc C4, parte 1 de 2). CHIN-UP 92.5kg 3×8 MILESTONE. PERO pinchazo cervical heavy (señal nueva). Ext cuádriceps tercera 3×10. Curl 10/10/9 mejorando.",
       "blocks": [
         {
           "name": "PIERNA",
@@ -312,10 +540,28 @@
           ]
         }
       ],
-      "deviations": [],
-      "patterns": [],
-      "decisions": [],
-      "raw_notes": ""
+      "deviations": [
+        "SPLIT: quad + bíceps hoy, hip-dominant domingo. RDL/prensa/hip thrust saltados.",
+        "Chin-up 92.5kg 3×8 — MILESTONE. Pinchazo cervical heavy. S3 última mega tensa.",
+        "Ext cuádriceps 65kg 3×10 — TERCERA consecutiva limpia.",
+        "Curl inclinado 14kg 10/10/9 — MEJORA vs 10/9/7 (27/06).",
+        "Wall sit 15kg 5×45s — limpio. Abductor 65kg 3×15 — base."
+      ],
+      "patterns": [
+        "✅ CHIN-UP 92.5kg 3×8 MILESTONE — 7/7/6 → 8/8/6 → 8/8/7 → 8/8/8 en 4 sesiones.",
+        "⚠️ CERVICAL PINCHAZO — señal NUEVA. No trapecio (2/3). Extensión cervical forzada o compensación S3.",
+        "✅ EXT CUÁDRICEPS TERCERA 3×10 — patrón S3 eliminado.",
+        "✅ CURL INCLINADO MEJORANDO — S2: 9→10, S3: 7→9.",
+        "✅ WALL SIT CUARTA SESIÓN COMPLETA.",
+        "✅ SPLIT FUNCIONANDO."
+      ],
+      "decisions": [
+        "Chin-up: repetir 92.5kg con cues cervical. Si limpia → 95kg.",
+        "Curl: mantener 14kg.",
+        "CICLO 4: 3-3-2 (merge domingo → 3-3-3).",
+        "DOMINGO: RDL 70kg debut, prensa 150, hip thrust 80, bici zona 2."
+      ],
+      "raw_notes": "Split jueves. Chin-up 3×8 milestone + cervical. Ext cuád tercera. Curl mejora."
     },
     {
       "id": "2026-06-30_espalda-hombro_1782838130986",
@@ -8673,25 +8919,25 @@
   ],
   "planning": [
     {
-      "id": "plan-ciclo4-w4-pierna",
-      "date": "2026-07-04",
+      "id": "plan-ciclo4-split-domingo",
+      "date": "2026-07-05",
       "weekday": "Sábado",
       "type": "Pierna/Bíc",
-      "notes": "Ciclo 4 sesión 3. RDL 70kg debut 3×10 — GRABARSE S1. Chin-up buscar 3×8. Wall sit mantener."
+      "notes": "Split parte 2 (hip-dominant). RDL 70kg DEBUT — GRÁBATE S1. Prensa 150. Hip thrust 80. Bici zona 2. Chin-up: si se hace aquí, 92.5kg con cues cervical. En general_feeling: 'split con jueves'."
     },
     {
       "id": "plan-ciclo4-w5-pecho",
-      "date": "2026-07-06",
+      "date": "2026-07-07",
       "weekday": "Lunes",
       "type": "Pecho/Trí",
-      "notes": "Ciclo 4 sesión 4 (ÚLTIMA). Overhead 20kg debut. Press 30 pendiente traumatólogo. Plate pinch 10kg."
+      "notes": "Ciclo 4 sesión 4 (ÚLTIMA). Overhead 20kg debut — vigilar lumbar. Press 30 pendiente traumatólogo. Plate pinch 10kg."
     },
     {
       "id": "plan-ciclo4-w5-espalda",
-      "date": "2026-07-08",
+      "date": "2026-07-09",
       "weekday": "Miércoles",
       "type": "Espalda/Hombro",
-      "notes": "Ciclo 4 sesión 4 (ÚLTIMA). Jalón 82.5kg DEBUT 4×6. Dead hang enforce descanso."
+      "notes": "Ciclo 4 sesión 4 (ÚLTIMA). Jalón 82.5kg DEBUT 4×6. Dead hang enforce 2 min descanso."
     }
   ],
   "reports": [
@@ -8862,7 +9108,7 @@
               "unit": "kg disco",
               "rest": 60,
               "tips": [
-                "⚠️ Bajado a 10kg — fractura trabecular + lesión ligamento 4º metacarpiano (RM 06/06)",
+                "⚠️ Bajado a 10kg — fractura trabecular + lesión ligamento (RM 06/06)",
                 "Hasta ok traumatólogo. NO subir."
               ]
             },
@@ -8875,7 +9121,7 @@
               "unit": "kg disco",
               "rest": 0,
               "tips": [
-                "Disco 2.5kg en mano, codo doblado 90°, gira muñeca palma arriba→abajo. 2×15 cada dirección."
+                "Disco 2.5kg en mano, codo 90°, gira muñeca palma arriba→abajo. 2×15 cada dirección."
               ]
             }
           ]
@@ -8917,7 +9163,7 @@
               "tips": [
                 "ANCLA tracción",
                 "Deprimir escápula ANTES",
-                "✅ 80kg CONSOLIDADO 3×4×8 → 82.5kg 4×6 debut",
+                "✅ 80kg CONSOLIDADO → 82.5kg 4×6 debut",
                 "Buscar consolidar 4×6 → luego 4×8"
               ]
             },
@@ -9015,8 +9261,8 @@
               "unit": "kg",
               "rest": 120,
               "tips": [
-                "⚠️ MÍNIMO 2 min descanso — 1 min destruye S3",
-                "⚠️ Si sesión cae martes post Pecho/Trí → 2:30 descanso"
+                "⚠️ MÍNIMO 2 min descanso",
+                "⚠️ Si martes post Pecho/Trí → 2:30 descanso"
               ]
             },
             {
@@ -9071,11 +9317,10 @@
               "unit": "kg",
               "rest": 120,
               "tips": [
-                "Autorizado fisio 16/06 — primer bilateral post-cruzado",
-                "Straps + muñeca neutra (TFCC)",
+                "Autorizado fisio 16/06",
+                "Straps + muñeca neutra",
                 "✅ ROM correcto: para en estiramiento isquio, NO en suelo",
-                "⚠️ 70kg debut — GRÁBATE de frente S1 para verificar barra nivelada",
-                "Si barra se inclina → mantener 70 y corregir antes de subir"
+                "⚠️ 70kg debut — GRÁBATE de frente S1"
               ]
             },
             {
@@ -9088,7 +9333,6 @@
               "rest": 180,
               "tips": [
                 "ANCLA pierna",
-                "✅ 150kg segunda 3×10 (27/06)",
                 "⚠️ Glúteo/cadera derecha S1 (27/06) — monitorizar"
               ]
             },
@@ -9101,8 +9345,7 @@
               "unit": "kg",
               "rest": 120,
               "tips": [
-                "Pausa 2s arriba",
-                "✅ Tercera consecutiva sin lumbar post-RDL"
+                "Pausa 2s arriba"
               ]
             },
             {
@@ -9115,7 +9358,7 @@
               "rest": 120,
               "tips": [
                 "Descanso 120s clave para S3",
-                "✅ Segunda consecutiva 3×10 completa (27/06)"
+                "✅ TERCERA 3×10 consecutiva (02/07) — consolidado"
               ]
             },
             {
@@ -9144,7 +9387,7 @@
               "unit": "kg disco",
               "rest": 90,
               "tips": [
-                "✅ Recuperado 27/06 — consolidar"
+                "✅ Cuarta sesión completa a 15kg — consolidado"
               ]
             }
           ]
@@ -9162,7 +9405,9 @@
               "rest": 180,
               "tips": [
                 "ANCLA bíceps",
-                "✅ 92.5kg 8/8/7 (27/06) — cerca de 3×8 → 95kg"
+                "✅ 3×8 MILESTONE (02/07)",
+                "⚠️ CUES CERVICAL: barbilla neutra (no empujar hacia la barra), mirada al frente, depresión escapular ANTES de tirar",
+                "Si 92.5 limpia sin cervical → 95kg"
               ]
             },
             {
@@ -9174,8 +9419,8 @@
               "unit": "kg/mano",
               "rest": 90,
               "tips": [
-                "⚠️ Bíceps izquierdo muere primero (consistente)",
-                "⚠️ Relación inversa con chin-up: mejor chin = peor curl"
+                "⚠️ Bíceps izquierdo muere primero",
+                "✅ 10/10/9 (02/07) — mejorando"
               ]
             }
           ]
@@ -9278,7 +9523,8 @@
               "unit": "PC",
               "rest": 60,
               "tips": [
-                "Lumbar pegada al suelo"
+                "Lumbar pegada al suelo",
+                "✅ 15kg 3×8 (02/07) — peso de trabajo confirmado"
               ]
             },
             {
@@ -9290,7 +9536,8 @@
               "unit": "kg",
               "rest": 60,
               "tips": [
-                "Extiende brazos resistiendo rotación"
+                "Extiende brazos resistiendo rotación",
+                "✅ 3×12 (02/07) — sobre scheme, zona de progresión"
               ]
             },
             {
