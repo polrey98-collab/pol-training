@@ -1,11 +1,233 @@
 {
   "sessions": [
     {
+      "id": "2026-07-10_espalda-hombro_1783695315645",
+      "date": "2026-07-10",
+      "weekday": "Viernes",
+      "type": "Espalda/Hombro",
+      "general_feeling": "Llevo todo el dia como con sensación de incubar algo tipo fiebre o similar. Tengo como cansancio y noto inflamado el gangleo del cuello..,",
+      "blocks": [
+        {
+          "name": "ESPALDA",
+          "exercises": [
+            {
+              "id": "jalon-neutro",
+              "name": "Jalón al pecho neutro",
+              "skipped": false,
+              "weight": "82.5kg",
+              "sets": "S1: 82.5kg×8 / S2: 82.5kg×8 / S3: 82.5kg×8 / S4: 82.5kg×8",
+              "notes": "Bastante tensa ultima serie",
+              "setData": [
+                {
+                  "weight": 82.5,
+                  "reps": 8
+                },
+                {
+                  "weight": 82.5,
+                  "reps": 8
+                },
+                {
+                  "weight": 82.5,
+                  "reps": 8
+                },
+                {
+                  "weight": 82.5,
+                  "reps": 8
+                }
+              ]
+            },
+            {
+              "id": "remo-polea",
+              "name": "Remo polea sentado",
+              "skipped": false,
+              "weight": "75kg",
+              "sets": "S1: 75kg×8 / S2: 75kg×8 / S3: 75kg×8",
+              "notes": "Tensa ultima serie",
+              "setData": [
+                {
+                  "weight": 75,
+                  "reps": 8
+                },
+                {
+                  "weight": 75,
+                  "reps": 8
+                },
+                {
+                  "weight": 75,
+                  "reps": 8
+                }
+              ]
+            },
+            {
+              "id": "pullover-cuerda",
+              "name": "Pull-over cuerda",
+              "skipped": false,
+              "weight": "20kg",
+              "sets": "S1: 20kg×12 / S2: 20kg×12 / S3: 20kg×12",
+              "notes": "Tensa ultima serie",
+              "setData": [
+                {
+                  "weight": 20,
+                  "reps": 12
+                },
+                {
+                  "weight": 20,
+                  "reps": 12
+                },
+                {
+                  "weight": 20,
+                  "reps": 12
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "HOMBRO",
+          "exercises": [
+            {
+              "id": "face-pull",
+              "name": "Face pull cuerda",
+              "skipped": false,
+              "weight": "25kg",
+              "sets": "S1: 25kg×15 / S2: 25kg×15",
+              "notes": "",
+              "setData": [
+                {
+                  "weight": 25,
+                  "reps": 15
+                },
+                {
+                  "weight": 25,
+                  "reps": 15
+                }
+              ]
+            },
+            {
+              "id": "landmine",
+              "name": "Landmine press unilateral",
+              "skipped": false,
+              "weight": "22.5kg",
+              "sets": "S1: 22.5kg×10 / S2: 22.5kg×10 / S3: 22.5kg×10",
+              "notes": "",
+              "setData": [
+                {
+                  "weight": 22.5,
+                  "reps": 10
+                },
+                {
+                  "weight": 22.5,
+                  "reps": 10
+                },
+                {
+                  "weight": 22.5,
+                  "reps": 10
+                }
+              ]
+            },
+            {
+              "id": "elev-lat",
+              "name": "Elevaciones laterales",
+              "skipped": false,
+              "weight": "6.25kg",
+              "sets": "S1: 6.25kg×15 / S2: 6.25kg×15",
+              "notes": "Bastante tensa ultima repe 2a serie",
+              "setData": [
+                {
+                  "weight": 6.25,
+                  "reps": 15
+                },
+                {
+                  "weight": 6.25,
+                  "reps": 15
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "TENDÓN + AGARRE",
+          "exercises": [
+            {
+              "id": "scapular-pull",
+              "name": "Scapular pull",
+              "skipped": false,
+              "weight": "80kg",
+              "sets": "S1: 80kg×8 / S2: 80kg×8 / S3: 80kg×8",
+              "notes": "",
+              "setData": [
+                {
+                  "weight": 80,
+                  "reps": 8
+                },
+                {
+                  "weight": 80,
+                  "reps": 8
+                },
+                {
+                  "weight": 80,
+                  "reps": 8
+                }
+              ]
+            },
+            {
+              "id": "dead-hang-lastre",
+              "name": "Dead hang con lastre",
+              "skipped": false,
+              "weight": "90kg",
+              "sets": "S1: 90kg×40 / S2: 90kg×40 / S3: 90kg×30",
+              "notes": "2a bastante tensa\n3a se me resbalan las manoos :(",
+              "setData": [
+                {
+                  "weight": 90,
+                  "reps": 40
+                },
+                {
+                  "weight": 90,
+                  "reps": 40
+                },
+                {
+                  "weight": 90,
+                  "reps": 30
+                }
+              ]
+            },
+            {
+              "id": "farmer-carry",
+              "name": "Farmer's carry",
+              "skipped": false,
+              "weight": "24kg/mano",
+              "sets": "S1: 24kg/mano×40 / S2: 24kg/mano×40 / S3: 24kg/mano×40",
+              "notes": "2a serie bastante tensa…. Antebrazo\n3a mueren mis antebrazos al acabar",
+              "setData": [
+                {
+                  "weight": 24,
+                  "reps": 40
+                },
+                {
+                  "weight": 24,
+                  "reps": 40
+                },
+                {
+                  "weight": 24,
+                  "reps": 40
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "deviations": [],
+      "patterns": [],
+      "decisions": [],
+      "raw_notes": ""
+    },
+    {
       "id": "2026-07-07_pecho-trí_1783442936958",
       "date": "2026-07-07",
       "weekday": "Martes",
       "type": "Pecho/Trí",
-      "general_feeling": "Sin valoración",
+      "general_feeling": "Cuarta Pecho/Trí Ciclo 4 — CIERRE. Press 32kg/mano sin consultar (+2kg, MRI era requisito). 4×8 completado S3-S4 tensas. Overhead 18.75kg cuarta 3×12 limpia. Fondos 170kg base respetada S3 tensa + tensión femoral derecho. Hammer 8/8/7 S3 cae tercera consecutiva. Plate pinch 10kg respetado. Prehab saltado.",
       "blocks": [
         {
           "name": "PECHO",
@@ -212,10 +434,32 @@
           ]
         }
       ],
-      "deviations": [],
-      "patterns": [],
-      "decisions": [],
-      "raw_notes": ""
+      "deviations": [
+        "Press 32kg/mano 4×8 vs base 30kg — +2kg sin consultar. MRI + traumatólogo era la condición explícita para esta progresión. S3-S4 tensas pero completadas.",
+        "Overhead 18.75kg 3×12 vs plan 20kg debut — conservó base. CUARTA consecutiva 3×12 limpia.",
+        "Fondos 170kg 3×10 — base respetada. S3 última rep tensa + tensión femoral derecho (zona poplíteo/alza).",
+        "Plate pinch 10kg 3×30s — base reducida respetada correctamente.",
+        "Hammer 57.5kg 8/8/7 — S3 cae a 7. Tercera sesión con S3 irregular: 8/8/8 (22/06), 8/7/7 (29/06), 8/8/7 (07/07).",
+        "Prehab TFCC SALTADO.",
+        "Iso Zass 20kg 3×10s vs protocolo 3×8s."
+      ],
+      "patterns": [
+        "⚠️ PRESS 32kg SIN CONSULTAR — MRI era el bloqueante explícito para esta subida. Si MRI ok → acepto 32kg retroactivamente como nueva base. Si pendiente → rollback 30kg hasta traumatólogo.",
+        "✅ OVERHEAD 18.75kg CUARTA 3×12 LIMPIA — trayectoria: 16/06 (1ª) → 22/06 (2ª) → 29/06 (3ª) → 07/07 (4ª). 20kg totalmente justificado para Ciclo 5. Precaución: 20kg generó lumbar el 01/06.",
+        "⚠️ FEMORAL DERECHO EN FONDOS — segunda sesión consecutiva (primera 29/06). Zona poplíteo/gemelo derecho vinculada a plantilla/alza. Tensión muscular bajo fatiga en última rep, no dolor articular. Dato para seguimiento.",
+        "⚠️ HAMMER 57.5kg S3 INESTABLE — tres sesiones: 8/8/8 (22/06) → 8/7/7 (29/06) → 8/8/7 (07/07). Hipótesis: press a 4×8-10 genera más pre-fatiga de pecho que antes → Hammer recibe más carga acumulada en S3. No es regresión aislada de fuerza.",
+        "✅ FONDOS 170kg DISCIPLINA CONSOLIDADA — quinta sesión respetando base. Patrón de subir a 180 definitivamente eliminado.",
+        "✅ CRUCE 13.75kg 3×10 limpio con margen real ('podría haber hecho 12').",
+        "✅ CICLO 4 PECHO/TRÍ CERRADO — 4ª sesión completada. Cuenta: 4-3-3. Faltan 1 Espalda/Hombro + 1 Pierna/Bíc para cierre de ciclo."
+      ],
+      "decisions": [
+        "Press 32kg: ¿MRI resultados? Si ok → confirmar 32kg base. Si pendiente → rollback 30kg hasta traumatólogo.",
+        "Overhead: DEBUT 20kg próxima Pecho/Trí (Ciclo 5). Vigilar lumbar desde S1. Si aparece → volver a 18.75.",
+        "Hammer: mantener 57.5kg. Si S3 sigue a 7 dos sesiones más → rollback a 55kg.",
+        "Femoral derecho fondos: monitorizar. Tercera aparición → dato para fisio.",
+        "CICLO 4: 4-3-3. Próximas: Espalda/Hombro miérc (jalón 82.5 debut) + Pierna/Bíc sábado completa (RDL 70kg debut, chin-up cues cervical)."
+      ],
+      "raw_notes": "4ª Pecho/Trí C4 — CIERRE. Press 32kg sin consultar. Overhead cuarta 3×12. Fondos femoral derecho zona alza. Hammer S3 tercera irregular."
     },
     {
       "id": "2026-07-02_complementario_1783013305169",
@@ -8919,25 +9163,18 @@
   ],
   "planning": [
     {
-      "id": "plan-ciclo4-split-domingo",
-      "date": "2026-07-05",
-      "weekday": "Sábado",
-      "type": "Pierna/Bíc",
-      "notes": "Split parte 2 (hip-dominant). RDL 70kg DEBUT — GRÁBATE S1. Prensa 150. Hip thrust 80. Bici zona 2. Chin-up: si se hace aquí, 92.5kg con cues cervical. En general_feeling: 'split con jueves'."
-    },
-    {
-      "id": "plan-ciclo4-w5-pecho",
-      "date": "2026-07-07",
-      "weekday": "Lunes",
-      "type": "Pecho/Trí",
-      "notes": "Ciclo 4 sesión 4 (ÚLTIMA). Overhead 20kg debut — vigilar lumbar. Press 30 pendiente traumatólogo. Plate pinch 10kg."
-    },
-    {
       "id": "plan-ciclo4-w5-espalda",
-      "date": "2026-07-09",
-      "weekday": "Miércoles",
+      "date": "2026-07-10",
+      "weekday": "Viernes",
       "type": "Espalda/Hombro",
       "notes": "Ciclo 4 sesión 4 (ÚLTIMA). Jalón 82.5kg DEBUT 4×6. Dead hang enforce 2 min descanso."
+    },
+    {
+      "id": "plan-ciclo4-final-pierna",
+      "date": "2026-07-11",
+      "weekday": "Sábado/Domingo",
+      "type": "Pierna/Bíc",
+      "notes": "Ciclo 4 sesión 4 (ÚLTIMA) — COMPLETA. RDL 70kg debut (pendiente del domingo que no fue). Prensa 150kg. Hip thrust 80kg. Chin-up 92.5kg CUES CERVICAL (barbilla neutra, mirada al frente, depresión escapular ANTES). Bici zona 2 post si hay energía."
     }
   ],
   "reports": [
@@ -8963,7 +9200,7 @@
       "period_start": "2026-05-18",
       "period_end": "2026-06-12",
       "generated_at": "2026-06-23",
-      "content": "# Informe de Cierre — Ciclo 3\n\n## 1. Volumen y Consistencia\n\n**Período:** 18 mayo – 12 junio 2026 (26 días)\n**Sesiones gym:** 12 de 12 (4 Pecho/Trí + 4 Espalda/Hombro + 4 Pierna/Bíc) — tercer ciclo completo consecutivo.\n**Complementario:** sin sesiones Día 4 registradas.\n**Otros deportes:** sin registro formal (pádel/escalada/running fuera de JSON).\n**Desplazamientos:** sesión 27/05 Pecho/Trí desplazada a miércoles. Semana 09-12/06 comprimida: Pecho/Trí martes, Pierna/Bíc jueves, Espalda/Hombro viernes.\n**Omisiones recurrentes:** prehab TFCC omitido 4/4 sesiones de Pecho/Trí. Farmer's carry saltado 1/4 (03/06, logístico).\n\n**Narrativa del ciclo:** este fue el ciclo de la **recuperación exponencial**. Arrancó con la peor sesión de muñeca del proyecto (01/06, dolor centro-muñeca diferente al TFCC habitual) y acabó con la mejor sesión de pecho (09/06, 30kg mancuernas 4×10). La clave fue que las sustituciones del Ciclo 2 (barra→mancuernas, predicador→chin-up, martillo→curl inclinado) no solo protegieron las zonas lesionadas sino que desbloquearon fuerza que la barra estaba limitando.\n\n---\n\n## 2. Progresión de Carga por Ejercicio\n\n### PECHO/TRÍ\n\n| Ejercicio | Inicio (18/05) | Cierre (09/06) | Tendencia |\n|-----------|---------------|----------------|-----------|\n| Press incl. mancuernas | 30kg dolor → 28kg (8/8/9/8) | 30kg 4×10 ✅ | ↑↑ Milestone — mejor sesión pecho |\n| Hammer Strength | 55kg (7/7/8) | 55kg 3×8 (×5 sesiones) | ✅ Sobreconsolidado → 57.5 |\n| Cruce poleas | 15→12.5→13.75kg | 13.75kg 3×10 | → Estabilizado |\n| Fondos máquina | 180→170kg | 170kg 3×10 ✅ | ✅ Disciplina de base lograda |\n| Overhead cuerda | 17.5→20→17.5kg | 17.5kg 3×12 | → Consolidado (20kg genera lumbar) |\n| Ext barra neutra | 22.5→25kg | 25kg 3×12 ✅ | ↑ Base confirmada |\n| Plate pinch | 10→15kg | 15kg 3×30s (mejorando) | ↑ Pese a capsulitis dedo |\n| Iso Zass empuje | 20kg 3×8s | 20kg 3×8s | → Estable |\n\n**Trayectoria press inclinado mancuernas:**\n- 18/05: 30kg S1 dolor TFCC real, cambio a barra 85kg (contamina muñeca)\n- 27/05: 28kg 8/8/9/8 — TFCC activo en handling, no en press\n- 01/06: 28kg 9/9/8/8 — muñeca PEOR QUE NUNCA (centro-muñeca, no cubital)\n- 09/06: **30kg 4×10** — muñeca controlada, explosión de fuerza\n\nLa fuerza siempre estuvo. El limitante era la muñeca, no el músculo. Cuando la muñeca dio tregua, el pecho se expresó.\n\n**Fondos — disciplina consolidada:**\n- 18/05: paralelas 30kg lastre (elección puntual)\n- 27/05: 180/180/170 (arranca por encima otra vez)\n- 01/06: 180/180→9/170 (reconoce que debería hacer 170)\n- 09/06: **170kg 2×10** (primera vez respetando base, gemelo limitó S3)\n- Base 170kg CONFIRMADA como real.\n\n### ESPALDA/HOMBRO\n\n| Ejercicio | Inicio (20/05) | Cierre (12/06) | Tendencia |\n|-----------|---------------|----------------|-----------|\n| Jalón neutro | 75kg 4×8 (5ª consecutiva) | 77.5kg 4×8 (3ª limpia) ✅ | ↑↑ Progresión textbook |\n| Remo polea | 75-77.5kg 3×8 | 75kg 3×8 | → 77.5 al límite técnico, vuelve a 75 |\n| Pull-over cuerda | 17.5→18.75→20kg | 20kg 3×12 ✅ | ↑ Confirmado |\n| Face pull | 25→26.25→25kg | 25kg 2×15 | → Subida sin consultar corregida |\n| Landmine press | 22.5-25kg | 22.5kg 3×10 ✅ | → 25kg: grip izq falla + zona D |\n| Elevaciones lat | 6.25-7.5kg | 6.25kg con isométrico ✅ | → 6.25+pausa > 7.5 sin pausa |\n| Scapular pull | PC 3×8 | PC 8/7/7 | → Fatiga acumulada |\n| Dead hang lastre | 90kg 3×40s | 90kg 40/30/35 | ⚠️ Irregular |\n| Farmer's carry | 24kg/mano 3×40m | 24kg 3×40m ✅ | → Recuperado |\n\n**Trayectoria jalón neutro — progresión modelo:**\n- 75kg 4×8 × 5 sesiones (sobreconsolidado desde Ciclo 2)\n- 77.5kg debut: 8/8/7/8 (28/05) — supera scheme 4×6\n- 77.5kg 2ª: 8/8/8/8 (03/06) — limpia\n- 77.5kg 3ª: 8/8/8/8 (12/06) — **CONSOLIDADO → 80kg Ciclo 4**\n\n**Dead hang — problema no resuelto:**\nSecuencia: 3×40s (20/05) → 3×40s (28/05) → 38/36/35 (03/06) → 40/30/35 (12/06)\nLas últimas 2 sesiones caen. Causa: 6 ejercicios de grip antes del dead hang (jalón→remo→pull-over→landmine→scapular→dead hang). Descanso insuficiente post-scapular pull. Pendiente reestructurar.\n\n### PIERNA/BÍC\n\n| Ejercicio | Inicio (23/05) | Cierre (10/06) | Tendencia |\n|-----------|---------------|----------------|-----------|\n| Prensa unilateral | 140kg 3×10 | 140kg 3×10 | → Sobreconsolidado (Pol quiere 150) |\n| Hip thrust | 80kg 2×15→3×15 | 80kg 3×15 ✅ | ✅ Consolidado |\n| Ext cuádriceps | 65kg (10/10/9) | 65kg 3×10 ✅ | ↑ S3 rota patrón de caída |\n| Curl femoral | 32.5kg 3×10 | 32.5kg 3×10 | → Última sesión ciclo (eliminado C4) |\n| Abductor | 65kg 3×15 | 65kg 3×15 | → Estable |\n| Wall sit | 10kg 5×45s (debut) | 15kg 5×50s ✅ | ↑↑ Progresión rápida |\n| Chin-up neutro | PC 3×8 → 90kg 3×8 | 92.5kg 7/7/6 ✅ | ↑↑ Milestone |\n| Curl inclinado | 16kg (9/8/6)→(10/8/7) | 14kg 3×10 ✅ | → Bajado por pre-fatiga chin-up |\n\n**Trayectoria chin-up neutro — de cero a ancla:**\n- Debut PC (23/05 post-fiesta): 3×8 — calibración\n- 90kg debut (16/05): 8/7/7\n- 90kg progresión: 8/8/7 (30/05) → **8/8/8** (06/06) — MILESTONE\n- 92.5kg debut (10/06): 7/7/6 — sólido dentro del rango\n\n**Curl inclinado — ajuste necesario:**\n16kg generaba fallo consistente en S2-S3 (9/8/6, 10/8/7, 8/8/6) por pre-fatiga del chin-up. Bajado a 14kg → 3×10 limpio (06/06). Confirmado como base.\n\n**Wall sit — progresión rápida:**\n10kg 5×45s debut (16/05) → 3 sesiones limpias → 15kg 5×50s (10/06). Tendón respondiendo bien.\n\n---\n\n## 3. Señales de Alerta Recurrentes\n\n### Muñeca izquierda (TFCC) — EVOLUCIÓN MIXTA\n- **18/05:** 30kg mancuernas dolor TFCC real + déficit control izquierdo (peso demasiado alto para debut)\n- **27/05:** 28kg TFCC en handling (dejar/coger mancuernas), no en press\n- **01/06:** **PEOR sesión** — dolor CENTRO muñeca/antebrazo (diferente al cubital). \"Muñeca débil\". Pol quiere volver a barra.\n- **09/06:** 30kg 4×10 muñeca \"controlada\" — giro radical\n- **Hallazgo clave:** el handling (coger/dejar mancuernas del suelo) es el momento más crítico, no el press. La desviación cubital bajo carga en la transición castiga el TFCC.\n- **Señal nueva (01/06):** dolor centro-muñeca distinto al TFCC cubital → resonancia programada 21/06.\n- **Prehab TFCC:** omitido 4/4 sesiones. Formato no funciona.\n\n### Trapecio derecho — ESTABLE POST-FISIO\n- Contador: 2/3 (sin señales nuevas en todo el ciclo)\n- La visita al fisio (06/05) fue claramente el punto de inflexión\n- Cue de depresión escapular activa funcionando\n\n### Hombro izquierdo — SEÑAL NUEVA\n- **03/06:** inestabilidad en landmine press (brazo izquierdo)\n- **09/06:** \"noto bastante hombro izquierdo\" post press inclinado\n- **12/06:** NO señala en landmine\n- **Hipótesis:** compensación por grip inestable izquierdo (cadena TFCC→grip→hombro)\n- **Acción:** monitorizar Ciclo 4. Si 3 sesiones → traumatólogo.\n\n### Lumbar — INTERMITENTE\n- **16/05:** hip thrust S1\n- **01/06:** overhead 20kg (peso sin consultar)\n- **10/06:** hip thrust leve\n- **Patrón:** no impide completar ejercicios. Aparece cuando overhead >17.5kg o post-running.\n\n### Bíceps izquierdo — DATO NUEVO\n- Se carga antes que el derecho en curl inclinado (3 sesiones consecutivas)\n- Posible conexión TFCC/muñeca → reclutamiento alterado\n- Dato para visita post-resonancia\n\n### Capsulitis dedo izquierdo — ACTIVA\n- Golpe ~semana del 27/05. Traumatólogo 12/06: capsulitis confirmada, ventana 6 semanas.\n- Limita plate pinch mano izquierda (15kg→10kg en sesiones activas)\n- Extendido a face pull (cuerda) el 18/06\n\n---\n\n## 4. Técnica y Patrones\n\n**Mejorando:**\n- **Disciplina de base:** fondos pasó de arrancar a 180 siempre → respetar 170 las últimas 2 sesiones. Face pull corregido de 26.25→25. Elevaciones de 7.5→6.25+isométrico.\n- **Press inclinado mancuernas:** la adaptación al nuevo patrón motor fue rápida. De dolor TFCC a 30kg 4×10 en 4 sesiones.\n- **Doble progresión funcionando:** jalón (75→77.5) y chin-up (90→92.5) son ejemplos perfectos del sistema.\n- **Hip thrust consolidado:** 80kg 3×15 sin lumbar en 3 de 4 sesiones.\n\n**Sin consolidar:**\n- **Subidas sin consultar:** pull-over 20kg, overhead 20kg, face pull 26.25, fondos 180, elevaciones 7.5. El patrón se repite ciclo tras ciclo. El sistema funciona cuando se respeta (jalón, chin-up) y falla cuando se salta (overhead→lumbar, elevaciones→compensación).\n- **Dead hang:** irregularidad crónica (40/40/40 una sesión, 38/36/35 la siguiente). Causa: fatiga acumulada de grip + descanso insuficiente.\n- **Prehab TFCC:** 4/4 omitido. El formato actual no funciona — necesita reestructuración.\n\n**Requiere atención:**\n- **Hombro izquierdo:** 2 señales en ejercicios de empuje diferentes. No es grave hoy pero es nueva.\n- **Asimetría D>I pierna:** confirmada en cuádriceps (ext cuád S3) e isquio (curl femoral). Muscular, no articular. Esperada post-cruzado.\n\n---\n\n## 5. Decisiones para Ciclo 4\n\n| Ejercicio | Decisión | Motivo |\n|-----------|----------|--------|\n| Jalón neutro | **80kg 4×6→8** | 77.5kg 3× limpias → doble progresión |\n| Hammer Strength | **57.5kg 3×8** | 55kg × 5 sesiones sobreconsolidado |\n| Press incl. mancuernas | Mantener 30kg 4×6-8 | 4×10 fue milestone, consolidar a 4×8 |\n| Overhead cuerda | **18.75kg** | 17.5kg insuficiente estímulo, 20kg lumbar |\n| Fondos | Mantener 170kg | Disciplina consolidada |\n| Prensa unilateral | **150kg** (esperar resonancia 21/06) | Sobreconsolidada a 140kg desde inicio |\n| Curl femoral | **ELIMINADO → RDL bilateral** | Indicación fisio 16/06: más cadera, menos rodilla |\n| Wall sit | **15kg 5×45s** | Debut 15kg exitoso |\n| Chin-up neutro | Mantener 92.5kg, buscar 3×8 | Debut 7/7/6 sólido |\n| Dead hang | Reconsolidar 3×40s, mín 2 min descanso | Irregularidad crónica |\n| Pull-over | Mantener 20kg | Confirmado |\n| Ext barra neutra | Mantener 25kg | Confirmado |\n| Elevaciones lat | 6.25kg con isométrico | Mejor estímulo que 7.5 sin pausa |\n| Landmine | Mantener 22.5kg | Grip izq no aguanta 25 |\n| Prehab TFCC | Reestructurar formato | 4/4 omitido |\n| Resonancia muñeca | 21/06 — TFCC + centro-muñeca | Resultados condicionan prensa y press |\n| Hombro izquierdo | Monitorizar — si 3 sesiones → traumatólogo | 2 señales en Ciclo 3 |\n"
+      "content": "# Informe de Cierre — Ciclo 3\n\n## 1. Volumen y Consistencia\n\n**Período:** 18 mayo – 12 junio 2026 (26 días)\n**Sesiones gym:** 12 de 12 (4 Pecho/Trí + 4 Espalda/Hombro + 4 Pierna/Bíc) — tercer ciclo completo consecutivo.\n**Complementario:** sin sesiones Día 4 registradas.\n**Otros deportes:** sin registro formal (pádel/escalada/running fuera de JSON).\n**Desplazamientos:** sesión 27/05 Pecho/Trí desplazada a miércoles. Semana 09-12/06 comprimida: Pecho/Trí martes, Pierna/Bíc jueves, Espalda/Hombro viernes.\n**Omisiones recurrentes:** prehab TFCC omitido 4/4 sesiones de Pecho/Trí. Farmer's carry saltado 1/4 (03/06, logístico).\n\n**Narrativa del ciclo:** este fue el ciclo de la **recuperación exponencial**. Arrancó con la peor sesión de muñeca del proyecto (01/06, dolor centro-muñeca diferente al TFCC habitual) y acabó con la mejor sesión de pecho (09/06, 30kg mancuernas 4×10). La clave fue que las sustituciones del Ciclo 2 (barra→mancuernas, predicador→chin-up, martillo→curl inclinado) no solo protegieron las zonas lesionadas sino que desbloquearon fuerza que la barra estaba limitando.\n\n---\n\n## 2. Progresión de Carga por Ejercicio\n\n### PECHO/TRÍ\n\n| Ejercicio | Inicio (18/05) | Cierre (09/06) | Tendencia |\n|-----------|---------------|----------------|-----------|\n| Press incl. mancuernas | 30kg dolor → 28kg (8/8/9/8) | 30kg 4×10 ✅ | ↑↑ Milestone — mejor sesión pecho |\n| Hammer Strength | 55kg (7/7/8) | 55kg 3×8 (×5 sesiones) | ✅ Sobreconsolidado → 57.5 |\n| Cruce poleas | 15→12.5→13.75kg | 13.75kg 3×10 | → Estabilizado |\n| Fondos máquina | 180→170kg | 170kg 3×10 ✅ | ✅ Disciplina de base lograda |\n| Overhead cuerda | 17.5→20→17.5kg | 17.5kg 3×12 | → Consolidado (20kg genera lumbar) |\n| Ext barra neutra | 22.5→25kg | 25kg 3×12 ✅ | ↑ Base confirmada |\n| Plate pinch | 10→15kg | 15kg 3×30s (mejorando) | ↑ Pese a capsulitis dedo |\n| Iso Zass empuje | 20kg 3×8s | 20kg 3×8s | → Estable |\n\n**Trayectoria press inclinado mancuernas:**\n- 18/05: 30kg S1 dolor TFCC real, cambio a barra 85kg (contamina muñeca)\n- 27/05: 28kg 8/8/9/8 — TFCC activo en handling, no en press\n- 01/06: 28kg 9/9/8/8 — muñeca PEOR QUE NUNCA (centro-muñeca, no cubital)\n- 09/06: **30kg 4×10** — muñeca controlada, explosión de fuerza\n\nLa fuerza siempre estuvo. El limitante era la muñeca, no el músculo. Cuando la muñeca dio tregua, el pecho se expresó.\n\n**Fondos — disciplina consolidada:**\n- 18/05: paralelas 30kg lastre (elección puntual)\n- 27/05: 180/180/170 (arranca por encima otra vez)\n- 01/06: 180/180→9/170 (reconoce que debería hacer 170)\n- 09/06: **170kg 2×10** (primera vez respetando base, gemelo limitó S3)\n- Base 170kg CONFIRMADA como real.\n\n### ESPALDA/HOMBRO\n\n| Ejercicio | Inicio (20/05) | Cierre (12/06) | Tendencia |\n|-----------|---------------|----------------|-----------|\n| Jalón neutro | 75kg 4×8 (5ª consecutiva) | 77.5kg 4×8 (3ª limpia) ✅ | ↑↑ Progresión textbook |\n| Remo polea | 75-77.5kg 3×8 | 75kg 3×8 | → 77.5 al límite técnico, vuelve a 75 |\n| Pull-over cuerda | 17.5→18.75→20kg | 20kg 3×12 ✅ | ↑ Confirmado |\n| Face pull | 25→26.25→25kg | 25kg 2×15 | → Subida sin consultar corregida |\n| Landmine press | 22.5-25kg | 22.5kg 3×10 ✅ | → 25kg: grip izq falla + zona D |\n| Elevaciones lat | 6.25-7.5kg | 6.25kg con isométrico ✅ | → 6.25+pausa > 7.5 sin pausa |\n| Scapular pull | PC 3×8 | PC 8/7/7 | → Fatiga acumulada |\n| Dead hang lastre | 90kg 3×40s | 90kg 40/30/35 | ⚠️ Irregular |\n| Farmer's carry | 24kg/mano 3×40m | 24kg 3×40m ✅ | → Recuperado |\n\n**Trayectoria jalón neutro — progresión modelo:**\n- 75kg 4×8 × 5 sesiones (sobreconsolidado desde Ciclo 2)\n- 77.5kg debut: 8/8/7/8 (28/05) — supera scheme 4×6\n- 77.5kg 2ª: 8/8/8/8 (03/06) — limpia\n- 77.5kg 3ª: 8/8/8/8 (12/06) — **CONSOLIDADO → 80kg Ciclo 4**\n\n**Dead hang — problema no resuelto:**\nSecuencia: 3×40s (20/05) → 3×40s (28/05) → 38/36/35 (03/06) → 40/30/35 (12/06)\nLas últimas 2 sesiones caen. Causa: 6 ejercicios de grip antes del dead hang. Descanso insuficiente post-scapular pull.\n\n### PIERNA/BÍC\n\n| Ejercicio | Inicio (23/05) | Cierre (10/06) | Tendencia |\n|-----------|---------------|----------------|-----------|\n| Prensa unilateral | 140kg 3×10 | 140kg 3×10 | → Sobreconsolidado (Pol quiere 150) |\n| Hip thrust | 80kg 2×15→3×15 | 80kg 3×15 ✅ | ✅ Consolidado |\n| Ext cuádriceps | 65kg (10/10/9) | 65kg 3×10 ✅ | ↑ S3 rota patrón de caída |\n| Curl femoral | 32.5kg 3×10 | 32.5kg 3×10 | → Última sesión ciclo (eliminado C4) |\n| Abductor | 65kg 3×15 | 65kg 3×15 | → Estable |\n| Wall sit | 10kg 5×45s (debut) | 15kg 5×50s ✅ | ↑↑ Progresión rápida |\n| Chin-up neutro | PC 3×8 → 90kg 3×8 | 92.5kg 7/7/6 ✅ | ↑↑ Milestone |\n| Curl inclinado | 16kg (9/8/6)→(10/8/7) | 14kg 3×10 ✅ | → Bajado por pre-fatiga chin-up |\n\n**Trayectoria chin-up neutro — de cero a ancla:**\n- Debut PC (23/05 post-fiesta): 3×8 — calibración\n- 90kg debut (16/05): 8/7/7\n- 90kg progresión: 8/8/7 (30/05) → **8/8/8** (06/06) — MILESTONE\n- 92.5kg debut (10/06): 7/7/6 — sólido dentro del rango\n\n---\n\n## 3. Señales de Alerta Recurrentes\n\n### Muñeca izquierda (TFCC) — EVOLUCIÓN MIXTA\n- **18/05:** 30kg mancuernas dolor TFCC real + déficit control izquierdo\n- **27/05:** 28kg TFCC en handling (dejar/coger mancuernas), no en press\n- **01/06:** **PEOR sesión** — dolor CENTRO muñeca/antebrazo (diferente al cubital). Pol quiere volver a barra.\n- **09/06:** 30kg 4×10 muñeca \"controlada\" — giro radical\n- **Hallazgo clave:** el handling (coger/dejar mancuernas del suelo) es el momento más crítico, no el press.\n- **Señal nueva (01/06):** dolor centro-muñeca distinto al TFCC cubital → resonancia programada 21/06.\n- **Prehab TFCC:** omitido 4/4 sesiones. Formato no funciona.\n\n### Trapecio derecho — ESTABLE POST-FISIO\n- Contador: 2/3 (sin señales nuevas en todo el ciclo)\n- La visita al fisio (06/05) fue claramente el punto de inflexión\n- Cue de depresión escapular activa funcionando\n\n### Hombro izquierdo — SEÑAL NUEVA\n- **03/06:** inestabilidad en landmine press (brazo izquierdo)\n- **09/06:** \"noto bastante hombro izquierdo\" post press inclinado\n- **12/06:** NO señala en landmine\n- **Hipótesis:** compensación por grip inestable izquierdo (cadena TFCC→grip→hombro)\n- **Acción:** monitorizar Ciclo 4. Si 3 sesiones → traumatólogo.\n\n### Lumbar — INTERMITENTE\n- **16/05:** hip thrust S1\n- **01/06:** overhead 20kg (peso sin consultar)\n- **10/06:** hip thrust leve\n- **Patrón:** no impide completar ejercicios. Aparece cuando overhead >17.5kg o post-running.\n\n### Bíceps izquierdo — DATO NUEVO\n- Se carga antes que el derecho en curl inclinado (3 sesiones consecutivas)\n- Posible conexión TFCC/muñeca → reclutamiento alterado\n\n### Capsulitis dedo izquierdo — ACTIVA\n- Golpe ~semana del 27/05. Traumatólogo 12/06: capsulitis confirmada, ventana 6 semanas.\n- Limita plate pinch mano izquierda\n\n---\n\n## 4. Técnica y Patrones\n\n**Mejorando:**\n- **Disciplina de base:** fondos pasó de arrancar a 180 siempre → respetar 170 las últimas 2 sesiones. Face pull corregido. Elevaciones de 7.5→6.25+isométrico.\n- **Press inclinado mancuernas:** de dolor TFCC a 30kg 4×10 en 4 sesiones.\n- **Doble progresión funcionando:** jalón (75→77.5) y chin-up (90→92.5) son ejemplos perfectos.\n- **Hip thrust consolidado:** 80kg 3×15 sin lumbar en 3 de 4 sesiones.\n\n**Sin consolidar:**\n- **Subidas sin consultar:** pull-over 20kg, overhead 20kg, face pull 26.25, fondos 180, elevaciones 7.5. El patrón persiste.\n- **Dead hang:** irregularidad crónica. Causa: fatiga acumulada de grip + descanso insuficiente.\n- **Prehab TFCC:** 4/4 omitido.\n\n---\n\n## 5. Decisiones para Ciclo 4\n\n| Ejercicio | Decisión | Motivo |\n|-----------|----------|--------|\n| Jalón neutro | **80kg 4×6→8** | 77.5kg 3× limpias → doble progresión |\n| Hammer Strength | **57.5kg 3×8** | 55kg × 5 sesiones sobreconsolidado |\n| Press incl. mancuernas | Mantener 30kg 4×6-8 | 4×10 fue milestone, consolidar a 4×8 |\n| Overhead cuerda | **18.75kg** | 17.5kg insuficiente estímulo, 20kg lumbar |\n| Fondos | Mantener 170kg | Disciplina consolidada |\n| Prensa unilateral | **150kg** (esperar resonancia 21/06) | Sobreconsolidada a 140kg desde inicio |\n| Curl femoral | **ELIMINADO → RDL bilateral** | Indicación fisio 16/06: más cadera, menos rodilla |\n| Wall sit | **15kg 5×45s** | Debut 15kg exitoso |\n| Chin-up neutro | Mantener 92.5kg, buscar 3×8 | Debut 7/7/6 sólido |\n| Dead hang | Reconsolidar 3×40s, mín 2 min descanso | Irregularidad crónica |\n| Pull-over | Mantener 20kg | Confirmado |\n| Ext barra neutra | Mantener 25kg | Confirmado |\n| Elevaciones lat | 6.25kg con isométrico | Mejor estímulo que 7.5 sin pausa |\n| Landmine | Mantener 22.5kg | Grip izq no aguanta 25 |\n| Prehab TFCC | Reestructurar formato | 4/4 omitido |\n| Resonancia muñeca | 21/06 — TFCC + centro-muñeca | Resultados condicionan prensa y press |\n| Hombro izquierdo | Monitorizar — si 3 sesiones → traumatólogo | 2 señales en Ciclo 3 |\n"
     }
   ],
   "cycle_meta": {
@@ -8971,9 +9208,9 @@
     "last_cycle_close": "2026-06-12",
     "report_rule": "4 Pecho/Trí + 4 Espalda/Hombro + 4 Pierna/Bíc desde last_cycle_close",
     "current_count": {
-      "Pecho/Trí": 3,
+      "Pecho/Trí": 4,
       "Espalda/Hombro": 3,
-      "Pierna/Bíc": 2
+      "Pierna/Bíc": 3
     }
   },
   "routines": {
@@ -9006,14 +9243,14 @@
               "name": "Press inclinado mancuernas",
               "scheme": "4×6-8",
               "sets": 4,
-              "base": 30,
+              "base": 32,
               "unit": "kg/mano",
               "rest": 180,
               "tips": [
                 "ANCLA de empuje",
                 "Muñequera izquierda SIEMPRE",
-                "✅ 30kg 4×10 tercera sobre scheme (29/06) — peso insuficiente",
-                "⚠️ Progresión a 32kg bloqueada hasta MRI"
+                "✅ 32kg confirmado (07/07) — 4×8 sin molestias. MRI pendiente: si resultado requiere cambio, rollback a 30.",
+                "Próxima sesión: buscar 4×8 limpio para consolidar antes de +2kg"
               ]
             },
             {
@@ -9025,7 +9262,7 @@
               "unit": "kg/lado",
               "rest": 120,
               "tips": [
-                "⚠️ 57.5kg 8/7/7 (29/06) — regresión por pre-fatiga press 4×10. Consolidar."
+                "⚠️ S3 inestable tercera sesión: 8/8/8 (22/06), 8/7/7 (29/06), 8/8/7 (07/07). Hipótesis: pre-fatiga mayor del press. Si S3 sigue a 7 → rollback 55."
               ]
             },
             {
@@ -9037,7 +9274,8 @@
               "unit": "kg",
               "rest": 90,
               "tips": [
-                "Siente el pecho, no hombro"
+                "Siente el pecho, no hombro",
+                "Margen real: puede llegar a 12 reps"
               ]
             }
           ]
@@ -9054,7 +9292,8 @@
               "unit": "kg",
               "rest": 120,
               "tips": [
-                "⚠️ Base 170kg — NO arrancar a 180"
+                "⚠️ Base 170kg — NO arrancar a 180",
+                "⚠️ Tensión femoral derecho S3 — segunda sesión (zona poplíteo/alza). Monitorizar."
               ]
             },
             {
@@ -9067,7 +9306,7 @@
               "rest": 90,
               "tips": [
                 "Codos cerrados",
-                "✅ 18.75kg TERCERA 3×12 (29/06) — probar 20kg próxima con vigilancia lumbar"
+                "✅ 18.75kg CUARTA 3×12 LIMPIA (07/07) — DEBUT 20kg próxima Pecho/Trí (Ciclo 5). Vigilar lumbar desde S1 (generó molestia 01/06)."
               ]
             },
             {
@@ -9163,7 +9402,7 @@
               "tips": [
                 "ANCLA tracción",
                 "Deprimir escápula ANTES",
-                "✅ 80kg CONSOLIDADO → 82.5kg 4×6 debut",
+                "✅ 80kg CONSOLIDADO → 82.5kg 4×6 DEBUT",
                 "Buscar consolidar 4×6 → luego 4×8"
               ]
             },
@@ -9320,7 +9559,7 @@
                 "Autorizado fisio 16/06",
                 "Straps + muñeca neutra",
                 "✅ ROM correcto: para en estiramiento isquio, NO en suelo",
-                "⚠️ 70kg debut — GRÁBATE de frente S1"
+                "⚠️ 70kg debut próxima sesión (domingo split cancelado) — GRÁBATE de frente S1"
               ]
             },
             {
