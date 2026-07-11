@@ -1,11 +1,202 @@
 {
   "sessions": [
     {
+      "id": "2026-07-11_pierna-bíc_1783768118049",
+      "date": "2026-07-11",
+      "weekday": "Sábado",
+      "type": "Pierna/Bíc",
+      "general_feeling": "Sensacion muy buena, ayer ayudo mucho descanso y nutrirme de buena vitamina….",
+      "blocks": [
+        {
+          "name": "PIERNA",
+          "exercises": [
+            {
+              "id": "rdl-bilateral",
+              "name": "Peso muerto rumano (RDL) bilateral",
+              "skipped": false,
+              "weight": "70kg",
+              "sets": "S1: 70kg×15 / S2: 70kg×15 / S3: 70kg×15",
+              "notes": "",
+              "setData": [
+                {
+                  "weight": 70,
+                  "reps": 15
+                },
+                {
+                  "weight": 70,
+                  "reps": 15
+                },
+                {
+                  "weight": 70,
+                  "reps": 15
+                }
+              ]
+            },
+            {
+              "id": "prensa-uni",
+              "name": "Prensa unilateral",
+              "skipped": false,
+              "weight": "150kg",
+              "sets": "S1: 150kg×10 / S2: 150kg×10 / S3: 150kg×10",
+              "notes": "",
+              "setData": [
+                {
+                  "weight": 150,
+                  "reps": 10
+                },
+                {
+                  "weight": 150,
+                  "reps": 10
+                },
+                {
+                  "weight": 150,
+                  "reps": 10
+                }
+              ]
+            },
+            {
+              "id": "hip-thrust",
+              "name": "Hip thrust barra libre",
+              "skipped": false,
+              "weight": "80kg",
+              "sets": "S1: 80kg×15 / S2: 80kg×15 / S3: 80kg×15",
+              "notes": "Noto tension en cuarto dedo del pie, el del lado del meñique en pie izquierdo ",
+              "setData": [
+                {
+                  "weight": 80,
+                  "reps": 15
+                },
+                {
+                  "weight": 80,
+                  "reps": 15
+                },
+                {
+                  "weight": 80,
+                  "reps": 15
+                }
+              ]
+            },
+            {
+              "id": "ext-cuad",
+              "name": "Extensión cuádriceps unilateral",
+              "skipped": false,
+              "weight": "65kg",
+              "sets": "S1: 65kg×10 / S2: 65kg×10 / S3: 65kg×10",
+              "notes": "3a bastante tensa",
+              "setData": [
+                {
+                  "weight": 65,
+                  "reps": 10
+                },
+                {
+                  "weight": 65,
+                  "reps": 10
+                },
+                {
+                  "weight": 65,
+                  "reps": 10
+                }
+              ]
+            },
+            {
+              "id": "abductor",
+              "name": "Abductor",
+              "skipped": false,
+              "weight": "65kg",
+              "sets": "S1: 65kg×15 / S2: 65kg×15 / S3: 65kg×15",
+              "notes": "",
+              "setData": [
+                {
+                  "weight": 65,
+                  "reps": 15
+                },
+                {
+                  "weight": 65,
+                  "reps": 15
+                },
+                {
+                  "weight": 65,
+                  "reps": 15
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "TENDÓN BILATERAL",
+          "exercises": [
+            {
+              "id": "wall-sit",
+              "name": "Wall sit con disco",
+              "skipped": true,
+              "weight": "—",
+              "sets": "Saltado",
+              "notes": "",
+              "setData": []
+            }
+          ]
+        },
+        {
+          "name": "BÍCEPS",
+          "exercises": [
+            {
+              "id": "chin-up-neutro",
+              "name": "Chin-up neutro lastrado",
+              "skipped": false,
+              "weight": "92.5kg",
+              "sets": "S1: 92.5kg×8 / S2: 92.5kg×8 / S3: 92.5kg×8",
+              "notes": "3a muerto en ultimas 2 repes",
+              "setData": [
+                {
+                  "weight": 92.5,
+                  "reps": 8
+                },
+                {
+                  "weight": 92.5,
+                  "reps": 8
+                },
+                {
+                  "weight": 92.5,
+                  "reps": 8
+                }
+              ]
+            },
+            {
+              "id": "curl-inclinado",
+              "name": "Curl inclinado mancuernas",
+              "skipped": false,
+              "weight": "14kg/mano",
+              "sets": "S1: 14kg/mano×10 / S2: 14kg/mano×10 / S3: 14kg/mano×9",
+              "notes": "Llego al fallo en 2a serie ",
+              "setData": [
+                {
+                  "weight": 14,
+                  "reps": 10
+                },
+                {
+                  "weight": 14,
+                  "reps": 10
+                },
+                {
+                  "weight": 14,
+                  "reps": 9
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "deviations": [],
+      "patterns": [],
+      "decisions": [],
+      "raw_notes": ""
+    },
+    {
       "id": "2026-07-10_espalda-hombro_1783695315645",
       "date": "2026-07-10",
       "weekday": "Viernes",
       "type": "Espalda/Hombro",
-      "general_feeling": "Llevo todo el dia como con sensación de incubar algo tipo fiebre o similar. Tengo como cansancio y noto inflamado el gangleo del cuello..,",
+      "general_feeling": "Cuarta Espalda/Hombro Ciclo 4 — CIERRE. Sesión bajo cuadro subclínico: sensación de fiebre incipiente, cansancio generalizado, ganglio cuello inflamado. Jalón 82.5kg debut 4×8 (plan era 4×6) — mismo patrón de siempre. Hombro y trapecio limpios. Dead hang S3 colapsa a 30s (manos se resbalan). Antebrazos muertos al acabar farmer's.",
       "blocks": [
         {
           "name": "ESPALDA",
@@ -217,10 +408,30 @@
           ]
         }
       ],
-      "deviations": [],
-      "patterns": [],
-      "decisions": [],
-      "raw_notes": ""
+      "deviations": [
+        "Jalón 82.5kg 4×8 vs plan 4×6 — DEBUT excede scheme. S4 tensa pero completada. Mismo patrón: debut siempre supera el scheme planificado.",
+        "Contexto enfermedad: sensación de fiebre incipiente, cansancio generalizado, ganglio cuello inflamado. Explica las tensiones generalizadas en toda la sesión.",
+        "Todos los ejercicios espalda y hombro en base. Orden hombro correcto (face pull primero).",
+        "Landmine 22.5kg 3×10 — sin notas = limpio.",
+        "Dead hang 90kg 40/40/30 — S3 colapsa a 30s (manos se resbalan). Patrón crónico.",
+        "Farmer's carry 3×40m completo — antebrazos muertos al acabar."
+      ],
+      "patterns": [
+        "⚠️ CONTEXTO ENFERMEDAD — sesión realizada bajo cuadro subclínico (ganglio cervical inflamado + cansancio + posible fiebre incipiente). Las tensiones generalizadas en espalda, remo, pull-over, elevaciones son consistentes con este estado. No son señal de fatiga de entrenamiento.",
+        "✅ JALÓN 82.5kg DEBUT 4×8 — plan era 4×6. S4 tensa pero completada bajo cuadro febril. Mismo patrón histórico: debut siempre excede scheme. Progresión textbook: 80kg (3× limpias 4×8) → 82.5 debut 4×8. Bajo condiciones normales habría sido más limpio.",
+        "✅ ORDEN HOMBRO CORRECTO — face pull primero. Cuarta sesión consecutiva respetando el orden.",
+        "✅ ZONA DERECHA Y TRAPECIO LIMPIOS — sin señales en ningún ejercicio. Contador sigue 2/3. Landmine sin notas = ambos lados limpios.",
+        "✅ HOMBRO IZQUIERDO NO SEÑALA — Ciclo 4 completo sin señal. La hipótesis de conexión TFCC→hombro se ha disipado.",
+        "⚠️ DEAD HANG S3 COLAPSA — 40/40/30. Manos se resbalan = grip falla antes que fuerza. Patrón crónico: S1-S2 a target, S3 siempre cae. La cadena previa (jalón→remo→pull-over→landmine→scapular = 5 ejercicios de grip) llega demasiado fatigada a S3. En Ciclo 5: valorar tiza o reordenar bloque.",
+        "✅ CICLO 4 ESPALDA/HOMBRO CERRADO — 4ª sesión completada. Cuenta: 4-4-3. Falta 1 Pierna/Bíc para cierre del Ciclo 4 y generación del informe."
+      ],
+      "decisions": [
+        "Jalón 82.5kg: debut 4×8 bajo cuadro febril = sólido. En Ciclo 5 consolidar 2-3 sesiones a 4×8 limpias → 85kg 4×6.",
+        "Salud: si el cuadro (ganglio, fiebre, cansancio) sigue activo cuando toque Pierna/Bíc → APLAZAR. No tiene sentido hacer RDL debut a 70kg con infección incipiente.",
+        "Dead hang: en Ciclo 5 probar tiza en S3, o mover dead hang antes de farmer's carry para darle más grip fresco.",
+        "CICLO 4: 4-4-3. Falta Pierna/Bíc (sáb/dom). Tras ella → generar Informe Ciclo 4."
+      ],
+      "raw_notes": "4ª Espalda/Hombro C4 — CIERRE. Jalón 82.5 debut 4×8 bajo cuadro febril. Hombro y trapecio limpios. Dead hang 40/40/30. Farmer antebrazos muertos."
     },
     {
       "id": "2026-07-07_pecho-trí_1783442936958",
@@ -9163,13 +9374,6 @@
   ],
   "planning": [
     {
-      "id": "plan-ciclo4-w5-espalda",
-      "date": "2026-07-10",
-      "weekday": "Viernes",
-      "type": "Espalda/Hombro",
-      "notes": "Ciclo 4 sesión 4 (ÚLTIMA). Jalón 82.5kg DEBUT 4×6. Dead hang enforce 2 min descanso."
-    },
-    {
       "id": "plan-ciclo4-final-pierna",
       "date": "2026-07-11",
       "weekday": "Sábado/Domingo",
@@ -9209,7 +9413,7 @@
     "report_rule": "4 Pecho/Trí + 4 Espalda/Hombro + 4 Pierna/Bíc desde last_cycle_close",
     "current_count": {
       "Pecho/Trí": 4,
-      "Espalda/Hombro": 3,
+      "Espalda/Hombro": 4,
       "Pierna/Bíc": 3
     }
   },
@@ -9402,8 +9606,8 @@
               "tips": [
                 "ANCLA tracción",
                 "Deprimir escápula ANTES",
-                "✅ 80kg CONSOLIDADO → 82.5kg 4×6 DEBUT",
-                "Buscar consolidar 4×6 → luego 4×8"
+                "✅ 82.5kg DEBUT 4×8 (10/07) — mismo patrón, excede scheme. Consolidar 2-3 sesiones → 85kg 4×6",
+                "Buscar S4 sin tensión antes de subir"
               ]
             },
             {
