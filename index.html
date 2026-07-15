@@ -882,18 +882,32 @@ function renderChart(){
 // ─── DATA / IO ───────────────────────────────────────────────────────────────
 function doClaudeExport(){
   const GYM=['Pecho/Trí','Espalda/Hombro','Pierna/Bíc'];
-  // 1. Sesiones nuevas sin analizar (deviations vacío)
-  const newSess=D.sessions.filter(s=>GYM.includes(s.type)&&(!s.deviations||s.deviations.length===0));
-  // 2. Últimas 3 sesiones ya analizadas de cada tipo (contexto)
+  const lastClose=(D.cycle_meta&&D.cycle_meta.last_cycle_close)||'2000-01-01';
+  // 1. Sesiones nuevas: sin analizar Y posteriores al cierre del último ciclo
+  const newSess=D.sessions.filter(s=>
+    GYM.includes(s.type)&&
+    s.date>=lastClose&&
+    (!s.deviations||s.deviations.length===0)
+  );
+  // 2. Últimas 3 sesiones analizadas de cada tipo (solo campos de análisis, sin bloques/sets)
+  const slimSess=s=>({
+    id:s.id,date:s.date,weekday:s.weekday,type:s.type,
+    general_feeling:s.general_feeling||'',
+    deviations:s.deviations||[],
+    patterns:s.patterns||[],
+    decisions:s.decisions||[],
+    raw_notes:s.raw_notes||''
+  });
   const ctx=[];
   for(const t of GYM){
     const typed=D.sessions
       .filter(s=>s.type===t&&s.deviations&&s.deviations.length>0)
       .sort((a,b)=>b.date.localeCompare(a.date))
-      .slice(0,3);
+      .slice(0,3)
+      .map(slimSess);
     ctx.push(...typed);
   }
-  // Merge sin duplicados, nuevas primero
+  // Merge sin duplicados, nuevas (completas) primero, contexto (slim) después
   const seen=new Set(newSess.map(s=>s.id));
   const merged=[...newSess,...ctx.filter(s=>!seen.has(s.id))];
   merged.sort((a,b)=>b.date.localeCompare(a.date));
