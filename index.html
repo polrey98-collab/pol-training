@@ -256,9 +256,8 @@
     <div id="io-top"><div class="h1">Datos</div><div id="version-lbl"></div></div>
     <div class="io-sec">
       <div class="io-title">↑ Exportar para Claude</div>
-      <div class="io-desc">Copia el JSON completo (sesiones + rutinas) y pégalo en Claude.</div>
-      <button class="btn btn-p" onclick="doExport()">Copiar JSON al portapapeles</button>
-      <textarea class="io-ta" id="export-ta" readonly placeholder="El JSON aparecerá aquí..."></textarea>
+      <div class="io-desc">Descarga el archivo optimizado: sesiones nuevas + últimas 3 de cada tipo + último informe. Adjúntalo directamente en el chat de Claude — no hace falta pegar texto.</div>
+      <button class="btn btn-p" onclick="doClaudeExport()">⬇ Descargar para Claude</button>
     </div>
     <div class="io-sec">
       <div class="io-title">⇪ Compartir / Backup</div>
@@ -304,8 +303,8 @@
   <div id="toast"></div>
 </div>
 <script>
-const APP_VERSION='3.4';
-const APP_DATE='24 junio 2026';
+const APP_VERSION='3.5';
+const APP_DATE='15 julio 2026';
 const SK='pol-v2',ASK='pol-active-v2',RK='pol-routines-v2',GHK='pol-gh-token',GHSK='pol-gh-sha',GHLAST='pol-gh-last-ok',CIRC=2*Math.PI*80;
 const COLORS={'Pecho/Trí':'#dc2626','Espalda/Hombro':'#2563eb','Pierna/Bíc':'#16a34a','Complementario':'#64748b','Running':'#ea580c','Pádel':'#9333ea','Escalada':'#ca8a04','Otro':'#6b7280'};
 const DAYS=['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'];
@@ -881,6 +880,50 @@ function renderChart(){
 }
 
 // ─── DATA / IO ───────────────────────────────────────────────────────────────
+function doClaudeExport(){
+  const GYM=['Pecho/Trí','Espalda/Hombro','Pierna/Bíc'];
+  // 1. Sesiones nuevas sin analizar (deviations vacío)
+  const newSess=D.sessions.filter(s=>GYM.includes(s.type)&&(!s.deviations||s.deviations.length===0));
+  // 2. Últimas 3 sesiones ya analizadas de cada tipo (contexto)
+  const ctx=[];
+  for(const t of GYM){
+    const typed=D.sessions
+      .filter(s=>s.type===t&&s.deviations&&s.deviations.length>0)
+      .sort((a,b)=>b.date.localeCompare(a.date))
+      .slice(0,3);
+    ctx.push(...typed);
+  }
+  // Merge sin duplicados, nuevas primero
+  const seen=new Set(newSess.map(s=>s.id));
+  const merged=[...newSess,...ctx.filter(s=>!seen.has(s.id))];
+  merged.sort((a,b)=>b.date.localeCompare(a.date));
+  // 3. Último informe de ciclo
+  const lastReport=D.reports&&D.reports.length?[D.reports[D.reports.length-1]]:[];
+  // 4. Construir export
+  const out={sessions:merged,cycle_meta:D.cycle_meta||{},reports:lastReport};
+  const json=JSON.stringify(out,null,2);
+  const filename=`claude-export-${today()}.json`;
+  // Descargar como archivo
+  try{
+    const blob=new Blob([json],{type:'application/json'});
+    const url=URL.createObjectURL(blob);
+    const a=document.createElement('a');a.href=url;a.download=filename;
+    document.body.appendChild(a);a.click();document.body.removeChild(a);
+    setTimeout(()=>URL.revokeObjectURL(url),1000);
+    toast(`✓ ${newSess.length} nueva(s) · ${merged.length} sesiones · listo para adjuntar`);
+  }catch(e){
+    // Fallback iOS: share sheet
+    if(navigator.share){
+      try{
+        const file=new File([json],filename,{type:'application/json'});
+        if(navigator.canShare&&navigator.canShare({files:[file]})){
+          navigator.share({files:[file],title:'Claude Export'}).catch(()=>{});return;
+        }
+      }catch(e2){}
+    }
+    toast('⚠ No se pudo descargar — usa Compartir / Backup');
+  }
+}
 function renderIO(){
   document.getElementById('version-lbl').textContent=`v${APP_VERSION} · ${APP_DATE}`;
   const info=document.getElementById('routines-info');
