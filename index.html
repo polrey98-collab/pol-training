@@ -882,7 +882,7 @@ function renderChart(){
 // ─── DATA / IO ───────────────────────────────────────────────────────────────
 function doClaudeExport(){
   const GYM=['Pecho/Trí','Espalda/Hombro','Pierna/Bíc'];
-  const lastClose=(D.cycle_meta&&D.cycle_meta.last_cycle_close)||'2000-01-01';
+  const d60=new Date();d60.setDate(d60.getDate()-60);const fb60=d60.toISOString().slice(0,10);const lr=D.reports&&D.reports.length?D.reports[D.reports.length-1]:null;const lastClose=(D.cycle_meta&&D.cycle_meta.last_cycle_close)||(lr&&lr.period_end)||fb60;
   // 1. Sesiones nuevas: sin analizar Y posteriores al cierre del último ciclo
   const newSess=D.sessions.filter(s=>
     GYM.includes(s.type)&&
