@@ -1,6 +1,228 @@
 {
   "sessions": [
     {
+      "id": "2026-07-15_espalda-hombro_1784133966613",
+      "date": "2026-07-15",
+      "weekday": "Miércoles",
+      "type": "Espalda/Hombro",
+      "general_feeling": "Sin valoración",
+      "blocks": [
+        {
+          "name": "ESPALDA",
+          "exercises": [
+            {
+              "id": "jalon-neutro",
+              "name": "Jalón al pecho neutro",
+              "skipped": false,
+              "weight": "82.5kg",
+              "sets": "S1: 82.5kg×8 / S2: 82.5kg×8 / S3: 82.5kg×8 / S4: 82.5kg×8",
+              "notes": "",
+              "setData": [
+                {
+                  "weight": 82.5,
+                  "reps": 8
+                },
+                {
+                  "weight": 82.5,
+                  "reps": 8
+                },
+                {
+                  "weight": 82.5,
+                  "reps": 8
+                },
+                {
+                  "weight": 82.5,
+                  "reps": 8
+                }
+              ]
+            },
+            {
+              "id": "remo-polea",
+              "name": "Remo polea sentado",
+              "skipped": false,
+              "weight": "75kg",
+              "sets": "S1: 75kg×8 / S2: 75kg×8 / S3: 75kg×8",
+              "notes": "",
+              "setData": [
+                {
+                  "weight": 75,
+                  "reps": 8
+                },
+                {
+                  "weight": 75,
+                  "reps": 8
+                },
+                {
+                  "weight": 75,
+                  "reps": 8
+                }
+              ]
+            },
+            {
+              "id": "pullover-cuerda",
+              "name": "Pull-over cuerda",
+              "skipped": false,
+              "weight": "20kg",
+              "sets": "S1: 20kg×12 / S2: 20kg×12 / S3: 20kg×12",
+              "notes": "",
+              "setData": [
+                {
+                  "weight": 20,
+                  "reps": 12
+                },
+                {
+                  "weight": 20,
+                  "reps": 12
+                },
+                {
+                  "weight": 20,
+                  "reps": 12
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "HOMBRO",
+          "exercises": [
+            {
+              "id": "face-pull",
+              "name": "Face pull cuerda",
+              "skipped": false,
+              "weight": "25kg",
+              "sets": "S1: 25kg×15 / S2: 25kg×15",
+              "notes": "",
+              "setData": [
+                {
+                  "weight": 25,
+                  "reps": 15
+                },
+                {
+                  "weight": 25,
+                  "reps": 15
+                }
+              ]
+            },
+            {
+              "id": "landmine",
+              "name": "Landmine press unilateral",
+              "skipped": false,
+              "weight": "22.5kg",
+              "sets": "S1: 22.5kg×10 / S2: 22.5kg×10 / S3: 22.5kg×10",
+              "notes": "",
+              "setData": [
+                {
+                  "weight": 22.5,
+                  "reps": 10
+                },
+                {
+                  "weight": 22.5,
+                  "reps": 10
+                },
+                {
+                  "weight": 22.5,
+                  "reps": 10
+                }
+              ]
+            },
+            {
+              "id": "elev-lat",
+              "name": "Elevaciones laterales",
+              "skipped": false,
+              "weight": "7.5kg",
+              "sets": "S1: 7.5kg×15 / S2: 7.5kg×15",
+              "notes": "Muy tensos, creo que mejor 6,25kg",
+              "setData": [
+                {
+                  "weight": 7.5,
+                  "reps": 15
+                },
+                {
+                  "weight": 7.5,
+                  "reps": 15
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "TENDÓN + AGARRE",
+          "exercises": [
+            {
+              "id": "scapular-pull",
+              "name": "Scapular pull",
+              "skipped": false,
+              "weight": "80kg",
+              "sets": "S1: 80kg×8 / S2: 80kg×8 / S3: 80kg×8",
+              "notes": "",
+              "setData": [
+                {
+                  "weight": 80,
+                  "reps": 8
+                },
+                {
+                  "weight": 80,
+                  "reps": 8
+                },
+                {
+                  "weight": 80,
+                  "reps": 8
+                }
+              ]
+            },
+            {
+              "id": "dead-hang-lastre",
+              "name": "Dead hang con lastre",
+              "skipped": false,
+              "weight": "90kg",
+              "sets": "S1: 90kg×40 / S2: 90kg×40 / S3: 90kg×40",
+              "notes": "",
+              "setData": [
+                {
+                  "weight": 90,
+                  "reps": 40
+                },
+                {
+                  "weight": 90,
+                  "reps": 40
+                },
+                {
+                  "weight": 90,
+                  "reps": 40
+                }
+              ]
+            },
+            {
+              "id": "farmer-carry",
+              "name": "Farmer's carry",
+              "skipped": false,
+              "weight": "24kg/mano",
+              "sets": "S1: 24kg/mano×40 / S2: 24kg/mano×40 / S3: 24kg/mano×40",
+              "notes": "",
+              "setData": [
+                {
+                  "weight": 24,
+                  "reps": 40
+                },
+                {
+                  "weight": 24,
+                  "reps": 40
+                },
+                {
+                  "weight": 24,
+                  "reps": 40
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "deviations": [],
+      "patterns": [],
+      "decisions": [],
+      "raw_notes": ""
+    },
+    {
       "id": "2026-07-14_pecho-trí_1784047696799",
       "date": "2026-07-14",
       "weekday": "Martes",
@@ -212,10 +434,33 @@
           ]
         }
       ],
-      "deviations": [],
-      "patterns": [],
-      "decisions": [],
-      "raw_notes": ""
+      "deviations": [
+        "Press 32kg 4×8 — sin notas en ninguna serie. Primera Pecho/Trí de Ciclo 5. Más limpio que el debut de 32kg en C4 (S3-S4 llegaban tensas con nota).",
+        "Hammer 57.5kg 8/8/8 — S3 'al fallo fallo' pero completada. Registrada como 8. Historial C4: 8/8/8 → 8/7/7 → 8/8/7 → 8/8/7. Hoy primera 3×8 en dos meses.",
+        "Cruce poleas 13.75kg 12/12/10 — S1-S2 a 12 reps (techo del rango 3×10-12). Primera vez que supera 10 consistentemente.",
+        "Fondos 170kg 3×10 — sin notas. Sexta sesión respetando base.",
+        "Overhead 20kg DEBUT — 12/12/10. S3 cae a 10. Sin lumbar (vs 01/06 que generó molestia). Debut exitoso.",
+        "Ext barra neutra 25kg 12/12/10 — S3 cae a 10. Patrón de caída final por fatiga acumulada de tríceps.",
+        "Prehab TFCC: SALTADO. Ciclo 5 S1."
+      ],
+      "patterns": [
+        "✅ PRESS 32kg 4×8 PRIMERA LIMPIA COMPLETA SIN NOTAS — en C4 debut (07/07) ya salió 4×8 pero S3-S4 llegaban tensas con notas. Hoy cero comentarios. La base 32kg está claramente consolidada. MRI sigue siendo el backstop para +2kg.",
+        "✅ HAMMER 57.5kg 3×8 — primera vez que completa 3×8 en dos meses. S3 al límite pero completada. Hipótesis de pre-fatiga del press sigue válida, pero hoy aguantó. Necesita una sesión más para confirmar si el patrón S3<8 está resuelto o fue puntual.",
+        "✅ OVERHEAD 20kg DEBUT LIMPIO — 12/12/10. S3 cae a 10 (rango mínimo). Sin lumbar — la señal del 01/06 a 20kg era por fatiga + carga acumulada. Con 18.75kg consolidado previo, el debut ha sido más sólido. Consolidar 3×12.",
+        "✅ FONDOS 170kg 3×10 SIN NOTAS — sexta sesión limpia. Definitivamente consolidado. Sin femoral derecho esta sesión (apareció en C4 en dos sesiones).",
+        "✅ CRUCE POLEAS 13.75kg — S1-S2 a 12 reps. Zona de progresión real. Cuando 3×12 → valorar subida.",
+        "⚠️ EXT BARRA NEUTRA Y OVERHEAD S3 A 10 — ambos ejercicios de tríceps caen en S3. Es fatiga acumulada de tríceps (press 4×8 + fondos 3×10 + overhead) llegando al tercer ejercicio de aislamiento. No es regresión de fuerza.",
+        "⚠️ PREHAB TFCC SALTADO — C5 S1. Sin comentarios adicionales."
+      ],
+      "decisions": [
+        "Press 32kg: base confirmada. Si próxima sesión sale 4×8 limpia también → se puede hablar de 34kg.",
+        "Overhead 20kg: debut exitoso. Consolidar 3×12 en S1-S2, buscar S3 a 12 también.",
+        "Hammer 57.5kg: S3 al límite pero completa. Una sesión más — si vuelve a 3×8 → base confirmada; si cae a 7 → rollback 55kg.",
+        "Cruce poleas: S1-S2 a 12 reps. Cuando 3×12 limpio → 15kg (con prudencia por dedo).",
+        "Fondos: sin femoral derecho hoy. Monitorizar — apareció en C4 en sesiones 2ª y 4ª.",
+        "CICLO 5: 1-0-0."
+      ],
+      "raw_notes": "C5 S1 Pecho/Trí. Press 32kg 4×8 limpio sin notas. Hammer 3×8 S3 al límite. Overhead 20kg debut 12/12/10 sin lumbar. Cruce 12/12/10. Fondos sin femoral. Prehab saltado."
     },
     {
       "id": "2026-07-11_pierna-bíc_1783768118049",
@@ -9619,25 +9864,18 @@
   ],
   "planning": [
     {
-      "id": "plan-c5-pecho-1",
-      "date": "2026-07-14",
-      "weekday": "Martes",
-      "type": "Pecho/Trí",
-      "notes": "Ciclo 5 S1. OVERHEAD 20kg DEBUT (vigilar lumbar desde S1 — si aparece volver a 18.75). Press 32kg 4×6-8. Hammer 57.5kg."
-    },
-    {
       "id": "plan-c5-espalda-1",
       "date": "2026-07-16",
       "weekday": "Miércoles",
       "type": "Espalda/Hombro",
-      "notes": "Ciclo 5 S1. Jalón 82.5kg 2ª sesión — consolidar. Dead hang: probar tiza en S3."
+      "notes": "Ciclo 5 S1. Jalón 82.5kg 2ª sesión — consolidar 4×8 limpia. Dead hang: probar tiza en S3."
     },
     {
       "id": "plan-c5-pierna-1",
       "date": "2026-07-19",
       "weekday": "Sábado",
       "type": "Pierna/Bíc",
-      "notes": "Ciclo 5 S1. RDL 70kg 3×8-10 — TOPE en 10. Grabar S1 de frente para asimetría barra. Chin-up 95kg debut. Wall sit ANTES de bíceps si sigue saltándose."
+      "notes": "Ciclo 5 S1. RDL 80kg debut 3×8-10 — TOPE en 10. Grabar S1 de frente. Chin-up 95kg debut. Wall sit 20kg ANTES de bíceps."
     }
   ],
   "reports": [
@@ -9679,7 +9917,7 @@
     "last_cycle_close": "2026-07-11",
     "report_rule": "4 Pecho/Trí + 4 Espalda/Hombro + 4 Pierna/Bíc desde last_cycle_close",
     "current_count": {
-      "Pecho/Trí": 0,
+      "Pecho/Trí": 1,
       "Espalda/Hombro": 0,
       "Pierna/Bíc": 0
     }
