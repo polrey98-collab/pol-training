@@ -1,11 +1,137 @@
 {
   "sessions": [
     {
+      "id": "2026-07-17_pierna-bíc_1784301735535",
+      "date": "2026-07-17",
+      "weekday": "Viernes",
+      "type": "Pierna/Bíc",
+      "general_feeling": "Sin valoración",
+      "blocks": [
+        {
+          "name": "PIERNA",
+          "exercises": [
+            {
+              "id": "rdl-bilateral",
+              "name": "Peso muerto rumano (RDL) bilateral",
+              "skipped": true,
+              "weight": "—",
+              "sets": "Saltado",
+              "notes": "",
+              "setData": []
+            },
+            {
+              "id": "prensa-uni",
+              "name": "Prensa unilateral",
+              "skipped": true,
+              "weight": "—",
+              "sets": "Saltado",
+              "notes": "",
+              "setData": []
+            },
+            {
+              "id": "hip-thrust",
+              "name": "Hip thrust barra libre",
+              "skipped": true,
+              "weight": "—",
+              "sets": "Saltado",
+              "notes": "",
+              "setData": []
+            },
+            {
+              "id": "ext-cuad",
+              "name": "Extensión cuádriceps unilateral",
+              "skipped": true,
+              "weight": "—",
+              "sets": "Saltado",
+              "notes": "",
+              "setData": []
+            },
+            {
+              "id": "abductor",
+              "name": "Abductor",
+              "skipped": true,
+              "weight": "—",
+              "sets": "Saltado",
+              "notes": "",
+              "setData": []
+            }
+          ]
+        },
+        {
+          "name": "TENDÓN BILATERAL",
+          "exercises": [
+            {
+              "id": "wall-sit",
+              "name": "Wall sit con disco",
+              "skipped": true,
+              "weight": "—",
+              "sets": "Saltado",
+              "notes": "",
+              "setData": []
+            }
+          ]
+        },
+        {
+          "name": "BÍCEPS",
+          "exercises": [
+            {
+              "id": "chin-up-neutro",
+              "name": "Chin-up neutro lastrado",
+              "skipped": false,
+              "weight": "95kg",
+              "sets": "S1: 95kg×8 / S2: 95kg×8 / S3: 95kg×7",
+              "notes": "",
+              "setData": [
+                {
+                  "weight": 95,
+                  "reps": 8
+                },
+                {
+                  "weight": 95,
+                  "reps": 8
+                },
+                {
+                  "weight": 95,
+                  "reps": 7
+                }
+              ]
+            },
+            {
+              "id": "curl-inclinado",
+              "name": "Curl inclinado mancuernas",
+              "skipped": false,
+              "weight": "14kg/mano",
+              "sets": "S1: 14kg/mano×10 / S2: 14kg/mano×10 / S3: 14kg/mano×8",
+              "notes": "",
+              "setData": [
+                {
+                  "weight": 14,
+                  "reps": 10
+                },
+                {
+                  "weight": 14,
+                  "reps": 10
+                },
+                {
+                  "weight": 14,
+                  "reps": 8
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "deviations": [],
+      "patterns": [],
+      "decisions": [],
+      "raw_notes": ""
+    },
+    {
       "id": "2026-07-15_espalda-hombro_1784133966613",
       "date": "2026-07-15",
       "weekday": "Miércoles",
       "type": "Espalda/Hombro",
-      "general_feeling": "Sin valoración",
+      "general_feeling": "C5 S1 Espalda/Hombro. Sesión limpia sin contexto adverso. Jalón 82.5 segunda 4×8 sin notas. Dead hang 3×40 completo por primera vez en el proyecto. Elevaciones de nuevo a 7.5 — autodiagnosis correcta al acabar.",
       "blocks": [
         {
           "name": "ESPALDA",
@@ -217,10 +343,28 @@
           ]
         }
       ],
-      "deviations": [],
-      "patterns": [],
-      "decisions": [],
-      "raw_notes": ""
+      "deviations": [
+        "Jalón 82.5kg 4×8 — segunda sesión a este peso. Primera (10/07) bajo cuadro febril con S4 tensa. Hoy sin notas en ninguna serie.",
+        "Elevaciones 7.5kg 2×15 vs base 6.25kg — subida espontánea. 'Muy tensos.' Pol concluye él mismo que mejor 6.25kg.",
+        "Dead hang 90kg 3×40s — PRIMERA VEZ 3×40s COMPLETO con lastre. Histórico C4: 40/38/20 (23/06) → 45/40/30 (30/06) → 40/40/30 (10/07) → HOY 40/40/40.",
+        "Remo, pull-over, face pull, landmine, scapular pull, farmer's: todo en base sin notas."
+      ],
+      "patterns": [
+        "✅ JALÓN 82.5kg SEGUNDA 4×8 — primera fue bajo fiebre. Hoy fresco y sin tensiones. Una sesión más así → conversación 85kg 4×6.",
+        "✅ DEAD HANG 90kg 3×40s COMPLETO — PRIMERA VEZ con lastre. Sin nota de tiza. Si sin tiza: mejora real de grip. Si con tiza: nuevo protocolo. Pendiente confirmación de Pol.",
+        "✅ ORDEN HOMBRO CORRECTO — face pull primero. Cuarta consecutiva.",
+        "✅ LANDMINE SIN NOTAS — ambos lados limpios. Patrón izquierdo = derecho (desde 30/06) se mantiene.",
+        "✅ TRAPECIO Y ZONA DERECHA LIMPIOS — contador sigue 2/3.",
+        "⚠️ ELEVACIONES 7.5kg PATRÓN RECURRENTE — episodio repetido (18/06, hoy). Pol lo autodiagnostica pero hay que cortar: no intentarlo en el resto de C5. 6.25 con isométrico = mejor estímulo.",
+        "✅ FARMER'S 3×40m SIN NOTA — vs antebrazos muertos el 10/07 bajo fiebre. Es el contexto, no regresión de grip."
+      ],
+      "decisions": [
+        "Jalón 82.5kg: dos sesiones (una bajo fiebre, una limpia). Necesita tercera 4×8 limpia → entonces 85kg 4×6.",
+        "Elevaciones: 6.25kg BASE DEFINITIVA Ciclo 5. No intentar 7.5.",
+        "Dead hang 3×40 completo: ¿tiza o sin tiza? Confirmar con Pol para fijar protocolo.",
+        "CICLO 5: 1-1-0."
+      ],
+      "raw_notes": "C5 S1 Espalda/Hombro. Jalón 82.5 segunda 4×8 limpia. Dead hang 3×40 primera vez completo. Elevaciones 7.5 otra vez (mejor 6.25). Landmine, remo, farmer's sin notas."
     },
     {
       "id": "2026-07-14_pecho-trí_1784047696799",
@@ -9918,7 +10062,7 @@
     "report_rule": "4 Pecho/Trí + 4 Espalda/Hombro + 4 Pierna/Bíc desde last_cycle_close",
     "current_count": {
       "Pecho/Trí": 1,
-      "Espalda/Hombro": 0,
+      "Espalda/Hombro": 1,
       "Pierna/Bíc": 0
     }
   },
