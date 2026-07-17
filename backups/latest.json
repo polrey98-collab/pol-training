@@ -1,6 +1,163 @@
 {
   "sessions": [
     {
+      "id": "2026-07-17_complementario_1784303367305",
+      "date": "2026-07-17",
+      "weekday": "Viernes",
+      "type": "Complementario",
+      "general_feeling": "Sin valoración",
+      "blocks": [
+        {
+          "name": "OVERCOMING — elige 2",
+          "exercises": [
+            {
+              "id": "iso-empuje-rack",
+              "name": "Isométrico empuje rack",
+              "skipped": true,
+              "weight": "—",
+              "sets": "Saltado",
+              "notes": "",
+              "setData": []
+            },
+            {
+              "id": "iso-traccion-barra",
+              "name": "Isométrico tracción barra fija",
+              "skipped": true,
+              "weight": "—",
+              "sets": "Saltado",
+              "notes": "",
+              "setData": []
+            },
+            {
+              "id": "iso-toalla",
+              "name": "Isométrico unilateral toalla",
+              "skipped": true,
+              "weight": "—",
+              "sets": "Saltado",
+              "notes": "",
+              "setData": []
+            }
+          ]
+        },
+        {
+          "name": "YIELDING / TENDÓN — elige 2",
+          "exercises": [
+            {
+              "id": "dead-hang-max",
+              "name": "Dead hang máximo (sin lastre)",
+              "skipped": true,
+              "weight": "—",
+              "sets": "Saltado",
+              "notes": "",
+              "setData": []
+            },
+            {
+              "id": "wall-sit-uni",
+              "name": "Wall sit unilateral progresivo",
+              "skipped": true,
+              "weight": "—",
+              "sets": "Saltado",
+              "notes": "",
+              "setData": []
+            },
+            {
+              "id": "plate-pinch-esc",
+              "name": "Plate pinch escalado",
+              "skipped": true,
+              "weight": "—",
+              "sets": "Saltado",
+              "notes": "",
+              "setData": []
+            }
+          ]
+        },
+        {
+          "name": "CORE — elige 2-3",
+          "exercises": [
+            {
+              "id": "dead-bug-prog",
+              "name": "Dead bug progresivo",
+              "skipped": false,
+              "weight": "15kg",
+              "sets": "S1: 15kg×8 / S2: 15kg×8 / S3: 15kg×8",
+              "notes": "",
+              "setData": [
+                {
+                  "weight": 15,
+                  "reps": 8
+                },
+                {
+                  "weight": 15,
+                  "reps": 8
+                },
+                {
+                  "weight": 15,
+                  "reps": 8
+                }
+              ]
+            },
+            {
+              "id": "pallof-press",
+              "name": "Pallof press",
+              "skipped": false,
+              "weight": "17.5kg",
+              "sets": "S1: 17.5kg×10 / S2: 17.5kg×10 / S3: 17.5kg×10",
+              "notes": "",
+              "setData": [
+                {
+                  "weight": 17.5,
+                  "reps": 10
+                },
+                {
+                  "weight": 17.5,
+                  "reps": 10
+                },
+                {
+                  "weight": 17.5,
+                  "reps": 10
+                }
+              ]
+            },
+            {
+              "id": "ab-wheel",
+              "name": "Ab wheel desde rodillas",
+              "skipped": true,
+              "weight": "—",
+              "sets": "Saltado",
+              "notes": "",
+              "setData": []
+            },
+            {
+              "id": "plancha-var",
+              "name": "Plancha con variaciones",
+              "skipped": false,
+              "weight": "15kg",
+              "sets": "S1: 15kg×60 / S2: 15kg×60 / S3: 15kg×60",
+              "notes": "Mi peso corporal + disco de 15 encima",
+              "setData": [
+                {
+                  "weight": 15,
+                  "reps": 60
+                },
+                {
+                  "weight": 15,
+                  "reps": 60
+                },
+                {
+                  "weight": 15,
+                  "reps": 60
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "deviations": [],
+      "patterns": [],
+      "decisions": [],
+      "raw_notes": ""
+    },
+    {
       "id": "2026-07-17_pierna-bíc_1784301735535",
       "date": "2026-07-17",
       "weekday": "Viernes",
