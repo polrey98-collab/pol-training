@@ -1,6 +1,176 @@
 {
   "sessions": [
     {
+      "id": "2026-07-18_pierna-bíc_1784370413475",
+      "date": "2026-07-18",
+      "weekday": "Sábado",
+      "type": "Pierna/Bíc",
+      "general_feeling": "Sin valoración",
+      "blocks": [
+        {
+          "name": "PIERNA",
+          "exercises": [
+            {
+              "id": "rdl-bilateral",
+              "name": "Peso muerto rumano (RDL) bilateral",
+              "skipped": false,
+              "weight": "80kg",
+              "sets": "S1: 80kg×12 / S2: 80kg×12 / S3: 80kg×12",
+              "notes": "",
+              "setData": [
+                {
+                  "weight": 80,
+                  "reps": 12
+                },
+                {
+                  "weight": 80,
+                  "reps": 12
+                },
+                {
+                  "weight": 80,
+                  "reps": 12
+                }
+              ]
+            },
+            {
+              "id": "prensa-uni",
+              "name": "Prensa unilateral",
+              "skipped": false,
+              "weight": "150kg",
+              "sets": "S1: 150kg×10 / S2: 150kg×10 / S3: 150kg×10",
+              "notes": "Me noto muy sobrado hoy, no se si es por ayer haber hecho la bici\nO el descanso o que en peso muerto no he hecho tantas repes",
+              "setData": [
+                {
+                  "weight": 150,
+                  "reps": 10
+                },
+                {
+                  "weight": 150,
+                  "reps": 10
+                },
+                {
+                  "weight": 150,
+                  "reps": 10
+                }
+              ]
+            },
+            {
+              "id": "hip-thrust",
+              "name": "Hip thrust barra libre",
+              "skipped": false,
+              "weight": "80kg",
+              "sets": "S1: 80kg×15 / S2: 80kg×15 / S3: 80kg×15",
+              "notes": "No he notado quemor en em gluteo, como chill hoy\nCreo que puede ser ponno haber hechoa pausa de 2s e ir mas rapido \n\nEn 3a serie lo hago bien y ostia puta..:. Como se nota, buaaa odio esta sensación en el gluteo",
+              "setData": [
+                {
+                  "weight": 80,
+                  "reps": 15
+                },
+                {
+                  "weight": 80,
+                  "reps": 15
+                },
+                {
+                  "weight": 80,
+                  "reps": 15
+                }
+              ]
+            },
+            {
+              "id": "ext-cuad",
+              "name": "Extensión cuádriceps unilateral",
+              "skipped": false,
+              "weight": "65kg",
+              "sets": "S1: 65kg×10 / S2: 65kg×10 / S3: 65kg×10",
+              "notes": "Bastante tensas ultimas repes en serie 2 y 3",
+              "setData": [
+                {
+                  "weight": 65,
+                  "reps": 10
+                },
+                {
+                  "weight": 65,
+                  "reps": 10
+                },
+                {
+                  "weight": 65,
+                  "reps": 10
+                }
+              ]
+            },
+            {
+              "id": "abductor",
+              "name": "Abductor",
+              "skipped": false,
+              "weight": "65kg",
+              "sets": "S1: 65kg×15 / S2: 65kg×15 / S3: 65kg×15",
+              "notes": "",
+              "setData": [
+                {
+                  "weight": 65,
+                  "reps": 15
+                },
+                {
+                  "weight": 65,
+                  "reps": 15
+                },
+                {
+                  "weight": 65,
+                  "reps": 15
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "TENDÓN BILATERAL",
+          "exercises": [
+            {
+              "id": "wall-sit",
+              "name": "Wall sit con disco",
+              "skipped": false,
+              "weight": "20kg",
+              "sets": "S1: 20kg×45",
+              "notes": "Tengo que irme lo dejo a medias",
+              "setData": [
+                {
+                  "weight": 20,
+                  "reps": 45
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "BÍCEPS",
+          "exercises": [
+            {
+              "id": "chin-up-neutro",
+              "name": "Chin-up neutro lastrado",
+              "skipped": true,
+              "weight": "—",
+              "sets": "Saltado",
+              "notes": "",
+              "setData": []
+            },
+            {
+              "id": "curl-inclinado",
+              "name": "Curl inclinado mancuernas",
+              "skipped": true,
+              "weight": "—",
+              "sets": "Saltado",
+              "notes": "",
+              "setData": []
+            }
+          ]
+        }
+      ],
+      "deviations": [],
+      "patterns": [],
+      "decisions": [],
+      "raw_notes": ""
+    },
+    {
       "id": "2026-07-17_complementario_1784303367305",
       "date": "2026-07-17",
       "weekday": "Viernes",
@@ -162,7 +332,7 @@
       "date": "2026-07-17",
       "weekday": "Viernes",
       "type": "Pierna/Bíc",
-      "general_feeling": "Sin valoración",
+      "general_feeling": "Split viernes: bíceps + assault bike. Chin-up 95kg debut 8/8/7. Bici 4×1min — cuádriceps tiesos al acabar, necesitó foam roller y movilidad en el suelo. Pierna completa mañana.",
       "blocks": [
         {
           "name": "PIERNA",
@@ -259,7 +429,7 @@
               "skipped": false,
               "weight": "14kg/mano",
               "sets": "S1: 14kg/mano×10 / S2: 14kg/mano×10 / S3: 14kg/mano×8",
-              "notes": "",
+              "notes": "S3 cae más de lo habitual — acumulación bici",
               "setData": [
                 {
                   "weight": 14,
@@ -276,12 +446,43 @@
               ]
             }
           ]
+        },
+        {
+          "name": "CARDIO",
+          "exercises": [
+            {
+              "id": "assault-bike",
+              "name": "Assault bike intervalos",
+              "skipped": false,
+              "weight": "—",
+              "sets": "4×1min / 2min descanso | 3036m | 77kcal | 5:52 elapsed",
+              "notes": "Cuádriceps muy fatigados al acabar — tuvo que tumbarse y hacer foam roller + movilidad en el suelo",
+              "setData": []
+            }
+          ]
         }
       ],
-      "deviations": [],
-      "patterns": [],
-      "decisions": [],
-      "raw_notes": ""
+      "deviations": [
+        "SPLIT: bíceps hoy. Pierna completa mañana (RDL 80kg debut, prensa, hip thrust, ext cuad, abductor, wall sit 20kg debut).",
+        "Chin-up 95kg DEBUT: 8/8/7. S3 cae a 7.",
+        "Curl inclinado 14kg: 10/10/8. S3 cae a 8 vs patrón habitual 10/10/9 — acumulación bici.",
+        "Assault bike (extra-sesión): 4×1min / 2min descanso, 3036m total, 77kcal. Cuádriceps muy fatigados post-sesión — foam roller + movilidad en el suelo necesarios."
+      ],
+      "patterns": [
+        "✅ CHIN-UP 95kg DEBUT SÓLIDO — 8/8/7 con bici previa + curl después. Aguantar 8/8 en S1-S2 bajo fatiga acumulada es muy buena señal. S3 a 7 esperado. Trayectoria textbook: 90kg 3×8 → 92.5kg 3×8×2 → 95kg 8/8/7.",
+        "✅ CUES CERVICALES CHIN-UP — sin pinchazo cervical (vs 02/07). Las cues funcionan.",
+        "✅ CURL INCLINADO 14kg 10/10/8 — S3 un escalón más bajo de lo habitual (9→8). Bici + chin-up explican la caída. No es regresión de fuerza.",
+        "⚠️ ASSAULT BIKE CUÁDRICEPS MUY FATIGADOS — 4 series de 1min cargaron los cuádriceps de forma inesperada. La máquina engancha más quad de lo que parece. Mañana RDL y prensa necesitan calentamiento largo y foam roller previo.",
+        "✅ SPLIT CORRECTO — la fatiga es de quad y cardio, no de cadena posterior. Isquios y glúteos llegan frescos al RDL de mañana. La decisión de separar bíceps y pierna está validada."
+      ],
+      "decisions": [
+        "Chin-up 95kg: debut 8/8/7 bajo fatiga. Próxima sesión fresco → buscar 3×8. Si sale limpio → consolidar.",
+        "Curl inclinado: mantener 14kg. S3 a 8 por acumulación, no regresión.",
+        "Assault bike: tope en 4 series en días pre-RDL. El quad no aguanta más sin comprometer el día siguiente.",
+        "MAÑANA: foam roller cuádriceps largo en calentamiento. Glute bridge activación. RDL primero y fresco. Grabar S1 de frente (asimetría pendiente de verificación).",
+        "CICLO 5: 1-1-1."
+      ],
+      "raw_notes": "Split viernes. Chin-up 95kg debut 8/8/7. Curl 10/10/8. Assault bike 4×1min — quad tiesos al acabar. Pierna completa mañana."
     },
     {
       "id": "2026-07-15_espalda-hombro_1784133966613",
@@ -10220,7 +10421,7 @@
     "current_count": {
       "Pecho/Trí": 1,
       "Espalda/Hombro": 1,
-      "Pierna/Bíc": 0
+      "Pierna/Bíc": 1
     }
   },
   "routines": {
