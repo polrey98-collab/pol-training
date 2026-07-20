@@ -1,11 +1,228 @@
 {
   "sessions": [
     {
+      "id": "2026-07-20_pecho-trí_1784566527868",
+      "date": "2026-07-20",
+      "weekday": "Lunes",
+      "type": "Pecho/Trí",
+      "general_feeling": "Sin valoración",
+      "blocks": [
+        {
+          "name": "PECHO",
+          "exercises": [
+            {
+              "id": "press-inclinado-db",
+              "name": "Press inclinado mancuernas",
+              "skipped": false,
+              "weight": "32kg/mano",
+              "sets": "S1: 32kg/mano×8 / S2: 32kg/mano×8 / S3: 32kg/mano×8 / S4: 32kg/mano×8",
+              "notes": "Ultima serie bastante tensa…. Sera por el tema nutricional",
+              "setData": [
+                {
+                  "weight": 32,
+                  "reps": 8
+                },
+                {
+                  "weight": 32,
+                  "reps": 8
+                },
+                {
+                  "weight": 32,
+                  "reps": 8
+                },
+                {
+                  "weight": 32,
+                  "reps": 8
+                }
+              ]
+            },
+            {
+              "id": "hammer-chest",
+              "name": "Press Hammer Strength",
+              "skipped": false,
+              "weight": "57.5kg/lado",
+              "sets": "S1: 57.5kg/lado×8 / S2: 57.5kg/lado×8 / S3: 57.5kg/lado×8",
+              "notes": "Ultima serie muy tensa",
+              "setData": [
+                {
+                  "weight": 57.5,
+                  "reps": 8
+                },
+                {
+                  "weight": 57.5,
+                  "reps": 8
+                },
+                {
+                  "weight": 57.5,
+                  "reps": 8
+                }
+              ]
+            },
+            {
+              "id": "cruce-poleas",
+              "name": "Cruce poleas banco",
+              "skipped": false,
+              "weight": "13.75kg",
+              "sets": "S1: 13.75kg×12 / S2: 13.75kg×10 / S3: 13.75kg×10",
+              "notes": "Bastante tenso la ultima serie",
+              "setData": [
+                {
+                  "weight": 13.75,
+                  "reps": 12
+                },
+                {
+                  "weight": 13.75,
+                  "reps": 10
+                },
+                {
+                  "weight": 13.75,
+                  "reps": 10
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "TRÍCEPS",
+          "exercises": [
+            {
+              "id": "fondos-maquina",
+              "name": "Fondos máquina",
+              "skipped": false,
+              "weight": "160kg",
+              "sets": "S1: 160kg×10 / S2: 160kg×10 / S3: 160kg×10",
+              "notes": "Bajo porque como ya he visto que en varios voy tenso y estoy con poco nutriente, lo hacemos como excepción \nLas series han sido justas o con una en recamara pero muy tens",
+              "setData": [
+                {
+                  "weight": 160,
+                  "reps": 10
+                },
+                {
+                  "weight": 160,
+                  "reps": 10
+                },
+                {
+                  "weight": 160,
+                  "reps": 10
+                }
+              ]
+            },
+            {
+              "id": "overhead-cuerda",
+              "name": "Extensión overhead cuerda",
+              "skipped": false,
+              "weight": "20kg",
+              "sets": "S1: 20kg×12 / S2: 20kg×12 / S3: 20kg×10",
+              "notes": "Tensas",
+              "setData": [
+                {
+                  "weight": 20,
+                  "reps": 12
+                },
+                {
+                  "weight": 20,
+                  "reps": 12
+                },
+                {
+                  "weight": 20,
+                  "reps": 10
+                }
+              ]
+            },
+            {
+              "id": "ext-barra-neutra",
+              "name": "Extensión polea barra neutra",
+              "skipped": false,
+              "weight": "25kg",
+              "sets": "S1: 25kg×10 / S2: 25kg×10 / S3: 25kg×10",
+              "notes": "",
+              "setData": [
+                {
+                  "weight": 25,
+                  "reps": 10
+                },
+                {
+                  "weight": 25,
+                  "reps": 10
+                },
+                {
+                  "weight": 25,
+                  "reps": 10
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "AGARRE / TENDÓN",
+          "exercises": [
+            {
+              "id": "iso-zass-empuje",
+              "name": "Isométrico Zass empuje (rack)",
+              "skipped": false,
+              "weight": "20kg",
+              "sets": "S1: 20kg×10 / S2: 20kg×10 / S3: 20kg×10",
+              "notes": "Altura 53 en banca - recordarlo",
+              "setData": [
+                {
+                  "weight": 20,
+                  "reps": 10
+                },
+                {
+                  "weight": 20,
+                  "reps": 10
+                },
+                {
+                  "weight": 20,
+                  "reps": 10
+                }
+              ]
+            },
+            {
+              "id": "plate-pinch",
+              "name": "Plate pinch",
+              "skipped": false,
+              "weight": "10kg",
+              "sets": "S1: 10kg×40 / S2: 10kg×40 / S3: 10kg×40",
+              "notes": "Incrementamos tiempo",
+              "setData": [
+                {
+                  "weight": 10,
+                  "reps": 40
+                },
+                {
+                  "weight": 10,
+                  "reps": 40
+                },
+                {
+                  "weight": 10,
+                  "reps": 40
+                }
+              ]
+            },
+            {
+              "id": "prehab-tfcc",
+              "name": "Prehab TFCC (disco)",
+              "skipped": true,
+              "weight": "—",
+              "sets": "Saltado",
+              "notes": "",
+              "setData": []
+            }
+          ]
+        }
+      ],
+      "deviations": [],
+      "patterns": [],
+      "decisions": [],
+      "raw_notes": ""
+    },
+    {
       "id": "2026-07-18_pierna-bíc_1784370413475",
       "date": "2026-07-18",
       "weekday": "Sábado",
       "type": "Pierna/Bíc",
-      "general_feeling": "Sin valoración",
+      "general_feeling": "Split sábado: pierna completa (bíceps ayer). RDL 80kg debut. Prensa muy sobrada. Hip thrust: pausa 2s es la diferencia entre nada y todo. Tuvo que irse antes de terminar wall sit.",
       "blocks": [
         {
           "name": "PIERNA",
@@ -38,7 +255,7 @@
               "skipped": false,
               "weight": "150kg",
               "sets": "S1: 150kg×10 / S2: 150kg×10 / S3: 150kg×10",
-              "notes": "Me noto muy sobrado hoy, no se si es por ayer haber hecho la bici\nO el descanso o que en peso muerto no he hecho tantas repes",
+              "notes": "Me noto muy sobrado hoy, no se si es por ayer haber hecho la bici o el descanso o que en peso muerto no he hecho tantas repes",
               "setData": [
                 {
                   "weight": 150,
@@ -60,7 +277,7 @@
               "skipped": false,
               "weight": "80kg",
               "sets": "S1: 80kg×15 / S2: 80kg×15 / S3: 80kg×15",
-              "notes": "No he notado quemor en em gluteo, como chill hoy\nCreo que puede ser ponno haber hechoa pausa de 2s e ir mas rapido \n\nEn 3a serie lo hago bien y ostia puta..:. Como se nota, buaaa odio esta sensación en el gluteo",
+              "notes": "S1-S2 sin pausa 2s, sin quemazón. S3 con pausa correcta — 'ostia puta como se nota'. La pausa lo cambia todo.",
               "setData": [
                 {
                   "weight": 80,
@@ -82,7 +299,7 @@
               "skipped": false,
               "weight": "65kg",
               "sets": "S1: 65kg×10 / S2: 65kg×10 / S3: 65kg×10",
-              "notes": "Bastante tensas ultimas repes en serie 2 y 3",
+              "notes": "Bastante tensas últimas reps en S2 y S3",
               "setData": [
                 {
                   "weight": 65,
@@ -131,7 +348,7 @@
               "skipped": false,
               "weight": "20kg",
               "sets": "S1: 20kg×45",
-              "notes": "Tengo que irme lo dejo a medias",
+              "notes": "Tuvo que irse — solo 1/5 series. Debut a 45s limpio.",
               "setData": [
                 {
                   "weight": 20,
@@ -150,7 +367,7 @@
               "skipped": true,
               "weight": "—",
               "sets": "Saltado",
-              "notes": "",
+              "notes": "Hecho ayer",
               "setData": []
             },
             {
@@ -159,16 +376,37 @@
               "skipped": true,
               "weight": "—",
               "sets": "Saltado",
-              "notes": "",
+              "notes": "Hecho ayer",
               "setData": []
             }
           ]
         }
       ],
-      "deviations": [],
-      "patterns": [],
-      "decisions": [],
-      "raw_notes": ""
+      "deviations": [
+        "SPLIT sábado: pierna completa. Bíceps hechos ayer (chin-up 95kg 8/8/7 + curl 10/10/8).",
+        "RDL 80kg 3×12 vs scheme 3×8-10 TOPE 10 — TERCERA sesión superando el tope: 70kg×15 (27/06), 70kg×15 (11/07), 80kg×12 (hoy). Sin nota de asimetría ni vídeo.",
+        "Hip thrust 80kg 3×15 — S1-S2 sin pausa 2s: sin quemazón. S3 con pausa correcta: estímulo máximo. La pausa isométrica es determinante.",
+        "Prensa 150kg 3×10 — sensación 'muy sobrado'. Inusual frescor de cuádriceps vs sesiones anteriores.",
+        "Wall sit 20kg DEBUT — solo 1/5 series (45s limpia). Tuvo que irse.",
+        "Ext cuádriceps 65kg 3×10 — QUINTA consecutiva completa. S2-S3 últimas reps tensas.",
+        "Chin-up y curl: saltados (hechos ayer en el split)."
+      ],
+      "patterns": [
+        "⚠️ RDL 80kg 3×12 — PATRÓN CRÓNICO TERCERA VEZ. La base se subió a 80kg precisamente para forzar el scheme 3×8-10, y sigue superando el tope. 12 reps a 80kg = endurance, no fuerza/hipertrofia. ¿Se grabó S1 de frente para verificar asimetría? No hay nota.",
+        "⚠️ HIP THRUST PAUSA 2S CRÍTICA — hallazgo clave: sin pausa = ejercicio casi vacío (S1-S2). Con pausa = estímulo máximo (S3 'ostia puta'). El cue de pausa isométrica es no negociable en todas las series, no solo la última.",
+        "✅ PRENSA 150kg 3×10 'MUY SOBRADO' — el RDL (bisagra de cadera) no pre-fatiga el cuádriceps. La prensa llega fresca. Valida el orden RDL→prensa y abre la conversación de 155kg en Ciclo 6.",
+        "✅ EXT CUÁD 65kg 3×10 QUINTA CONSECUTIVA — completo pese a cuádriceps tocados de la bici de ayer. Patrón de S3 definitivamente resuelto.",
+        "✅ WALL SIT 20kg DEBUT 45s — una serie limpia antes de irse. El peso funciona a 45s.",
+        "✅ ABDUCTOR 65kg 3×15 — limpio, sin notas."
+      ],
+      "decisions": [
+        "RDL: TOPE 10 REPS OBLIGATORIO — si 80kg parece light, la respuesta es subir peso, no reps. Próxima sesión: 80kg máximo 10 reps. Si sale limpio con corrección de asimetría → 82.5kg. Preguntar: ¿se grabó S1 de frente hoy?",
+        "Hip thrust: CUE OBLIGATORIO antes de CADA serie — '2 segundos de pausa isométrica arriba'. Sin pausa el ejercicio no tiene sentido.",
+        "Wall sit 20kg: debut OK. Completar 5×45s en próxima sesión completa.",
+        "Prensa 150kg: sensación 'sobrado' — monitorizar. Si se repite → valorar 155kg en Ciclo 6.",
+        "CICLO 5: 1-1-2."
+      ],
+      "raw_notes": "Split sábado pierna. RDL 80kg 3×12 (otra vez sobre el tope). Prensa muy sobrada. Hip thrust: pausa 2s = todo. Ext cuád quinta 3×10. Wall sit 20kg debut 1 serie. Tuvo que irse."
     },
     {
       "id": "2026-07-17_complementario_1784303367305",
@@ -10421,7 +10659,7 @@
     "current_count": {
       "Pecho/Trí": 1,
       "Espalda/Hombro": 1,
-      "Pierna/Bíc": 1
+      "Pierna/Bíc": 2
     }
   },
   "routines": {
