@@ -1,11 +1,233 @@
 {
   "sessions": [
     {
+      "id": "2026-07-21_espalda-hombro_1784650379855",
+      "date": "2026-07-21",
+      "weekday": "Martes",
+      "type": "Espalda/Hombro",
+      "general_feeling": "Noto fatiga en antebrazo, puede ser de ayer en el ejercicio del plitch en pecho/triceps?\nTras hacer scapular me veo mejor en el lado derecho",
+      "blocks": [
+        {
+          "name": "ESPALDA",
+          "exercises": [
+            {
+              "id": "jalon-neutro",
+              "name": "Jalón al pecho neutro",
+              "skipped": false,
+              "weight": "82.5kg",
+              "sets": "S1: 82.5kg×8 / S2: 82.5kg×8 / S3: 82.5kg×8 / S4: 82.5kg×8",
+              "notes": " 3a y 4a ya bastante tensa ultima repe\n",
+              "setData": [
+                {
+                  "weight": 82.5,
+                  "reps": 8
+                },
+                {
+                  "weight": 82.5,
+                  "reps": 8
+                },
+                {
+                  "weight": 82.5,
+                  "reps": 8
+                },
+                {
+                  "weight": 82.5,
+                  "reps": 8
+                }
+              ]
+            },
+            {
+              "id": "remo-polea",
+              "name": "Remo polea sentado",
+              "skipped": false,
+              "weight": "75kg",
+              "sets": "S1: 75kg×8 / S2: 75kg×8 / S3: 75kg×8",
+              "notes": "",
+              "setData": [
+                {
+                  "weight": 75,
+                  "reps": 8
+                },
+                {
+                  "weight": 75,
+                  "reps": 8
+                },
+                {
+                  "weight": 75,
+                  "reps": 8
+                }
+              ]
+            },
+            {
+              "id": "pullover-cuerda",
+              "name": "Pull-over cuerda",
+              "skipped": false,
+              "weight": "20kg",
+              "sets": "S1: 20kg×12 / S2: 20kg×12 / S3: 20kg×12",
+              "notes": "",
+              "setData": [
+                {
+                  "weight": 20,
+                  "reps": 12
+                },
+                {
+                  "weight": 20,
+                  "reps": 12
+                },
+                {
+                  "weight": 20,
+                  "reps": 12
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "HOMBRO",
+          "exercises": [
+            {
+              "id": "face-pull",
+              "name": "Face pull cuerda",
+              "skipped": false,
+              "weight": "25kg",
+              "sets": "S1: 25kg×15 / S2: 25kg×15",
+              "notes": "Tensos",
+              "setData": [
+                {
+                  "weight": 25,
+                  "reps": 15
+                },
+                {
+                  "weight": 25,
+                  "reps": 15
+                }
+              ]
+            },
+            {
+              "id": "landmine",
+              "name": "Landmine press unilateral",
+              "skipped": false,
+              "weight": "22.5kg",
+              "sets": "S1: 22.5kg×10 / S2: 22.5kg×10 / S3: 22.5kg×10",
+              "notes": "Tensa ultima serie",
+              "setData": [
+                {
+                  "weight": 22.5,
+                  "reps": 10
+                },
+                {
+                  "weight": 22.5,
+                  "reps": 10
+                },
+                {
+                  "weight": 22.5,
+                  "reps": 10
+                }
+              ]
+            },
+            {
+              "id": "elev-lat",
+              "name": "Elevaciones laterales",
+              "skipped": false,
+              "weight": "6.25kg",
+              "sets": "S1: 6.25kg×15 / S2: 6.25kg×15",
+              "notes": "Muy good, yo creo que 7,5kg podemos cogerlos\nPero arrastro tension en lado derecho. Lo he notado en el jalon, como que mi lado derecho estaba mas tenso/fatigado",
+              "setData": [
+                {
+                  "weight": 6.25,
+                  "reps": 15
+                },
+                {
+                  "weight": 6.25,
+                  "reps": 15
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "TENDÓN + AGARRE",
+          "exercises": [
+            {
+              "id": "scapular-pull",
+              "name": "Scapular pull",
+              "skipped": false,
+              "weight": "80kg",
+              "sets": "S1: 80kg×8 / S2: 80kg×8 / S3: 80kg×8",
+              "notes": "",
+              "setData": [
+                {
+                  "weight": 80,
+                  "reps": 8
+                },
+                {
+                  "weight": 80,
+                  "reps": 8
+                },
+                {
+                  "weight": 80,
+                  "reps": 8
+                }
+              ]
+            },
+            {
+              "id": "dead-hang-lastre",
+              "name": "Dead hang con lastre",
+              "skipped": false,
+              "weight": "90kg",
+              "sets": "S1: 90kg×40 / S2: 90kg×40 / S3: 90kg×35",
+              "notes": "2a serie mega tensa, casi no llego a los 40s\nNo llego a la 3a",
+              "setData": [
+                {
+                  "weight": 90,
+                  "reps": 40
+                },
+                {
+                  "weight": 90,
+                  "reps": 40
+                },
+                {
+                  "weight": 90,
+                  "reps": 35
+                }
+              ]
+            },
+            {
+              "id": "farmer-carry",
+              "name": "Farmer's carry",
+              "skipped": false,
+              "weight": "24kg/mano",
+              "sets": "S1: 24kg/mano×40 / S2: 24kg/mano×40 / S3: 24kg/mano×40",
+              "notes": "",
+              "setData": [
+                {
+                  "weight": 24,
+                  "reps": 40
+                },
+                {
+                  "weight": 24,
+                  "reps": 40
+                },
+                {
+                  "weight": 24,
+                  "reps": 40
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "deviations": [],
+      "patterns": [],
+      "decisions": [],
+      "raw_notes": ""
+    },
+    {
       "id": "2026-07-20_pecho-trí_1784566527868",
       "date": "2026-07-20",
       "weekday": "Lunes",
       "type": "Pecho/Trí",
-      "general_feeling": "Sin valoración",
+      "general_feeling": "Sesión condicionada por estado nutricional bajo — sensación de tensión generalizada en todos los bloques desde S3/S4 en adelante. Buena gestión: fondos bajaron conscientemente a 160kg como excepción.",
       "blocks": [
         {
           "name": "PECHO",
@@ -212,9 +434,28 @@
           ]
         }
       ],
-      "deviations": [],
-      "patterns": [],
-      "decisions": [],
+      "deviations": [
+        "Fondos máquina: 160kg (base 170kg) — bajada consciente por estado nutricional. Excepción declarada.",
+        "Overhead cuerda: debut 20kg — S3 cae a 10 reps (objetivo 3×12). No limpio todavía.",
+        "Cruce poleas: S2 y S3 caen a 10 reps (objetivo 10-12). Dentro de rango pero límite inferior.",
+        "Plate pinch: 10kg×40s (base 15kg×30s) — bajó carga, subió tiempo. Desviación de formato no acordada previamente.",
+        "Isométrico Zass: registrado en reps (3×10) en lugar de segundos (3×8s) — formato incorrecto.",
+        "Prehab TFCC: saltado — patrón recurrente."
+      ],
+      "patterns": [
+        "Tensión generalizada en toda la sesión atribuible a déficit nutricional — no señal de fatiga acumulada de entrenamiento. Contexto claro.",
+        "Press inclinado 4×8 a 32kg completado (última tensa pero hecha) — base Ciclo 5 sostenida en condiciones subóptimas. Positivo.",
+        "Hammer 3×8 a 57.5kg completado — ídem, sostenido pese al estado.",
+        "Overhead cuerda 20kg: debut parcialmente limpio (S1+S2 ok, S3 cae 2 reps) — no consolidado aún, mantener 20kg.",
+        "Prehab TFCC saltado: segundo ciclo consecutivo sin completarlo. Patrón que requiere solución estructural, no recordatorio.",
+        "Plate pinch: cambio de formato no consultado (↓peso, ↑tiempo) — aclarar si es intención de cambio de estímulo o fue puntual."
+      ],
+      "decisions": [
+        "Fondos: volver a 170kg próxima Pecho/Trí si estado nutricional normalizado. 160kg solo como excepción puntual.",
+        "Overhead cuerda: mantener 20kg hasta 3×12 limpio en condiciones normales antes de consolidar.",
+        "Plate pinch: confirmar si el cambio a 10kg/40s es intencional o volver a 15kg/30s.",
+        "Prehab TFCC: buscar solución estructural — hacerlo al llegar a casa si en gym no hay momento, no saltarlo."
+      ],
       "raw_notes": ""
     },
     {
@@ -10657,7 +10898,7 @@
     "last_cycle_close": "2026-07-11",
     "report_rule": "4 Pecho/Trí + 4 Espalda/Hombro + 4 Pierna/Bíc desde last_cycle_close",
     "current_count": {
-      "Pecho/Trí": 1,
+      "Pecho/Trí": 2,
       "Espalda/Hombro": 1,
       "Pierna/Bíc": 2
     }
