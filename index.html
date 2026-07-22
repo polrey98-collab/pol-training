@@ -276,6 +276,7 @@
       <div class="io-desc">Backup automático al guardar sesión → repo <b>privado</b> pol-training-data. Usa un token <b>fine-grained</b> limitado a ese repo (permiso Contents: Read/Write, con expiración). Nunca un token clásico con scope repo.</div>
       <input type="password" class="io-ta" id="gh-token-inp" placeholder="github_pat_xxxxxxxx" autocomplete="off" style="min-height:auto;height:48px;font-size:14px">
       <button class="btn btn-s" onclick="saveGHToken()" style="margin-bottom:8px">Guardar token</button>
+      <button class="btn btn-g" onclick="githubRestore()" style="margin-bottom:8px">⟳ Restaurar desde GitHub</button>
       <div class="gh-status" id="gh-status"></div>
     </div>
     <div class="io-sec">
@@ -304,9 +305,9 @@
   <div id="toast"></div>
 </div>
 <script>
-const APP_VERSION='3.6.0';
+const APP_VERSION='3.7.0';
 const APP_DATE='22 julio 2026';
-const SK='pol-v2',ASK='pol-active-v2',RK='pol-routines-v2',GHK='pol-gh-token',GHSK='pol-gh-sha',GHLAST='pol-gh-last-ok',CIRC=2*Math.PI*80;
+const SK='pol-v2',ASK='pol-active-v2',RK='pol-routines-v2',GHK='pol-gh-token',GHSK='pol-gh-sha',GHLAST='pol-gh-last-ok',GHHIST='pol-gh-hist-last',CIRC=2*Math.PI*80;
 const COLORS={'Pecho/Trí':'#dc2626','Espalda/Hombro':'#2563eb','Pierna/Bíc':'#16a34a','Complementario':'#64748b','Running':'#ea580c','Pádel':'#9333ea','Escalada':'#ca8a04','Otro':'#6b7280'};
 const DAYS=['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'];
 const MESES=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
@@ -503,6 +504,9 @@ function loadRoutines(){
 function save(){try{localStorage.setItem(SK,JSON.stringify(D));}catch(e){toast('⚠ Almacenamiento lleno — exporta los datos');}}
 function saveRoutines(){try{localStorage.setItem(RK,JSON.stringify(R));}catch(e){}}
 function saveAS(){try{if(AS)localStorage.setItem(ASK,JSON.stringify({session:AS,ae:AE}));else localStorage.removeItem(ASK);}catch(e){}}
+// Versión con debounce para eventos de teclado (updW/updNotes) — evita un write síncrono por pulsación
+let _sasT=null;
+function saveASsoon(){clearTimeout(_sasT);_sasT=setTimeout(saveAS,300);}
 
 // ─── GITHUB BACKUP ───────────────────────────────────────────────────────────
 function getGHToken(){return localStorage.getItem(GHK)||'';}
@@ -534,18 +538,23 @@ async function githubBackup(){
     if(putR.ok||putR.status===201){
       const d=await putR.json();
       localStorage.setItem(GHSK,d.content.sha);
-      // F1: histórico con fecha — backups/historico/YYYY-MM-DD.json (uno por día)
+      // F1: histórico semanal — backups/historico/YYYY-MM-DD.json (latest.json se actualiza siempre)
       const fecha=new Date().toISOString().split('T')[0];
-      const hPath=`backups/historico/${fecha}.json`;
-      const hUrl=`https://api.github.com/repos/${GH_DATA_REPO}/contents/${hPath}`;
-      try{
-        let hSha=null;
-        const hGet=await fetch(hUrl,{headers});
-        if(hGet.ok){const hd=await hGet.json();hSha=hd.sha;}
-        const hBody={message:`Histórico ${fecha}`,content};
-        if(hSha)hBody.sha=hSha;
-        await fetch(hUrl,{method:'PUT',headers,body:JSON.stringify(hBody)});
-      }catch(e){}
+      const lastHist=localStorage.getItem(GHHIST)||'';
+      const histDue=!lastHist||(Date.parse(fecha)-Date.parse(lastHist))>=6*86400000;
+      if(histDue){
+        const hPath=`backups/historico/${fecha}.json`;
+        const hUrl=`https://api.github.com/repos/${GH_DATA_REPO}/contents/${hPath}`;
+        try{
+          let hSha=null;
+          const hGet=await fetch(hUrl,{headers});
+          if(hGet.ok){const hd=await hGet.json();hSha=hd.sha;}
+          const hBody={message:`Histórico ${fecha}`,content};
+          if(hSha)hBody.sha=hSha;
+          const hPut=await fetch(hUrl,{method:'PUT',headers,body:JSON.stringify(hBody)});
+          if(hPut.ok||hPut.status===201)localStorage.setItem(GHHIST,fecha);
+        }catch(e){}
+      }
       // F4: verificar que lo subido coincide con local (nº sesiones)
       try{
         const vGet=await fetch(url+'?t='+Date.now(),{headers,cache:'no-store'});
@@ -568,6 +577,24 @@ async function githubBackup(){
     }
   }catch(e){ghStatus(`Error de red: ${e.message}`,'err');toast('⚠️ Backup GitHub falló: red');}
 }
+// ─── RESTAURACIÓN DESDE GITHUB ───────────────────────────────────────────────
+// Recuperación completa en móvil nuevo: pegar token → pulsar Restaurar.
+// Usa Accept: raw para evitar el límite de 1MB del content base64 de la API.
+async function githubRestore(){
+  const token=getGHToken();if(!token){toast('⚠ Configura el token primero');return;}
+  if(!confirm('¿Restaurar datos desde GitHub? Se fusionan con los datos locales por id — no se borra nada.'))return;
+  ghStatus('Restaurando...','');
+  try{
+    const r=await fetch(`https://api.github.com/repos/${GH_DATA_REPO}/contents/${GH_PATH}?t=${Date.now()}`,{headers:{'Authorization':`Bearer ${token}`,'Accept':'application/vnd.github.raw+json'},cache:'no-store'});
+    if(!r.ok){ghStatus(`Error ${r.status} al leer el backup`,'err');toast(r.status===404?'⚠ No hay backup en GitHub todavía':'⚠ No se pudo leer el backup');return;}
+    const parsed=await r.json();
+    const res=importData(parsed);
+    if(!res){ghStatus('Backup con formato inválido','err');toast('⚠ Backup con formato inválido');return;}
+    ghStatus(`Restaurado: ${res.added} nuevas · ${res.updated} actualizadas`,'ok');
+    toast(`✓ Restaurado · ${res.added} nuevas · ${res.updated} actualizadas${res.routinesMerged?' · '+res.routinesMerged+' rutina(s)':''}`);
+    renderHome();renderIO();
+  }catch(e){ghStatus('Error de red al restaurar','err');toast('⚠ Restauración falló: red');}
+}
 
 // ─── HELPERS ─────────────────────────────────────────────────────────────────
 function col(t){return COLORS[t]||COLORS['Otro'];}
@@ -589,7 +616,7 @@ function lastWeight(type,exId,exName){
   return null;
 }
 function nextInRotation(){
-  const gs=D.sessions.filter(s=>ROTATION.includes(s.type));
+  const gs=D.sessions.filter(s=>ROTATION.includes(s.type)).sort((a,b)=>b.date.localeCompare(a.date));
   if(!gs.length)return'Pecho/Trí';
   return ROTATION[(ROTATION.indexOf(gs[0].type)+1)%3];
 }
@@ -716,14 +743,14 @@ function toggleEx(id){
   if(AS?.states[id]?.skipped)return;
   AE=AE===id?null:id;saveAS();renderSess();if(AE)setTimeout(()=>scrollToEx(AE),80);
 }
-function updW(id,i,val){const st=AS?.states[id];if(!st)return;st.sets[i].w=parseW(val);saveAS();}
+function updW(id,i,val){const st=AS?.states[id];if(!st)return;st.sets[i].w=parseW(val);saveASsoon();}
 function adjR(id,i,d){
   const st=AS?.states[id];if(!st||st.sets[i].ok)return;
   const cur=st.sets[i].reps!==null?parseInt(st.sets[i].reps):0;
   st.sets[i].reps=Math.max(0,cur+d);
   const disp=document.getElementById(`rv-${id}-${i}`);if(disp)disp.textContent=st.sets[i].reps;saveAS();
 }
-function updNotes(id,val){if(AS?.states[id]){AS.states[id].notes=val;saveAS();}}
+function updNotes(id,val){if(AS?.states[id]){AS.states[id].notes=val;saveASsoon();}}
 function confSet(id,i){
   const st=AS.states[id];if(!st)return;
   const wInp=document.getElementById(`w-${id}-${i}`);if(wInp)st.sets[i].w=parseW(wInp.value)||st.sets[i].w||0;
@@ -751,7 +778,7 @@ function doneEx(id){
 function finishSession(){
   if(!AS)return;
   const gn=document.getElementById('gen-notes');
-  const sess={id:`${AS.date}_${AS.type.replace(/[\/\s]/g,'-').toLowerCase()}_${Date.now()}`,date:AS.date,weekday:DAYS[new Date().getDay()],type:AS.type,general_feeling:(gn?.value?.trim())||'Sin valoración',blocks:[],deviations:[],patterns:[],decisions:[],raw_notes:''};
+  const sess={id:`${AS.date}_${AS.type.replace(/[\/\s]/g,'-').toLowerCase()}_${Date.now()}`,date:AS.date,weekday:DAYS[new Date(AS.date+'T12:00:00').getDay()],type:AS.type,general_feeling:(gn?.value?.trim())||'Sin valoración',blocks:[],deviations:[],patterns:[],decisions:[],raw_notes:''};
   for(const blk of R[AS.type].blocks){
     if(blk.warmup)continue;
     const bd={name:blk.name,exercises:[]};
@@ -780,24 +807,26 @@ function cancelSession(){
 }
 
 // ─── TIMER ───────────────────────────────────────────────────────────────────
-function startTimer(secs){
-  timerDur=secs;timerStart=Date.now();timerRem=secs;
-  document.querySelectorAll('.t-opt').forEach(b=>b.classList.remove('on'));
-  const labels={60:'60s',90:'90s',120:'2min',180:'3min'};
-  document.querySelectorAll('.t-opt').forEach(b=>{if(b.textContent===(labels[secs]||''))b.classList.add('on');});
-  document.getElementById('timer-ov').classList.add('show');
+function tickTimer(){
   clearInterval(timerIv);updTimer();
   timerIv=setInterval(()=>{
     const elapsed=Math.floor((Date.now()-timerStart)/1000);timerRem=Math.max(0,timerDur-elapsed);updTimer();
     if(timerRem<=0){clearInterval(timerIv);vib([200,100,200,100,200]);setTimeout(()=>document.getElementById('timer-ov').classList.remove('show'),600);}
   },500);
 }
+function startTimer(secs){
+  timerDur=secs;timerStart=Date.now();timerRem=secs;
+  document.querySelectorAll('.t-opt').forEach(b=>b.classList.remove('on'));
+  const labels={60:'60s',90:'90s',120:'2min',180:'3min'};
+  document.querySelectorAll('.t-opt').forEach(b=>{if(b.textContent===(labels[secs]||''))b.classList.add('on');});
+  document.getElementById('timer-ov').classList.add('show');
+  tickTimer();
+}
 function updTimer(){document.getElementById('t-num').textContent=timerRem;document.getElementById('t-prog').style.strokeDashoffset=CIRC*(1-timerRem/timerDur);}
 function setTimer(btn,secs){
   timerDur=secs;timerStart=Date.now();timerRem=secs;
   document.querySelectorAll('.t-opt').forEach(b=>b.classList.remove('on'));btn.classList.add('on');
-  clearInterval(timerIv);updTimer();
-  timerIv=setInterval(()=>{const elapsed=Math.floor((Date.now()-timerStart)/1000);timerRem=Math.max(0,timerDur-elapsed);updTimer();if(timerRem<=0){clearInterval(timerIv);vib([200,100,200,100,200]);setTimeout(()=>document.getElementById('timer-ov').classList.remove('show'),600);}},500);
+  tickTimer();
 }
 function skipTimer(){clearInterval(timerIv);document.getElementById('timer-ov').classList.remove('show');}
 
@@ -1004,29 +1033,39 @@ function validRoutine(type,rt){
   }
   return true;
 }
+// Lógica de fusión compartida entre importación manual y restauración desde GitHub.
+// Devuelve resumen {added,updated,routinesMerged} o null si el formato es inválido.
+function importData(parsed){
+  if(!parsed||!Array.isArray(parsed.sessions))return null;
+  let added=0,updated=0;
+  for(const s of parsed.sessions){
+    if(!s||typeof s.id!=='string'||typeof s.date!=='string'||typeof s.type!=='string')continue;
+    const idx=D.sessions.findIndex(ls=>ls.id===s.id);
+    if(idx>=0){Object.assign(D.sessions[idx],s);updated++;}else{D.sessions.push(s);added++;}
+  }
+  if(parsed.planning)D.planning=parsed.planning;
+  if(parsed.reports&&parsed.reports.length){const rm=new Map((D.reports||[]).map(r=>[r.cycle,r]));parsed.reports.forEach(r=>rm.set(r.cycle,r));D.reports=[...rm.values()].sort((a,b)=>a.cycle-b.cycle);}
+  if(parsed.cycle_meta)D.cycle_meta=parsed.cycle_meta;
+  save();
+  let routinesMerged=0,routinesRejected=0;
+  if(parsed.routines&&typeof parsed.routines==='object'&&Object.keys(parsed.routines).length>0){
+    for(const[type,routine]of Object.entries(parsed.routines)){
+      if(validRoutine(type,routine)){R[type]=routine;routinesMerged++;}
+      else routinesRejected++;
+    }
+    if(routinesMerged>0){saveRoutines();buildExType();}
+    if(routinesRejected>0)toast(`⚠ ${routinesRejected} rutina(s) rechazada(s): formato o ids inválidos`);
+  }
+  return{added,updated,routinesMerged};
+}
 function doImport(){
   const raw=document.getElementById('import-ta').value.trim();if(!raw){toast('Pega el JSON primero');return;}
   try{
-    const parsed=JSON.parse(raw);if(!Array.isArray(parsed.sessions))throw new Error('bad');
-    let added=0,updated=0;
-    for(const s of parsed.sessions){const idx=D.sessions.findIndex(ls=>ls.id===s.id);if(idx>=0){Object.assign(D.sessions[idx],s);updated++;}else{D.sessions.push(s);added++;}}
-    if(parsed.planning)D.planning=parsed.planning;
-    if(parsed.reports&&parsed.reports.length){const rm=new Map((D.reports||[]).map(r=>[r.cycle,r]));parsed.reports.forEach(r=>rm.set(r.cycle,r));D.reports=[...rm.values()].sort((a,b)=>a.cycle-b.cycle);}
-    if(parsed.cycle_meta)D.cycle_meta=parsed.cycle_meta;
-    save();
-    // Import routines if present — MERGE por tipo de sesión (NO reemplazar todo el objeto)
-    // Así, si el JSON solo trae una rutina, las demás se conservan intactas.
-    let routinesUpdated=false,routinesMerged=0,routinesRejected=0;
-    if(parsed.routines&&typeof parsed.routines==='object'&&Object.keys(parsed.routines).length>0){
-      for(const[type,routine]of Object.entries(parsed.routines)){
-        if(validRoutine(type,routine)){R[type]=routine;routinesMerged++;}
-        else routinesRejected++;
-      }
-      if(routinesMerged>0){saveRoutines();buildExType();routinesUpdated=true;}
-      if(routinesRejected>0)toast(`⚠ ${routinesRejected} rutina(s) rechazada(s): formato o ids inválidos`);
-    }
+    const parsed=JSON.parse(raw);
+    const res=importData(parsed);
+    if(!res)throw new Error('bad');
     document.getElementById('import-ta').value='';
-    toast(`✓ ${added} nuevas · ${updated} actualizadas${routinesUpdated?' · '+routinesMerged+' rutina(s)':''}`);
+    toast(`✓ ${res.added} nuevas · ${res.updated} actualizadas${res.routinesMerged?' · '+res.routinesMerged+' rutina(s)':''}`);
   }catch(e){toast('⚠ JSON inválido — revisa el formato');}
 }
 function resetRoutines(){
