@@ -945,7 +945,7 @@ function doClaudeExport(){
   // 3. Todos los informes de ciclo (contexto histórico completo)
   const lastReport=D.reports||[];
   // 4. Construir export
-  const out={sessions:merged,cycle_meta:D.cycle_meta||{},reports:lastReport,routines:R};
+  const out={app_version:APP_VERSION,sessions:merged,cycle_meta:D.cycle_meta||{},reports:lastReport,routines:R};
   const json=JSON.stringify(out,null,2);
   const filename=`claude-export-${today()}.json`;
   // Descargar como archivo
