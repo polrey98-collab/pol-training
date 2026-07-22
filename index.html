@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; connect-src https://api.github.com; img-src 'self' data:; base-uri 'none'; form-action 'none'">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -272,8 +273,8 @@
     </div>
     <div class="io-sec">
       <div class="io-title">⚙ GitHub Backup</div>
-      <div class="io-desc">Backup automático al guardar sesión. Introduce tu Personal Access Token de GitHub (solo una vez).</div>
-      <input type="password" class="io-ta" id="gh-token-inp" placeholder="ghp_xxxxxxxxxxxx" style="min-height:auto;height:48px;font-size:14px">
+      <div class="io-desc">Backup automático al guardar sesión → repo <b>privado</b> pol-training-data. Usa un token <b>fine-grained</b> limitado a ese repo (permiso Contents: Read/Write, con expiración). Nunca un token clásico con scope repo.</div>
+      <input type="password" class="io-ta" id="gh-token-inp" placeholder="github_pat_xxxxxxxx" autocomplete="off" style="min-height:auto;height:48px;font-size:14px">
       <button class="btn btn-s" onclick="saveGHToken()" style="margin-bottom:8px">Guardar token</button>
       <div class="gh-status" id="gh-status"></div>
     </div>
@@ -303,8 +304,8 @@
   <div id="toast"></div>
 </div>
 <script>
-const APP_VERSION='3.5.1';
-const APP_DATE='15 julio 2026';
+const APP_VERSION='3.6.0';
+const APP_DATE='22 julio 2026';
 const SK='pol-v2',ASK='pol-active-v2',RK='pol-routines-v2',GHK='pol-gh-token',GHSK='pol-gh-sha',GHLAST='pol-gh-last-ok',CIRC=2*Math.PI*80;
 const COLORS={'Pecho/Trí':'#dc2626','Espalda/Hombro':'#2563eb','Pierna/Bíc':'#16a34a','Complementario':'#64748b','Running':'#ea580c','Pádel':'#9333ea','Escalada':'#ca8a04','Otro':'#6b7280'};
 const DAYS=['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'];
@@ -312,7 +313,8 @@ const MESES=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','
 const DAY_MAP={1:'Pecho/Trí',3:'Espalda/Hombro',6:'Pierna/Bíc'};
 const ROTATION=['Pecho/Trí','Espalda/Hombro','Pierna/Bíc'];
 const ALL_TYPES=[...ROTATION,'Complementario'];
-const GH_REPO='polrey98-collab/pol-training';
+// ⚠️ Repo PRIVADO solo para datos — el código público (Pages) vive en pol-training
+const GH_DATA_REPO='polrey98-collab/pol-training-data';
 const GH_PATH='backups/latest.json';
 
 // ─── DEFAULT ROUTINES — CICLO 3 (12/05/2026) ────────────────────────────────
@@ -517,7 +519,7 @@ async function githubBackup(){
   const token=getGHToken();if(!token){ghStatus('⚠️ Token no configurado','err');return;}
   const fullData={...D,routines:R};
   const content=btoa(unescape(encodeURIComponent(JSON.stringify(fullData,null,2))));
-  const url=`https://api.github.com/repos/${GH_REPO}/contents/${GH_PATH}`;
+  const url=`https://api.github.com/repos/${GH_DATA_REPO}/contents/${GH_PATH}`;
   const headers={'Authorization':`Bearer ${token}`,'Content-Type':'application/json','Accept':'application/vnd.github.v3+json'};
   try{
     let sha=localStorage.getItem(GHSK)||null;
@@ -535,7 +537,7 @@ async function githubBackup(){
       // F1: histórico con fecha — backups/historico/YYYY-MM-DD.json (uno por día)
       const fecha=new Date().toISOString().split('T')[0];
       const hPath=`backups/historico/${fecha}.json`;
-      const hUrl=`https://api.github.com/repos/${GH_REPO}/contents/${hPath}`;
+      const hUrl=`https://api.github.com/repos/${GH_DATA_REPO}/contents/${hPath}`;
       try{
         let hSha=null;
         const hGet=await fetch(hUrl,{headers});
@@ -675,10 +677,10 @@ function renderSess(){
   for(const blk of routine.blocks){
     const blkEl=document.createElement('div');
     if(blk.warmup){
-      blkEl.innerHTML=`<div class="blk-hd">${blk.name}</div>`+blk.exercises.map(ex=>`<div class="warmup-card"><div class="warmup-name">${ex.name}</div><div class="tips">${ex.tips.map(t=>`<div class="tip">${t}</div>`).join('')}</div></div>`).join('');
+      blkEl.innerHTML=`<div class="blk-hd">${esc(blk.name)}</div>`+blk.exercises.map(ex=>`<div class="warmup-card"><div class="warmup-name">${esc(ex.name)}</div><div class="tips">${(ex.tips||[]).map(t=>`<div class="tip">${esc(t)}</div>`).join('')}</div></div>`).join('');
       body.appendChild(blkEl);continue;
     }
-    blkEl.innerHTML=`<div class="blk-hd">${blk.name}</div>`;
+    blkEl.innerHTML=`<div class="blk-hd">${esc(blk.name)}</div>`;
     for(const ex of blk.exercises){
       if(!ex.sets)continue;
       const st=AS.states[ex.id]||{},isOpen=AE===ex.id,isDone=st.done,isSkip=st.skipped;
@@ -688,17 +690,17 @@ function renderSess(){
       card.className=`ex-card${isSkip?' skipped':isOpen?' open':isDone?' done':''}`;
       card.id=`ec-${ex.id}`;
       const skipLabel=isSkip?'Activar':'Saltar';
-      card.innerHTML=`<div class="ex-hd"><div class="ex-dot"></div><div class="ex-info" onclick="toggleEx('${ex.id}')"><div class="ex-name">${ex.name}</div><div class="ex-meta" style="color:${isSkip?'var(--text3)':c};">${isSkip?'Saltado':ex.scheme+' · '+ex.unit+(confSets>0?' · '+confSets+'/'+ex.sets+' series':'')}</div></div><button class="skip-btn" onclick="event.stopPropagation();skipExercise('${ex.id}')">${skipLabel}</button></div>`;
+      card.innerHTML=`<div class="ex-hd"><div class="ex-dot"></div><div class="ex-info" onclick="toggleEx('${ex.id}')"><div class="ex-name">${esc(ex.name)}</div><div class="ex-meta" style="color:${isSkip?'var(--text3)':c};">${isSkip?'Saltado':esc(ex.scheme)+' · '+esc(ex.unit)+(confSets>0?' · '+confSets+'/'+ex.sets+' series':'')}</div></div><button class="skip-btn" onclick="event.stopPropagation();skipExercise('${ex.id}')">${skipLabel}</button></div>`;
       if(isOpen&&!isSkip){
-        let bh=`<div class="ex-body"><div class="tips" style="margin-top:12px;"><div class="tips-lbl">Cues técnicos</div>${ex.tips.map(t=>`<div class="tip">${t}</div>`).join('')}</div>`;
+        let bh=`<div class="ex-body"><div class="tips" style="margin-top:12px;"><div class="tips-lbl">Cues técnicos</div>${(ex.tips||[]).map(t=>`<div class="tip">${esc(t)}</div>`).join('')}</div>`;
         const _lw=lastWeight(AS.type,ex.id,ex.name);
-        if(_lw!==null)bh+=`<div class="last-ref">última sesión: <b>${_lw} ${ex.unit}</b></div>`;
+        if(_lw!==null)bh+=`<div class="last-ref">última sesión: <b>${esc(_lw)} ${esc(ex.unit)}</b></div>`;
         bh+=`<div class="sets">`;
         (st.sets||[]).forEach((setD,i)=>{
           const locked=setD.ok,wVal=(setD.w!==null&&setD.w!==undefined)?setD.w:'',rVal=(setD.reps!==null&&setD.reps!==undefined)?setD.reps:'—';
           const wPlaceholder=ex.base!==null?(ex.base||''):'PC';
-          if(locked){bh+=`<div class="set-row"><div class="set-n">S${i+1}</div><div class="w-box locked"><input class="w-inp" type="text" value="${wVal}" disabled><div class="w-unit-lbl">${ex.unit}</div></div><div class="set-x">×</div><div class="reps-grp locked"><button class="r-adj" disabled tabindex="-1">−</button><div class="r-val">${rVal}</div><div class="r-unit">${rU}</div><button class="r-adj" disabled tabindex="-1">+</button></div><button class="unlock-btn" onclick="unlockSet('${ex.id}',${i})" title="Editar serie">🔓</button></div>`;}
-          else{bh+=`<div class="set-row"><div class="set-n">S${i+1}</div><div class="w-box"><input class="w-inp" type="text" inputmode="decimal" id="w-${ex.id}-${i}" value="${wVal}" placeholder="${wPlaceholder}" oninput="updW('${ex.id}',${i},this.value)" onfocus="this.select()"><div class="w-unit-lbl">${ex.unit}</div></div><div class="set-x">×</div><div class="reps-grp"><button class="r-adj" onclick="adjR('${ex.id}',${i},-1)" tabindex="-1">−</button><div class="r-val" id="rv-${ex.id}-${i}">${rVal}</div><div class="r-unit">${rU}</div><button class="r-adj" onclick="adjR('${ex.id}',${i},1)" tabindex="-1">+</button></div><button class="confirm-btn" onclick="confSet('${ex.id}',${i})" tabindex="-1">✓</button></div>`;}
+          if(locked){bh+=`<div class="set-row"><div class="set-n">S${i+1}</div><div class="w-box locked"><input class="w-inp" type="text" value="${esc(wVal)}" disabled><div class="w-unit-lbl">${esc(ex.unit)}</div></div><div class="set-x">×</div><div class="reps-grp locked"><button class="r-adj" disabled tabindex="-1">−</button><div class="r-val">${rVal}</div><div class="r-unit">${rU}</div><button class="r-adj" disabled tabindex="-1">+</button></div><button class="unlock-btn" onclick="unlockSet('${ex.id}',${i})" title="Editar serie">🔓</button></div>`;}
+          else{bh+=`<div class="set-row"><div class="set-n">S${i+1}</div><div class="w-box"><input class="w-inp" type="text" inputmode="decimal" id="w-${ex.id}-${i}" value="${esc(wVal)}" placeholder="${esc(wPlaceholder)}" oninput="updW('${ex.id}',${i},this.value)" onfocus="this.select()"><div class="w-unit-lbl">${esc(ex.unit)}</div></div><div class="set-x">×</div><div class="reps-grp"><button class="r-adj" onclick="adjR('${ex.id}',${i},-1)" tabindex="-1">−</button><div class="r-val" id="rv-${ex.id}-${i}">${rVal}</div><div class="r-unit">${rU}</div><button class="r-adj" onclick="adjR('${ex.id}',${i},1)" tabindex="-1">+</button></div><button class="confirm-btn" onclick="confSet('${ex.id}',${i})" tabindex="-1">✓</button></div>`;}
         });
         bh+=`</div><div class="note-sec"><div class="note-lbl">Notas</div><textarea class="note-ta" id="nt-${ex.id}" placeholder="Tensión, técnica, molestias..." oninput="updNotes('${ex.id}',this.value)">${esc(st.notes||'')}</textarea></div>`;
         if(!isDone)bh+=`<button class="btn btn-p done-ex-btn" onclick="doneEx('${ex.id}')">✓ Ejercicio completado</button>`;
@@ -811,7 +813,7 @@ function toggleHist(i){const b=document.getElementById(`hbody-${i}`),c=document.
 // ─── PROGRESSION ─────────────────────────────────────────────────────────────
 function renderProg(){
   const sel=document.getElementById('prog-sel');if(!sel)return;
-  sel.innerHTML=Object.entries(R).map(([type,rt])=>{const exs=rt.blocks.filter(b=>!b.warmup).flatMap(b=>b.exercises.filter(e=>e.sets>0));return`<optgroup label="${type}">${exs.map(ex=>`<option value="${ex.id}">${ex.name}</option>`).join('')}</optgroup>`;}).join('');
+  sel.innerHTML=Object.entries(R).map(([type,rt])=>{const exs=rt.blocks.filter(b=>!b.warmup).flatMap(b=>b.exercises.filter(e=>e.sets>0));return`<optgroup label="${esc(type)}">${exs.map(ex=>`<option value="${esc(ex.id)}">${esc(ex.name)}</option>`).join('')}</optgroup>`;}).join('');
   renderCycleStatus();renderReports();renderChart();
 }
 function renderCycleStatus(){
@@ -987,6 +989,21 @@ function doShare(){
   }
   try{const blob=new Blob([json],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=filename;document.body.appendChild(a);a.click();document.body.removeChild(a);setTimeout(()=>URL.revokeObjectURL(url),1000);toast('✓ Descargado');}catch(e){toast('⚠ Usa copiar al portapapeles');}
 }
+// ─── VALIDACIÓN DE RUTINAS IMPORTADAS (anti-XSS / anti-corrupción) ───────────
+// Los ids se inyectan en atributos onclick/id del DOM → deben ser [a-z0-9-] estricto.
+const VALID_EX_ID=/^[a-z0-9-]{1,60}$/;
+function validRoutine(type,rt){
+  if(typeof type!=='string'||!type.length||type.length>40)return false;
+  if(!rt||!Array.isArray(rt.blocks)||!rt.blocks.length)return false;
+  for(const b of rt.blocks){
+    if(typeof b.name!=='string'||!Array.isArray(b.exercises))return false;
+    for(const e of b.exercises){
+      if(typeof e.name!=='string'||!VALID_EX_ID.test(String(e.id||'')))return false;
+      if(e.tips!==undefined&&(!Array.isArray(e.tips)||e.tips.some(t=>typeof t!=='string')))return false;
+    }
+  }
+  return true;
+}
 function doImport(){
   const raw=document.getElementById('import-ta').value.trim();if(!raw){toast('Pega el JSON primero');return;}
   try{
@@ -999,12 +1016,14 @@ function doImport(){
     save();
     // Import routines if present — MERGE por tipo de sesión (NO reemplazar todo el objeto)
     // Así, si el JSON solo trae una rutina, las demás se conservan intactas.
-    let routinesUpdated=false,routinesMerged=0;
+    let routinesUpdated=false,routinesMerged=0,routinesRejected=0;
     if(parsed.routines&&typeof parsed.routines==='object'&&Object.keys(parsed.routines).length>0){
       for(const[type,routine]of Object.entries(parsed.routines)){
-        if(routine&&routine.blocks&&routine.blocks.length){R[type]=routine;routinesMerged++;}
+        if(validRoutine(type,routine)){R[type]=routine;routinesMerged++;}
+        else routinesRejected++;
       }
       if(routinesMerged>0){saveRoutines();buildExType();routinesUpdated=true;}
+      if(routinesRejected>0)toast(`⚠ ${routinesRejected} rutina(s) rechazada(s): formato o ids inválidos`);
     }
     document.getElementById('import-ta').value='';
     toast(`✓ ${added} nuevas · ${updated} actualizadas${routinesUpdated?' · '+routinesMerged+' rutina(s)':''}`);
