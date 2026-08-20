@@ -132,6 +132,8 @@
     .h-date{font-family:var(--ff-d);font-size:14px;font-weight:700;color:var(--text)}
     .h-feel{font-size:12px;color:var(--text3);margin-top:2px;font-style:italic}
     .h-chev{color:var(--text3);font-size:16px;transition:transform .2s}
+    .h-del{background:none;border:none;color:var(--text3);font-size:17px;padding:6px 8px;cursor:pointer;line-height:1;border-radius:8px;flex-shrink:0;-webkit-tap-highlight-color:transparent}
+    .h-del:active{background:rgba(239,68,68,.15);color:var(--err)}
     .h-body{display:none;padding:0 14px 14px;border-top:1px solid var(--border)}
     .h-body.open{display:block}
     .h-blk-lbl{font-family:var(--ff-d);font-size:9px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--text3);margin:12px 0 6px}
@@ -305,8 +307,8 @@
   <div id="toast"></div>
 </div>
 <script>
-const APP_VERSION='3.7.0';
-const APP_DATE='22 julio 2026';
+const APP_VERSION='3.8.0';
+const APP_DATE='20 agosto 2026';
 const SK='pol-v2',ASK='pol-active-v2',RK='pol-routines-v2',GHK='pol-gh-token',GHSK='pol-gh-sha',GHLAST='pol-gh-last-ok',GHHIST='pol-gh-hist-last',CIRC=2*Math.PI*80;
 const COLORS={'Pecho/Trí':'#dc2626','Espalda/Hombro':'#2563eb','Pierna/Bíc':'#16a34a','Complementario':'#64748b','Running':'#ea580c','Pádel':'#9333ea','Escalada':'#ca8a04','Otro':'#6b7280'};
 const DAYS=['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'];
@@ -835,9 +837,21 @@ function renderHist(){
   const filt=document.getElementById('filt-sel')?.value||'all',list=document.getElementById('hist-list');if(!list)return;
   const sess=[...D.sessions].filter(s=>filt==='all'||s.type===filt).sort((a,b)=>b.date.localeCompare(a.date));
   if(!sess.length){list.innerHTML=`<div class="empty">Sin sesiones registradas aún.<br>¡Empieza tu primer entreno!</div>`;return;}
-  list.innerHTML=sess.map((s,i)=>{const c=col(s.type);return`<div class="h-card" style="border-left-color:${c};"><div class="h-hd" onclick="toggleHist(${i})"><div class="h-dot" style="background:${c};"></div><div class="h-info"><div class="h-date">${DAYS[new Date(s.date+'T12:00:00').getDay()]} ${fmtD(s.date)} · <span style="color:${c};font-weight:800;">${esc(s.type)}</span></div><div class="h-feel">${esc(s.general_feeling||'')}</div></div><div class="h-chev" id="hchev-${i}">▾</div></div><div class="h-body" id="hbody-${i}">${(s.blocks||[]).map(b=>`<div class="h-blk-lbl">${esc(b.name)}</div>${(b.exercises||[]).map(e=>`<div class="h-ex${e.skipped?' h-skipped':''}"><div class="h-ex-name">${esc(e.name)}${e.skipped?' <span style="font-size:10px;color:var(--text3);">(saltado)</span>':''}</div><div class="h-ex-sets" style="color:${c};">${esc(e.sets)}</div>${e.notes?`<div class="h-ex-notes">${esc(e.notes)}</div>`:''}</div>`).join('')}`).join('')}${s.patterns?.length?`<div class="h-tag" style="background:rgba(239,68,68,.07);border-color:var(--err);"><div class="h-tag-lbl" style="color:var(--err);">⚠ Patrones</div>${s.patterns.map(p=>`<div class="h-tag-item">${esc(p)}</div>`).join('')}</div>`:''}${s.decisions?.length?`<div class="h-tag" style="background:rgba(34,197,94,.07);border-color:var(--ok);"><div class="h-tag-lbl" style="color:var(--ok);">✓ Decisiones</div>${s.decisions.map(d=>`<div class="h-tag-item">→ ${esc(d)}</div>`).join('')}</div>`:''}</div></div>`;}).join('');
+  list.innerHTML=sess.map((s,i)=>{const c=col(s.type);return`<div class="h-card" style="border-left-color:${c};"><div class="h-hd" onclick="toggleHist(${i})"><div class="h-dot" style="background:${c};"></div><div class="h-info"><div class="h-date">${DAYS[new Date(s.date+'T12:00:00').getDay()]} ${fmtD(s.date)} · <span style="color:${c};font-weight:800;">${esc(s.type)}</span></div><div class="h-feel">${esc(s.general_feeling||'')}</div></div><button class="h-del" onclick="event.stopPropagation();delSession('${esc(s.id)}')" title="Borrar sesión">🗑</button><div class="h-chev" id="hchev-${i}">▾</div></div><div class="h-body" id="hbody-${i}">${(s.blocks||[]).map(b=>`<div class="h-blk-lbl">${esc(b.name)}</div>${(b.exercises||[]).map(e=>`<div class="h-ex${e.skipped?' h-skipped':''}"><div class="h-ex-name">${esc(e.name)}${e.skipped?' <span style="font-size:10px;color:var(--text3);">(saltado)</span>':''}</div><div class="h-ex-sets" style="color:${c};">${esc(e.sets)}</div>${e.notes?`<div class="h-ex-notes">${esc(e.notes)}</div>`:''}</div>`).join('')}`).join('')}${s.patterns?.length?`<div class="h-tag" style="background:rgba(239,68,68,.07);border-color:var(--err);"><div class="h-tag-lbl" style="color:var(--err);">⚠ Patrones</div>${s.patterns.map(p=>`<div class="h-tag-item">${esc(p)}</div>`).join('')}</div>`:''}${s.decisions?.length?`<div class="h-tag" style="background:rgba(34,197,94,.07);border-color:var(--ok);"><div class="h-tag-lbl" style="color:var(--ok);">✓ Decisiones</div>${s.decisions.map(d=>`<div class="h-tag-item">→ ${esc(d)}</div>`).join('')}</div>`:''}</div></div>`;}).join('');
 }
 function toggleHist(i){const b=document.getElementById(`hbody-${i}`),c=document.getElementById(`hchev-${i}`);if(!b)return;b.classList.toggle('open');if(c)c.style.transform=b.classList.contains('open')?'rotate(180deg)':'';}
+function delSession(id){
+  const s=D.sessions.find(x=>x.id===id);
+  if(!s){toast('⚠ Sesión no encontrada');return;}
+  const lbl=`${fmtD(s.date)} · ${s.type}`;
+  if(!confirm(`¿Borrar la sesión ${lbl}?\n\nEsta acción no se puede deshacer.`))return;
+  const n=D.sessions.length;
+  D.sessions=D.sessions.filter(x=>x.id!==id);
+  if(D.sessions.length===n){toast('⚠ No se pudo borrar');return;}
+  save();renderHist();renderProg?.();
+  toast(`🗑 Sesión borrada · ${lbl}`);
+  githubBackup?.();
+}
 
 // ─── PROGRESSION ─────────────────────────────────────────────────────────────
 function renderProg(){
