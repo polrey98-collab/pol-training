@@ -184,6 +184,20 @@
     .prog-row-item:last-child{border-bottom:none}
     .prog-row-date{font-family:var(--ff-d);font-size:13px;color:var(--text2);font-weight:500}
     .prog-row-val{font-family:var(--ff-d);font-size:18px;font-weight:800}
+    #rehab-top{padding:24px 16px 6px}
+    .rh-sub{font-size:13px;color:var(--text2);line-height:1.6;margin:8px 0 14px}
+    .rh-prog{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+    .rh-card{margin:0 16px 10px;padding:14px 16px;background:var(--card);border:1px solid var(--border);border-radius:14px;transition:border-color .2s,opacity .2s}
+    .rh-card.done{border-color:var(--ok);opacity:.75}
+    .rh-name{font-family:var(--ff-d);font-size:18px;font-weight:800;letter-spacing:.04em;text-transform:uppercase}
+    .rh-spec{font-family:var(--ff-d);font-size:13px;font-weight:700;letter-spacing:.04em;color:var(--accent);margin-top:2px}
+    .rh-desc{font-size:12px;color:var(--text2);line-height:1.5;margin-top:6px}
+    .rh-sets{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
+    .rh-set{width:46px;height:46px;border-radius:50%;border:2px solid var(--border2);background:transparent;color:var(--text2);font-family:var(--ff-d);font-size:16px;font-weight:800;cursor:pointer;-webkit-user-select:none;user-select:none;transition:all .15s}
+    .rh-set:active{transform:scale(.92)}
+    .rh-set.on{background:var(--ok);border-color:var(--ok);color:#fff}
+    .rh-set.opt:not(.on){border-style:dashed}
+    .rh-note{margin:6px 16px 16px;font-size:12px;color:var(--text3);line-height:1.6}
     #io-top{padding:24px 16px 20px;display:flex;align-items:baseline;justify-content:space-between;gap:10px}
     #version-lbl{font-family:var(--ff-d);font-size:10px;font-weight:700;letter-spacing:.08em;color:var(--text3);white-space:nowrap}
     .io-sec{margin:0 16px 16px;padding:18px;background:var(--card);border:1px solid var(--border);border-radius:14px}
@@ -292,10 +306,21 @@
       <button class="btn btn-g" style="border-color:var(--err);color:var(--err)" onclick="doReset()">Borrar todo</button>
     </div>
   </div>
+  <div id="rehab" class="screen">
+    <div id="rehab-top">
+      <div class="h1">Rehab mano</div>
+      <div class="rh-sub">Antebrazo izquierdo · tendinoso, con líquido en muñeca (fisio, 09/10/2026). Pauta diaria. Solo orientativo: lo marcado no se guarda en ningún JSON y se reinicia cada día.</div>
+      <div class="rh-prog"><div class="prog-track"><div class="prog-fill" id="rh-fill" style="width:0%;background:var(--ok)"></div></div><div class="prog-lbl" id="rh-lbl"></div></div>
+    </div>
+    <div id="rehab-list"></div>
+    <div class="rh-note">Dolor, no «tira» → reduce rango o carga y avisa. Reevaluación con el fisio en ~1 mes (≈ 09/11/2026). Plate pinch, dead hang lastrado, farmer's carry y press con barra siguen suspendidos hasta confirmación del fisio.</div>
+    <div style="margin:0 16px"><button class="btn btn-g" onclick="rehabReset()">Reiniciar checklist</button></div>
+  </div>
   <nav id="nav">
     <button class="nb on" id="nb-home" onclick="go('home')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Hoy</button>
     <button class="nb" id="nb-hist" onclick="go('hist')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>Historial</button>
     <button class="nb" id="nb-prog" onclick="go('prog')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>Progresión</button>
+    <button class="nb" id="nb-rehab" onclick="go('rehab')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>Rehab</button>
     <button class="nb" id="nb-io" onclick="go('io')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="8 17 12 21 16 17"/><line x1="12" y1="12" x2="12" y2="21"/><path d="M20.88 18.09A5 5 0 0018 9h-1.26A8 8 0 103 16.29"/></svg>Datos</button>
   </nav>
   <div id="timer-ov">
@@ -307,8 +332,8 @@
   <div id="toast"></div>
 </div>
 <script>
-const APP_VERSION='3.8.0';
-const APP_DATE='20 agosto 2026';
+const APP_VERSION='3.9.0';
+const APP_DATE='9 octubre 2026';
 const SK='pol-v2',ASK='pol-active-v2',RK='pol-routines-v2',GHK='pol-gh-token',GHSK='pol-gh-sha',GHLAST='pol-gh-last-ok',GHHIST='pol-gh-hist-last',CIRC=2*Math.PI*80;
 const COLORS={'Pecho/Trí':'#dc2626','Espalda/Hombro':'#2563eb','Pierna/Bíc':'#16a34a','Complementario':'#64748b','Running':'#ea580c','Pádel':'#9333ea','Escalada':'#ca8a04','Otro':'#6b7280'};
 const DAYS=['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'];
@@ -643,8 +668,36 @@ function go(screen){
   if(screen==='hist')renderHist();
   if(screen==='prog')renderProg();
   if(screen==='io')renderIO();
+  if(screen==='rehab')renderRehab();
 }
 function openActiveSession(){go('sess');}
+
+// ─── REHAB MANO (checklist fijo, sin JSON ni backup) ─────────────────────────
+const RHK='pol-rehab-v1';
+const REHAB=[
+  {id:'pelota',name:'Pelota de tenis',spec:'Descarga · antebrazo izquierdo',desc:'Para soltar el antebrazo antes de los ejercicios.',sets:1},
+  {id:'supinacion',name:'Supinación',spec:'10 reps · 3-4 series',desc:'Con mancuerna o barra (15 kg, 20 kg si va bien). Control en la ida y en la vuelta.',sets:4,opt:4},
+  {id:'pronacion',name:'Pronación',spec:'10 reps · 3-4 series',desc:'Mismo material y carga que la supinación.',sets:4,opt:4},
+  {id:'radial',name:'Desviación radial con goma',spec:'10 reps · 3-4 series',desc:'Hacia el pulgar, con goma. Trabaja la zona de la muñeca donde había líquido.',sets:4,opt:4}
+];
+function rehabState(){try{const r=JSON.parse(localStorage.getItem(RHK)||'null');if(r&&r.d===today()&&r.c&&typeof r.c==='object')return r.c;}catch(e){}return{};}
+function rehabSave(c){try{localStorage.setItem(RHK,JSON.stringify({d:today(),c}));}catch(e){}}
+function rehabToggle(id,i){const c=rehabState();const a=Array.isArray(c[id])?c[id]:[];a[i]=!a[i];c[id]=a;rehabSave(c);renderRehab();vib(8);}
+function rehabReset(){try{localStorage.removeItem(RHK);}catch(e){}renderRehab();}
+function renderRehab(){
+  const c=rehabState();let done=0,total=0;
+  document.getElementById('rehab-list').innerHTML=REHAB.map(ex=>{
+    const a=Array.isArray(c[ex.id])?c[ex.id]:[];
+    const need=ex.opt?ex.sets-1:ex.sets; // series mínimas (la 4ª es opcional)
+    const got=a.slice(0,need).filter(Boolean).length;
+    done+=got;total+=need;
+    const full=got>=need;
+    const btns=Array.from({length:ex.sets},(_,i)=>`<button class="rh-set${a[i]?' on':''}${ex.opt&&i>=need?' opt':''}" onclick="rehabToggle('${ex.id}',${i})" aria-label="Serie ${i+1}">${a[i]?'✓':i+1}</button>`).join('');
+    return`<div class="rh-card${full?' done':''}"><div class="rh-name">${esc(ex.name)}</div><div class="rh-spec">${esc(ex.spec)}</div><div class="rh-desc">${esc(ex.desc)}</div><div class="rh-sets">${btns}</div></div>`;
+  }).join('');
+  document.getElementById('rh-fill').style.width=(total?Math.round(done/total*100):0)+'%';
+  document.getElementById('rh-lbl').textContent=`${done}/${total}`;
+}
 
 // ─── HOME ────────────────────────────────────────────────────────────────────
 function renderHome(){
