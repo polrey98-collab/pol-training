@@ -1,8 +1,8 @@
-// POL · ENTRENO — Service Worker v3.9.0
+// POL · ENTRENO — Service Worker v3.10.0
 // Estrategia: cache-first para el shell de la app + fuentes.
 // Las llamadas a api.github.com (backups) van siempre a red — nunca se cachean.
 
-const CACHE = 'pol-entreno-v3.9.0';
+const CACHE = 'pol-entreno-v3.10.0';
 
 const SHELL = [
   './',

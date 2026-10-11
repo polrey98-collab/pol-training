@@ -198,6 +198,15 @@
     .rh-set.on{background:var(--ok);border-color:var(--ok);color:#fff}
     .rh-set.opt:not(.on){border-style:dashed}
     .rh-note{margin:6px 16px 16px;font-size:12px;color:var(--text3);line-height:1.6}
+    #cardio-top{padding:24px 16px 4px}
+    .cd-form{margin:0 16px 16px;padding:18px;background:var(--card);border:1px solid var(--border);border-radius:14px}
+    .cd-f{display:block;margin-bottom:12px;min-width:0}
+    .cd-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .cd-in{display:block;width:100%;background:var(--input);border:1.5px solid var(--border2);border-radius:10px;padding:11px 12px;font-family:var(--ff-b);font-size:16px;color:var(--text);outline:none;-webkit-appearance:none;appearance:none;min-height:46px}
+    .cd-in::placeholder{color:var(--text3)}
+    .cd-pace{font-family:var(--ff-d);font-size:14px;font-weight:700;color:#ea580c;margin:-4px 0 12px;min-height:18px}
+    .cd-chk{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--text2);line-height:1.4;margin-bottom:12px;cursor:pointer}
+    .cd-chk input{width:20px;height:20px;flex-shrink:0;accent-color:#ea580c;margin-top:1px}
     #io-top{padding:24px 16px 20px;display:flex;align-items:baseline;justify-content:space-between;gap:10px}
     #version-lbl{font-family:var(--ff-d);font-size:10px;font-weight:700;letter-spacing:.08em;color:var(--text3);white-space:nowrap}
     .io-sec{margin:0 16px 16px;padding:18px;background:var(--card);border:1px solid var(--border);border-radius:14px}
@@ -254,6 +263,7 @@
         <option value="Espalda/Hombro">ESPALDA</option>
         <option value="Pierna/Bíc">PIERNA</option>
         <option value="Complementario">COMPL.</option>
+        <option value="Cardio">CARDIO</option>
         <option value="Otro">OTRAS</option>
       </select>
     </div>
@@ -306,6 +316,33 @@
       <button class="btn btn-g" style="border-color:var(--err);color:var(--err)" onclick="doReset()">Borrar todo</button>
     </div>
   </div>
+  <div id="cardio" class="screen">
+    <div id="cardio-top">
+      <div class="h1" style="color:#ea580c">Cardio</div>
+      <div class="rh-sub">Rodajes, bici, natación y actividades externas (escalada, pádel, HYROX). No cuenta en el ciclo 4-4-4.</div>
+    </div>
+    <div class="cd-form">
+      <div class="cd-row">
+        <label class="cd-f"><span class="note-lbl">Fecha</span><input type="date" id="cd-date" class="cd-in"></label>
+        <label class="cd-f"><span class="note-lbl">Modalidad</span><select id="cd-mod" class="cd-in" onchange="cdCalc()"></select></label>
+      </div>
+      <div class="cd-row">
+        <label class="cd-f"><span class="note-lbl">Duración (mm:ss)</span><input id="cd-dur" class="cd-in" inputmode="numeric" placeholder="30:41" autocomplete="off" oninput="cdCalc()"></label>
+        <label class="cd-f"><span class="note-lbl">Distancia (km)</span><input id="cd-dist" class="cd-in" inputmode="decimal" placeholder="5,02" autocomplete="off" oninput="cdCalc()"></label>
+      </div>
+      <div class="cd-pace" id="cd-pace"></div>
+      <div class="cd-row">
+        <label class="cd-f"><span class="note-lbl">FC media</span><input id="cd-hra" class="cd-in" inputmode="numeric" placeholder="148" autocomplete="off"></label>
+        <label class="cd-f"><span class="note-lbl">FC máx</span><input id="cd-hrm" class="cd-in" inputmode="numeric" placeholder="161" autocomplete="off"></label>
+      </div>
+      <label class="cd-f" id="cd-route-f"><span class="note-lbl">Recorrido</span><input id="cd-route" class="cd-in" list="cd-routes" placeholder="Mismo recorrido = comparable" autocomplete="off"><datalist id="cd-routes"></datalist></label>
+      <label class="cd-chk" id="cd-alza-f"><input type="checkbox" id="cd-alza"><span>Alza puesta</span></label>
+      <label class="cd-chk" id="cd-talk-f"><input type="checkbox" id="cd-talk"><span>Test de la conversación superado (frases enteras sin cortar)</span></label>
+      <div class="note-sec"><div class="note-lbl">Sensaciones / notas</div><textarea class="note-ta" id="cd-notes" placeholder="Cómo fue, molestias, terreno..."></textarea></div>
+      <button class="btn btn-p" style="background:#ea580c;margin-top:14px" onclick="saveCardio()">✓ Guardar cardio</button>
+      <button class="btn btn-g" style="margin-top:8px" onclick="go('home')">Cancelar</button>
+    </div>
+  </div>
   <div id="rehab" class="screen">
     <div id="rehab-top">
       <div class="h1">Rehab mano</div>
@@ -332,15 +369,15 @@
   <div id="toast"></div>
 </div>
 <script>
-const APP_VERSION='3.9.0';
-const APP_DATE='9 octubre 2026';
+const APP_VERSION='3.10.0';
+const APP_DATE='11 octubre 2026';
 const SK='pol-v2',ASK='pol-active-v2',RK='pol-routines-v2',GHK='pol-gh-token',GHSK='pol-gh-sha',GHLAST='pol-gh-last-ok',GHHIST='pol-gh-hist-last',CIRC=2*Math.PI*80;
-const COLORS={'Pecho/Trí':'#dc2626','Espalda/Hombro':'#2563eb','Pierna/Bíc':'#16a34a','Complementario':'#64748b','Running':'#ea580c','Pádel':'#9333ea','Escalada':'#ca8a04','Otro':'#6b7280'};
+const COLORS={'Pecho/Trí':'#dc2626','Espalda/Hombro':'#2563eb','Pierna/Bíc':'#16a34a','Complementario':'#64748b','Cardio':'#ea580c','Running':'#ea580c','Pádel':'#9333ea','Escalada':'#ca8a04','Otro':'#6b7280'};
 const DAYS=['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'];
 const MESES=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
 const DAY_MAP={1:'Pecho/Trí',3:'Espalda/Hombro',6:'Pierna/Bíc'};
 const ROTATION=['Pecho/Trí','Espalda/Hombro','Pierna/Bíc'];
-const ALL_TYPES=[...ROTATION,'Complementario'];
+const ALL_TYPES=[...ROTATION,'Complementario','Cardio'];
 // ⚠️ Repo PRIVADO solo para datos — el código público (Pages) vive en pol-training
 const GH_DATA_REPO='polrey98-collab/pol-training-data';
 const GH_PATH='backups/latest.json';
@@ -661,8 +698,9 @@ function go(screen){
   document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
   document.querySelectorAll('.nb').forEach(b=>b.classList.remove('on'));
   document.getElementById(screen).classList.add('active');
-  const nb=document.getElementById('nb-'+(screen==='sess'?'home':screen));
+  const nb=document.getElementById('nb-'+(screen==='sess'||screen==='cardio'?'home':screen));
   if(nb)nb.classList.add('on');
+  if(screen==='cardio')renderCardio();
   if(screen==='sess'&&AS)renderSess();
   if(screen==='home')renderHome();
   if(screen==='hist')renderHist();
@@ -713,9 +751,14 @@ function renderHome(){
     banner.innerHTML=`<div style="font-family:var(--ff-d);font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:${col(AS.type)};margin-bottom:3px;">Sesión en curso</div><div style="font-family:var(--ff-d);font-size:16px;font-weight:700;color:var(--text);">${AS.type} — ${fmtD(AS.date)}</div><div style="font-size:12px;color:var(--text2);margin-top:2px;">Toca para continuar</div>`;
     startBtn.textContent='+ Nueva sesión';
   }else{banner.style.display='none';startBtn.innerHTML='▶ Empezar sesión';}
+  if(curType==='Cardio')startBtn.innerHTML='▶ Registrar cardio';
+  startBtn.style.background=curType==='Cardio'?col('Cardio'):'';
   startBtn.onclick=startSession;
   const prev=document.getElementById('last-prev'),last=lastOfType(curType);
-  if(last){
+  if(last&&last.cardio){
+    prev.style.display='block';
+    prev.innerHTML=`<div><div class="lbl" style="margin-bottom:6px;">Último cardio</div><div style="font-family:var(--ff-d);font-size:13px;color:var(--text2);font-weight:500;">${fmtD(last.date)}</div><div style="margin-top:8px;font-family:var(--ff-d);font-size:13px;font-weight:700;color:${col('Cardio')};">${esc(cardioLine(last.cardio))}</div>${last.cardio.route?`<div style="font-size:12px;color:var(--text3);margin-top:3px;">${esc(last.cardio.route)}</div>`:''}</div>`;
+  }else if(last){
     const exs=(last.blocks?.[0]?.exercises||[]).slice(0,2);
     prev.style.display='block';
     prev.innerHTML=`<div><div class="lbl" style="margin-bottom:6px;">Última ${esc(curType)}</div><div style="font-family:var(--ff-d);font-size:13px;color:var(--text2);font-weight:500;">${fmtD(last.date)}</div>${last.general_feeling?`<div style="font-size:12px;color:var(--text3);font-style:italic;margin-top:3px;">${esc(last.general_feeling)}</div>`:''}${exs.map(e=>`<div style="margin-top:8px;display:flex;align-items:baseline;gap:6px;"><div style="font-family:var(--ff-d);font-size:13px;font-weight:700;color:${col(curType)};">${esc(e.name)}</div><div style="font-family:var(--ff-d);font-size:13px;color:var(--text2);">${esc(e.weight||'')}</div></div>`).join('')}</div>`;
@@ -725,6 +768,7 @@ function selectType(t){curType=t;renderHome();}
 
 // ─── SESSION ─────────────────────────────────────────────────────────────────
 function startSession(){
+  if(curType==='Cardio'){go('cardio');return;}
   if(!curType||!R[curType]){toast('Selecciona un tipo de sesión');return;}
   if(AS&&!confirm('Ya hay una sesión activa. ¿Empezar una nueva?')){go('sess');return;}
   AS={type:curType,date:today(),states:{}};
@@ -861,6 +905,90 @@ function cancelSession(){
   toast('Sesión descartada');go('home');
 }
 
+// ─── CARDIO (v3.10.0) — registro propio, fuera del ciclo 4-4-4 ───────────────
+const CARDIO_MODS=['Rodaje Z2','Running','Bici','Elíptica','Natación','Escalada','Pádel','HYROX','Otro'];
+const PACE_MODS=['Rodaje Z2','Running'];
+const ALZA_MODS=['Rodaje Z2','Running','HYROX'];
+const TALK_MODS=['Rodaje Z2','Running','Bici','Elíptica','Natación'];
+// "30" → 30 min · "30:41" → mm:ss · "1:05:20" → h:mm:ss
+function parseDur(v){
+  const p=String(v||'').trim().split(':');
+  if(!p[0]||p.length>3||p.some(x=>!/^\d{1,3}$/.test(x)))return null;
+  const n=p.map(Number);
+  if(p.length>1&&n.slice(1).some(x=>x>59))return null;
+  const s=p.length===1?n[0]*60:p.length===2?n[0]*60+n[1]:n[0]*3600+n[1]*60+n[2];
+  return s>0&&s<=86400?s:null;
+}
+function fmtDur(s){const h=Math.floor(s/3600),m=Math.floor(s%3600/60),x=String(s%60).padStart(2,'0');return h?`${h}:${String(m).padStart(2,'0')}:${x}`:`${m}:${x}`;}
+function fmtPace(sec,km){if(!sec||!km)return null;const p=Math.round(sec/km);return`${Math.floor(p/60)}:${String(p%60).padStart(2,'0')}`;}
+function numOrNull(v,min,max){const n=parseFloat(String(v||'').replace(',','.'));return isFinite(n)&&n>=min&&n<=max?n:null;}
+function cardioLine(c){
+  if(!c)return'';
+  const parts=[c.modality||'Cardio'];
+  if(c.duration)parts.push(c.duration);
+  if(c.distance_km)parts.push(`${String(c.distance_km).replace('.',',')} km`);
+  if(c.pace_per_km)parts.push(`${c.pace_per_km}/km`);
+  if(c.hr_avg)parts.push(`FC ${c.hr_avg}${c.hr_max?'/'+c.hr_max:''}`);
+  return parts.join(' · ');
+}
+function renderCardio(){
+  const sel=document.getElementById('cd-mod');
+  sel.innerHTML=CARDIO_MODS.map(m=>`<option value="${esc(m)}">${esc(m)}</option>`).join('');
+  document.getElementById('cd-date').value=today();
+  document.getElementById('cd-date').max=today();
+  ['cd-dur','cd-dist','cd-hra','cd-hrm','cd-route','cd-notes'].forEach(id=>document.getElementById(id).value='');
+  document.getElementById('cd-alza').checked=false;
+  document.getElementById('cd-talk').checked=false;
+  // Recorridos ya usados → mismo nombre = comparación de ritmo a FC fija
+  const routes=[...new Set(D.sessions.filter(s=>s.cardio&&s.cardio.route).map(s=>s.cardio.route))];
+  document.getElementById('cd-routes').innerHTML=routes.map(r=>`<option value="${esc(r)}"></option>`).join('');
+  cdCalc();
+}
+function cdCalc(){
+  const mod=document.getElementById('cd-mod').value;
+  const sec=parseDur(document.getElementById('cd-dur').value);
+  const km=numOrNull(document.getElementById('cd-dist').value,0.01,500);
+  const pace=PACE_MODS.includes(mod)?fmtPace(sec,km):null;
+  document.getElementById('cd-pace').textContent=pace?`Ritmo medio: ${pace} /km`:'';
+  document.getElementById('cd-alza-f').style.display=ALZA_MODS.includes(mod)?'':'none';
+  document.getElementById('cd-talk-f').style.display=TALK_MODS.includes(mod)?'':'none';
+}
+function saveCardio(){
+  const date=document.getElementById('cd-date').value;
+  if(!/^\d{4}-\d{2}-\d{2}$/.test(date)){toast('⚠ Fecha no válida');return;}
+  if(date>today()){toast('⚠ La fecha no puede ser futura');return;}
+  const mod=document.getElementById('cd-mod').value;
+  if(!CARDIO_MODS.includes(mod)){toast('⚠ Elige modalidad');return;}
+  const durRaw=document.getElementById('cd-dur').value;
+  const sec=parseDur(durRaw);
+  if(!sec){toast('⚠ Duración: minutos o mm:ss');return;}
+  const fields={dist:['cd-dist',0.01,500,'Distancia'],hra:['cd-hra',40,230,'FC media'],hrm:['cd-hrm',40,230,'FC máx']};
+  const v={};
+  for(const[k,[id,mn,mx,lbl]]of Object.entries(fields)){
+    const raw=document.getElementById(id).value.trim();
+    v[k]=raw?numOrNull(raw,mn,mx):null;
+    if(raw&&v[k]===null){toast(`⚠ ${lbl} fuera de rango`);return;}
+  }
+  if(v.hra&&v.hrm&&v.hrm<v.hra){toast('⚠ FC máx menor que FC media');return;}
+  const route=document.getElementById('cd-route').value.trim().slice(0,80);
+  const notes=document.getElementById('cd-notes').value.trim();
+  const cardio={
+    modality:mod,
+    duration:fmtDur(sec),duration_s:sec,
+    distance_km:v.dist!==null?Math.round(v.dist*100)/100:null,
+    pace_per_km:PACE_MODS.includes(mod)?fmtPace(sec,v.dist):null,
+    hr_avg:v.hra!==null?Math.round(v.hra):null,
+    hr_max:v.hrm!==null?Math.round(v.hrm):null,
+    route:route||null,
+    insole:ALZA_MODS.includes(mod)?document.getElementById('cd-alza').checked:null,
+    talk_test:TALK_MODS.includes(mod)?document.getElementById('cd-talk').checked:null
+  };
+  const sess={id:`${date}_cardio_${Date.now()}`,date,weekday:DAYS[new Date(date+'T12:00:00').getDay()],type:'Cardio',general_feeling:notes||'Sin valoración',cardio,blocks:[],deviations:[],patterns:[],decisions:[],raw_notes:''};
+  D.sessions.unshift(sess);save();
+  githubBackup();
+  vib([100,50,100]);toast(`✓ Cardio guardado · ${cardio.duration}`);go('home');
+}
+
 // ─── TIMER ───────────────────────────────────────────────────────────────────
 function tickTimer(){
   clearInterval(timerIv);updTimer();
@@ -890,7 +1018,13 @@ function renderHist(){
   const filt=document.getElementById('filt-sel')?.value||'all',list=document.getElementById('hist-list');if(!list)return;
   const sess=[...D.sessions].filter(s=>filt==='all'||s.type===filt).sort((a,b)=>b.date.localeCompare(a.date));
   if(!sess.length){list.innerHTML=`<div class="empty">Sin sesiones registradas aún.<br>¡Empieza tu primer entreno!</div>`;return;}
-  list.innerHTML=sess.map((s,i)=>{const c=col(s.type);return`<div class="h-card" style="border-left-color:${c};"><div class="h-hd" onclick="toggleHist(${i})"><div class="h-dot" style="background:${c};"></div><div class="h-info"><div class="h-date">${DAYS[new Date(s.date+'T12:00:00').getDay()]} ${fmtD(s.date)} · <span style="color:${c};font-weight:800;">${esc(s.type)}</span></div><div class="h-feel">${esc(s.general_feeling||'')}</div></div><button class="h-del" onclick="event.stopPropagation();delSession('${esc(s.id)}')" title="Borrar sesión">🗑</button><div class="h-chev" id="hchev-${i}">▾</div></div><div class="h-body" id="hbody-${i}">${(s.blocks||[]).map(b=>`<div class="h-blk-lbl">${esc(b.name)}</div>${(b.exercises||[]).map(e=>`<div class="h-ex${e.skipped?' h-skipped':''}"><div class="h-ex-name">${esc(e.name)}${e.skipped?' <span style="font-size:10px;color:var(--text3);">(saltado)</span>':''}</div><div class="h-ex-sets" style="color:${c};">${esc(e.sets)}</div>${e.notes?`<div class="h-ex-notes">${esc(e.notes)}</div>`:''}</div>`).join('')}`).join('')}${s.patterns?.length?`<div class="h-tag" style="background:rgba(239,68,68,.07);border-color:var(--err);"><div class="h-tag-lbl" style="color:var(--err);">⚠ Patrones</div>${s.patterns.map(p=>`<div class="h-tag-item">${esc(p)}</div>`).join('')}</div>`:''}${s.decisions?.length?`<div class="h-tag" style="background:rgba(34,197,94,.07);border-color:var(--ok);"><div class="h-tag-lbl" style="color:var(--ok);">✓ Decisiones</div>${s.decisions.map(d=>`<div class="h-tag-item">→ ${esc(d)}</div>`).join('')}</div>`:''}</div></div>`;}).join('');
+  list.innerHTML=sess.map((s,i)=>{const c=col(s.type);return`<div class="h-card" style="border-left-color:${c};"><div class="h-hd" onclick="toggleHist(${i})"><div class="h-dot" style="background:${c};"></div><div class="h-info"><div class="h-date">${DAYS[new Date(s.date+'T12:00:00').getDay()]} ${fmtD(s.date)} · <span style="color:${c};font-weight:800;">${esc(s.type)}</span></div><div class="h-feel">${esc(s.cardio?cardioLine(s.cardio):(s.general_feeling||''))}</div></div><button class="h-del" onclick="event.stopPropagation();delSession('${esc(s.id)}')" title="Borrar sesión">🗑</button><div class="h-chev" id="hchev-${i}">▾</div></div><div class="h-body" id="hbody-${i}">${s.cardio?cardioHist(s):''}${(s.blocks||[]).map(b=>`<div class="h-blk-lbl">${esc(b.name)}</div>${(b.exercises||[]).map(e=>`<div class="h-ex${e.skipped?' h-skipped':''}"><div class="h-ex-name">${esc(e.name)}${e.skipped?' <span style="font-size:10px;color:var(--text3);">(saltado)</span>':''}</div><div class="h-ex-sets" style="color:${c};">${esc(e.sets)}</div>${e.notes?`<div class="h-ex-notes">${esc(e.notes)}</div>`:''}</div>`).join('')}`).join('')}${s.patterns?.length?`<div class="h-tag" style="background:rgba(239,68,68,.07);border-color:var(--err);"><div class="h-tag-lbl" style="color:var(--err);">⚠ Patrones</div>${s.patterns.map(p=>`<div class="h-tag-item">${esc(p)}</div>`).join('')}</div>`:''}${s.decisions?.length?`<div class="h-tag" style="background:rgba(34,197,94,.07);border-color:var(--ok);"><div class="h-tag-lbl" style="color:var(--ok);">✓ Decisiones</div>${s.decisions.map(d=>`<div class="h-tag-item">→ ${esc(d)}</div>`).join('')}</div>`:''}</div></div>`;}).join('');
+}
+function cardioHist(s){
+  const k=s.cardio,flag=(v,lbl)=>v===true?`✓ ${lbl}`:v===false?`✗ ${lbl}`:'';
+  const flags=[flag(k.insole,'alza'),flag(k.talk_test,'test conversación')].filter(Boolean).join(' · ');
+  const notes=s.general_feeling&&s.general_feeling!=='Sin valoración'?s.general_feeling:'';
+  return`<div class="h-ex"><div class="h-ex-name">${esc(k.modality||'Cardio')}${k.route?` <span style="font-size:11px;color:var(--text3);font-weight:600;">· ${esc(k.route)}</span>`:''}</div>${flags?`<div class="h-ex-notes" style="font-style:normal;">${esc(flags)}</div>`:''}${notes?`<div class="h-ex-notes">${esc(notes)}</div>`:''}</div>`;
 }
 function toggleHist(i){const b=document.getElementById(`hbody-${i}`),c=document.getElementById(`hchev-${i}`);if(!b)return;b.classList.toggle('open');if(c)c.style.transform=b.classList.contains('open')?'rotate(180deg)':'';}
 function delSession(id){
@@ -982,8 +1116,9 @@ function doClaudeExport(){
   const GYM=['Pecho/Trí','Espalda/Hombro','Pierna/Bíc'];
   const d60=new Date();d60.setDate(d60.getDate()-60);const fb60=d60.toISOString().slice(0,10);const lr=D.reports&&D.reports.length?D.reports[D.reports.length-1]:null;const lastClose=(D.cycle_meta&&D.cycle_meta.last_cycle_close)||(lr&&lr.period_end)||fb60;
   // 1. Sesiones nuevas: sin analizar Y posteriores al cierre del último ciclo
+  // Cardio (v3.10.0) viaja junto a los splits: no computa en el ciclo, pero Claude lo analiza
   const newSess=D.sessions.filter(s=>
-    GYM.includes(s.type)&&
+    (GYM.includes(s.type)||s.type==='Cardio')&&
     s.date>=lastClose&&
     (!s.deviations||s.deviations.length===0)
   );
@@ -994,14 +1129,16 @@ function doClaudeExport(){
     deviations:s.deviations||[],
     patterns:s.patterns||[],
     decisions:s.decisions||[],
-    raw_notes:s.raw_notes||''
+    raw_notes:s.raw_notes||'',
+    ...(s.cardio?{cardio:s.cardio}:{})
   });
   const ctx=[];
-  for(const t of GYM){
+  // Cardio: últimas 4 analizadas, con sus datos (ritmo a FC fija = métrica del plan de fondo)
+  for(const t of[...GYM,'Cardio']){
     const typed=D.sessions
       .filter(s=>s.type===t&&s.deviations&&s.deviations.length>0)
       .sort((a,b)=>b.date.localeCompare(a.date))
-      .slice(0,3)
+      .slice(0,t==='Cardio'?4:3)
       .map(slimSess);
     ctx.push(...typed);
   }
