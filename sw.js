@@ -1,8 +1,8 @@
-// POL · ENTRENO — Service Worker v3.10.1
+// POL · ENTRENO — Service Worker v3.10.2
 // Estrategia: cache-first para el shell de la app + fuentes.
 // Las llamadas a api.github.com (backups) van siempre a red — nunca se cachean.
 
-const CACHE = 'pol-entreno-v3.10.1';
+const CACHE = 'pol-entreno-v3.10.2';
 
 const SHELL = [
   './',
@@ -13,7 +13,11 @@ const SHELL = [
 // ─── INSTALL: precargar shell ─────────────────────────────────────────────────
 self.addEventListener('install', e => {
   e.waitUntil(
-    caches.open(CACHE).then(c => c.addAll(SHELL)).then(() => self.skipWaiting())
+    // cache:'reload' salta la caché HTTP de GitHub Pages (max-age 10 min): sin esto,
+    // la caché nueva podía guardarse con el index.html de la versión anterior.
+    caches.open(CACHE).then(c => Promise.all(SHELL.map(u =>
+      c.add(new Request(u, { cache: 'reload' })).catch(() => {}) // fuentes: best-effort, no bloquean la instalación
+    ))).then(() => self.skipWaiting())
   );
 });
 
@@ -52,7 +56,8 @@ self.addEventListener('fetch', e => {
   // Garantiza apertura offline; la próxima carga con red actualiza la caché.
   e.respondWith(
     caches.match(e.request).then(cached => {
-      const networkFetch = fetch(e.request).then(res => {
+      // no-cache: revalida contra el servidor en vez de reutilizar la caché HTTP
+      const networkFetch = fetch(e.request, { cache: 'no-cache' }).then(res => {
         if (res && res.status === 200 && e.request.method === 'GET') {
           const clone = res.clone();
           caches.open(CACHE).then(c => c.put(e.request, clone));
