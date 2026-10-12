@@ -369,7 +369,7 @@
   <div id="toast"></div>
 </div>
 <script>
-const APP_VERSION='3.10.1';
+const APP_VERSION='3.10.2';
 const APP_DATE='12 octubre 2026';
 const SK='pol-v2',ASK='pol-active-v2',RK='pol-routines-v2',GHK='pol-gh-token',GHSK='pol-gh-sha',GHLAST='pol-gh-last-ok',GHHIST='pol-gh-hist-last',CIRC=2*Math.PI*80;
 const COLORS={'Pecho/Trí':'#dc2626','Espalda/Hombro':'#2563eb','Pierna/Bíc':'#16a34a','Complementario':'#64748b','Cardio':'#ea580c','Running':'#ea580c','Pádel':'#9333ea','Escalada':'#ca8a04','Otro':'#6b7280'};
@@ -1300,8 +1300,16 @@ if(AS)renderSess();
 // ─── SERVICE WORKER (PWA offline garantizado) ─────────────────────────────────
 if('serviceWorker' in navigator){
   window.addEventListener('load',()=>{
-    navigator.serviceWorker.register('./sw.js').catch(()=>{});
+    navigator.serviceWorker.register('./sw.js').then(r=>r.update()).catch(()=>{});
   });
+  // Versión nueva activada → recarga una vez para mostrarla (solo si ya había una versión controlando)
+  if(navigator.serviceWorker.controller){
+    let _swReloaded=false;
+    navigator.serviceWorker.addEventListener('controllerchange',()=>{
+      if(_swReloaded)return;_swReloaded=true;
+      saveAS();location.reload();
+    });
+  }
 }
 </script>
 </body>
