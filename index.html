@@ -327,7 +327,7 @@
         <label class="cd-f"><span class="note-lbl">Modalidad</span><select id="cd-mod" class="cd-in" onchange="cdCalc()"></select></label>
       </div>
       <div class="cd-row">
-        <label class="cd-f"><span class="note-lbl">Duración (mm:ss)</span><input id="cd-dur" class="cd-in" inputmode="numeric" placeholder="30:41" autocomplete="off" oninput="cdCalc()"></label>
+        <label class="cd-f"><span class="note-lbl">Duración</span><input id="cd-dur" class="cd-in" inputmode="numeric" placeholder="30:41" autocomplete="off" oninput="cdDurFmt(this)"></label>
         <label class="cd-f"><span class="note-lbl">Distancia (km)</span><input id="cd-dist" class="cd-in" inputmode="decimal" placeholder="5,02" autocomplete="off" oninput="cdCalc()"></label>
       </div>
       <div class="cd-pace" id="cd-pace"></div>
@@ -369,8 +369,8 @@
   <div id="toast"></div>
 </div>
 <script>
-const APP_VERSION='3.10.0';
-const APP_DATE='11 octubre 2026';
+const APP_VERSION='3.10.1';
+const APP_DATE='12 octubre 2026';
 const SK='pol-v2',ASK='pol-active-v2',RK='pol-routines-v2',GHK='pol-gh-token',GHSK='pol-gh-sha',GHLAST='pol-gh-last-ok',GHHIST='pol-gh-hist-last',CIRC=2*Math.PI*80;
 const COLORS={'Pecho/Trí':'#dc2626','Espalda/Hombro':'#2563eb','Pierna/Bíc':'#16a34a','Complementario':'#64748b','Cardio':'#ea580c','Running':'#ea580c','Pádel':'#9333ea','Escalada':'#ca8a04','Otro':'#6b7280'};
 const DAYS=['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'];
@@ -918,6 +918,13 @@ function parseDur(v){
   if(p.length>1&&n.slice(1).some(x=>x>59))return null;
   const s=p.length===1?n[0]*60:p.length===2?n[0]*60+n[1]:n[0]*3600+n[1]*60+n[2];
   return s>0&&s<=86400?s:null;
+}
+// Teclado numérico de iOS no tiene ":" → se escriben solo dígitos y el formato se pone solo
+// "30" → 30 min · "3041" → 30:41 · "13052" → 1:30:52
+function cdDurFmt(el){
+  const d=el.value.replace(/\D/g,'').replace(/^0+(?=\d)/,'').slice(0,6);
+  el.value=d.length<=2?d:d.length<=4?`${d.slice(0,-2)}:${d.slice(-2)}`:`${d.slice(0,-4)}:${d.slice(-4,-2)}:${d.slice(-2)}`;
+  cdCalc();
 }
 function fmtDur(s){const h=Math.floor(s/3600),m=Math.floor(s%3600/60),x=String(s%60).padStart(2,'0');return h?`${h}:${String(m).padStart(2,'0')}:${x}`:`${m}:${x}`;}
 function fmtPace(sec,km){if(!sec||!km)return null;const p=Math.round(sec/km);return`${Math.floor(p/60)}:${String(p%60).padStart(2,'0')}`;}
