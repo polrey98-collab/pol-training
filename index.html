@@ -302,6 +302,7 @@
       <div class="io-desc">Backup automático al guardar sesión → repo <b>privado</b> pol-training-data. Usa un token <b>fine-grained</b> limitado a ese repo (permiso Contents: Read/Write, con expiración). Nunca un token clásico con scope repo.</div>
       <input type="password" class="io-ta" id="gh-token-inp" placeholder="github_pat_xxxxxxxx" autocomplete="off" style="min-height:auto;height:48px;font-size:14px">
       <button class="btn btn-s" onclick="saveGHToken()" style="margin-bottom:8px">Guardar token</button>
+      <button class="btn btn-s" onclick="githubBackupNow()" style="margin-bottom:8px">⇪ Backup ahora</button>
       <button class="btn btn-g" onclick="githubRestore()" style="margin-bottom:8px">⟳ Restaurar desde GitHub</button>
       <div class="gh-status" id="gh-status"></div>
     </div>
@@ -369,9 +370,9 @@
   <div id="toast"></div>
 </div>
 <script>
-const APP_VERSION='3.10.3';
-const APP_DATE='16 octubre 2026';
-const SK='pol-v2',ASK='pol-active-v2',RK='pol-routines-v2',GHK='pol-gh-token',GHSK='pol-gh-sha',GHLAST='pol-gh-last-ok',GHHIST='pol-gh-hist-last',CIRC=2*Math.PI*80;
+const APP_VERSION='3.10.4';
+const APP_DATE='31 octubre 2026';
+const SK='pol-v2',ASK='pol-active-v2',RK='pol-routines-v2',GHK='pol-gh-token',GHSK='pol-gh-sha',GHLAST='pol-gh-last-ok',GHHIST='pol-gh-hist-last',GHPEND='pol-gh-pending',GHDEL='pol-gh-deleted',CIRC=2*Math.PI*80;
 const COLORS={'Pecho/Trí':'#dc2626','Espalda/Hombro':'#2563eb','Pierna/Bíc':'#16a34a','Complementario':'#64748b','Cardio':'#ea580c','Running':'#ea580c','Pádel':'#9333ea','Escalada':'#ca8a04','Otro':'#6b7280'};
 const DAYS=['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'];
 const MESES=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
@@ -583,8 +584,49 @@ function saveGHToken(){
   toast('✓ Token guardado');
 }
 function ghStatus(msg,cls){const el=document.getElementById('gh-status');if(el){el.textContent=msg;el.className='gh-status'+(cls?' '+cls:'');}}
-async function githubBackup(){
-  const token=getGHToken();if(!token){ghStatus('⚠️ Token no configurado','err');return;}
+// v3.10.4: reintentos, timeout, botón manual y backup pendiente al abrir
+let _ghBusy=false,_ghRetryT=null;
+const GH_RETRY_DELAYS=[5000,20000,60000];
+function ghFetch(url,opts={},ms=30000){
+  const ctl=new AbortController();const t=setTimeout(()=>ctl.abort(),ms);
+  return fetch(url,{...opts,signal:ctl.signal}).finally(()=>clearTimeout(t));
+}
+function newestSessionTs(){
+  let mx=0;for(const x of (D.sessions||[])){const m=/_(\d{10,})$/.exec(x.id||'');if(m){const n=+m[1];if(n>mx)mx=n;}}
+  return mx;
+}
+function ghPending(){
+  if(localStorage.getItem(GHPEND)==='1')return true;
+  const lastOk=parseInt(localStorage.getItem(GHLAST)||'0',10);
+  return !!lastOk&&newestSessionTs()>lastOk;
+}
+function ghNetMsg(e){
+  if(e&&e.name==='AbortError')return 'sin respuesta en 30s';
+  if(!navigator.onLine)return 'sin conexión';
+  return (e&&e.message)||'conexión fallida';
+}
+function ghScheduleRetry(attempt,why){
+  clearTimeout(_ghRetryT);
+  if(attempt>=GH_RETRY_DELAYS.length){
+    ghStatus(`⚠️ Backup pendiente (${why}). Se reintentará al abrir la app o al recuperar conexión. Puedes pulsar "Backup ahora".`,'err');
+    toast('⚠️ Backup pendiente: '+why);return;
+  }
+  const s=Math.round(GH_RETRY_DELAYS[attempt]/1000);
+  ghStatus(`Error de red (${why}) · reintento ${attempt+1}/${GH_RETRY_DELAYS.length} en ${s}s`,'err');
+  _ghRetryT=setTimeout(()=>githubBackup(attempt+1),GH_RETRY_DELAYS[attempt]);
+}
+function githubBackupNow(){clearTimeout(_ghRetryT);ghStatus('Subiendo backup…','');githubBackup(0,true);}
+function ghResumePending(){
+  if(!getGHToken()||!ghPending()||_ghBusy||!navigator.onLine)return;
+  ghStatus('Backup pendiente · subiendo…','');githubBackup(0);
+}
+async function githubBackup(attempt=0,manual=false){
+  const token=getGHToken();if(!token){ghStatus('⚠️ Token no configurado','err');if(manual)toast('⚠ Configura el token primero');return;}
+  if(_ghBusy){if(manual)toast('Backup en curso…');return;}
+  _ghBusy=true;localStorage.setItem(GHPEND,'1');
+  try{await _githubBackupRun(token,attempt);}finally{_ghBusy=false;}
+}
+async function _githubBackupRun(token,attempt){
   const fullData={...D,routines:R};
   const content=btoa(unescape(encodeURIComponent(JSON.stringify(fullData,null,2))));
   const url=`https://api.github.com/repos/${GH_DATA_REPO}/contents/${GH_PATH}`;
@@ -592,13 +634,33 @@ async function githubBackup(){
   try{
     let sha=localStorage.getItem(GHSK)||null;
     // Try to get current sha
+    let remoteIds=null;
     try{
-      const getR=await fetch(url,{headers});
-      if(getR.ok){const d=await getR.json();sha=d.sha;}
+      const getR=await ghFetch(url,{headers});
+      if(getR.ok){
+        const d=await getR.json();sha=d.sha;
+        // v3.10.4: leer qué sesiones tiene GitHub para no pisarlas con un dispositivo desactualizado
+        try{
+          let txt=null;
+          if(d.encoding==='base64'&&d.content)txt=decodeURIComponent(escape(atob(d.content.replace(/\n/g,''))));
+          else{const rr=await ghFetch(url+'?t='+Date.now(),{headers:{'Authorization':`Bearer ${token}`,'Accept':'application/vnd.github.raw+json'},cache:'no-store'});if(rr.ok)txt=await rr.text();}
+          if(txt){const rj=JSON.parse(txt);remoteIds=(rj.sessions||[]).map(x=>x.id);}
+        }catch(e){}
+      }
     }catch(e){}
+    if(remoteIds){
+      const localIds=new Set(D.sessions.map(x=>x.id));
+      let deleted=[];try{deleted=JSON.parse(localStorage.getItem(GHDEL)||'[]');}catch(e){}
+      const missing=remoteIds.filter(id=>!localIds.has(id)&&!deleted.includes(id));
+      if(missing.length){
+        ghStatus(`⚠️ Backup NO subido: GitHub tiene ${missing.length} sesión(es) que no están en este dispositivo. Pulsa "Restaurar desde GitHub" y después "Backup ahora".`,'err');
+        toast(`⚠️ Backup no subido: faltan ${missing.length} sesión(es) aquí`);
+        return;
+      }
+    }
     const body={message:`Backup ${new Date().toISOString().split('T')[0]}`,content};
     if(sha)body.sha=sha;
-    const putR=await fetch(url,{method:'PUT',headers,body:JSON.stringify(body)});
+    const putR=await ghFetch(url,{method:'PUT',headers,body:JSON.stringify(body)},45000);
     if(putR.ok||putR.status===201){
       const d=await putR.json();
       localStorage.setItem(GHSK,d.content.sha);
@@ -635,11 +697,16 @@ async function githubBackup(){
       }catch(e){}
       ghStatus(`Último backup: ${new Date().toLocaleString('es-ES',{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'})} ✓ verificado`,'ok');toast('✓ Backup GitHub verificado');
       localStorage.setItem(GHLAST,Date.now().toString());
+      localStorage.removeItem(GHPEND);localStorage.removeItem(GHDEL);
     }else{
       const err=await putR.json().catch(()=>({}));
-      ghStatus(`Error: ${err.message||putR.status}`,'err');toast('⚠️ Backup GitHub falló: '+(err.message||putR.status));
+      const why=err.message||putR.status;
+      // 5xx / 409 (sha desfasado) / 429 → reintentar; 401/403/404 → problema de token o permisos
+      if(putR.status>=500||putR.status===409||putR.status===429){ghScheduleRetry(attempt,`GitHub ${putR.status}`);return;}
+      const hint=(putR.status===401||putR.status===403)?' — revisa el token (caducado o sin permiso)':'';
+      ghStatus(`Error: ${why}${hint}`,'err');toast('⚠️ Backup GitHub falló: '+why);
     }
-  }catch(e){ghStatus(`Error de red: ${e.message}`,'err');toast('⚠️ Backup GitHub falló: red');}
+  }catch(e){ghScheduleRetry(attempt,ghNetMsg(e));}
 }
 // ─── RESTAURACIÓN DESDE GITHUB ───────────────────────────────────────────────
 // Recuperación completa en móvil nuevo: pegar token → pulsar Restaurar.
@@ -1042,6 +1109,7 @@ function delSession(id){
   const n=D.sessions.length;
   D.sessions=D.sessions.filter(x=>x.id!==id);
   if(D.sessions.length===n){toast('⚠ No se pudo borrar');return;}
+  try{const dl=JSON.parse(localStorage.getItem(GHDEL)||'[]');if(!dl.includes(id))dl.push(id);localStorage.setItem(GHDEL,JSON.stringify(dl));}catch(e){}
   save();renderHist();renderProg?.();
   toast(`🗑 Sesión borrada · ${lbl}`);
   githubBackup?.();
@@ -1195,7 +1263,9 @@ function renderIO(){
     // F6: avisar si llevas >7 días sin backup verificado
     const lastOk=parseInt(localStorage.getItem(GHLAST)||'0',10);
     const dias=lastOk?Math.floor((Date.now()-lastOk)/86400000):null;
-    if(lastOk&&dias>=7){
+    if(ghPending()){
+      ghStatus(_ghBusy?'Subiendo backup…':'⚠️ Hay sesiones sin subir a GitHub · pulsa "Backup ahora"','err');
+    }else if(lastOk&&dias>=7){
       ghStatus(`⚠️ ¡${dias} días sin backup! Revisa el token`,'err');
       toast(`⚠️ ${dias} días sin backup correcto`);
     }else if(lastOk){
@@ -1296,6 +1366,10 @@ load();
 loadRoutines();
 renderHome();
 if(AS)renderSess();
+// Backup pendiente: al abrir, al volver a la app y al recuperar conexión
+setTimeout(()=>{if(getGHToken()&&ghPending()){toast('⚠️ Backup pendiente · subiendo…');ghResumePending();}},2500);
+window.addEventListener('online',()=>setTimeout(ghResumePending,1500));
+document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')setTimeout(ghResumePending,1500);});
 
 // ─── SERVICE WORKER (PWA offline garantizado) ─────────────────────────────────
 if('serviceWorker' in navigator){
