@@ -98,6 +98,9 @@
     .r-val{font-family:var(--ff-d);font-size:20px;font-weight:800;color:var(--text);min-width:28px;text-align:center;pointer-events:none}
     .r-unit{font-family:var(--ff-d);font-size:9px;font-weight:700;color:var(--text3);padding-right:4px;flex-shrink:0}
     .reps-grp.locked .r-val{color:var(--text2)}
+    .erg-box{flex:0 0 74px}
+    .erg-box.spm{flex:0 0 56px}
+    .erg-split{font-family:var(--ff-d);font-size:10px;font-weight:700;color:var(--text3);margin:-4px 0 8px 34px;letter-spacing:.03em}
     .confirm-btn{width:52px;height:52px;border-radius:12px;border:none;background:var(--accent);color:#fff;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .15s;-webkit-user-select:none;user-select:none;font-weight:700}
     .confirm-btn:active{opacity:.8;transform:scale(.95)}
     .unlock-btn{width:36px;height:52px;border-radius:12px;border:none;background:transparent;color:var(--text3);font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;-webkit-user-select:none;user-select:none}
@@ -370,8 +373,8 @@
   <div id="toast"></div>
 </div>
 <script>
-const APP_VERSION='3.10.4';
-const APP_DATE='31 octubre 2026';
+const APP_VERSION='3.11.0';
+const APP_DATE='4 noviembre 2026';
 const SK='pol-v2',ASK='pol-active-v2',RK='pol-routines-v2',GHK='pol-gh-token',GHSK='pol-gh-sha',GHLAST='pol-gh-last-ok',GHHIST='pol-gh-hist-last',GHPEND='pol-gh-pending',GHDEL='pol-gh-deleted',CIRC=2*Math.PI*80;
 const COLORS={'Pecho/Trí':'#dc2626','Espalda/Hombro':'#2563eb','Pierna/Bíc':'#16a34a','Complementario':'#64748b','Cardio':'#ea580c','Running':'#ea580c','Pádel':'#9333ea','Escalada':'#ca8a04','Otro':'#6b7280'};
 const DAYS=['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'];
@@ -892,6 +895,12 @@ function renderSess(){
         (st.sets||[]).forEach((setD,i)=>{
           const locked=setD.ok,wVal=(setD.w!==null&&setD.w!==undefined)?setD.w:'',rVal=(setD.reps!==null&&setD.reps!==undefined)?setD.reps:'—';
           const wPlaceholder=ex.base!==null?(ex.base||''):'PC';
+          if(isErg(ex)){
+            const tV=ergFmtSec(setD.reps),sV=setD.spm||'',sp=ergSplit(setD.w,setD.reps);
+            if(locked)bh+=`<div class="set-row"><div class="set-n">S${i+1}</div><div class="w-box locked"><input class="w-inp" type="text" value="${esc(wVal)}" disabled><div class="w-unit-lbl">m</div></div><div class="w-box locked erg-box"><input class="w-inp" type="text" value="${esc(tV)}" disabled></div><div class="w-box locked erg-box spm"><input class="w-inp" type="text" value="${esc(sV)}" disabled></div><button class="unlock-btn" onclick="unlockSet('${ex.id}',${i})" title="Editar serie">🔓</button></div><div class="erg-split">${sp?'ritmo '+sp:''}</div>`;
+            else bh+=`<div class="set-row"><div class="set-n">S${i+1}</div><div class="w-box"><input class="w-inp" type="text" inputmode="numeric" id="w-${ex.id}-${i}" value="${esc(wVal)}" placeholder="metros" oninput="updW('${ex.id}',${i},this.value)" onfocus="this.select()"><div class="w-unit-lbl">m</div></div><div class="w-box erg-box"><input class="w-inp" type="text" inputmode="numeric" id="t-${ex.id}-${i}" value="${esc(tV)}" placeholder="1:00" oninput="updT('${ex.id}',${i},this)" onfocus="this.select()"></div><div class="w-box erg-box spm"><input class="w-inp" type="text" inputmode="numeric" id="spm-${ex.id}-${i}" value="${esc(sV)}" placeholder="s/m" oninput="updSpm('${ex.id}',${i},this.value)" onfocus="this.select()"></div><button class="confirm-btn" onclick="confSet('${ex.id}',${i})" tabindex="-1">✓</button></div><div class="erg-split" id="es-${ex.id}-${i}">${sp?'ritmo '+sp:''}</div>`;
+            return;
+          }
           if(locked){bh+=`<div class="set-row"><div class="set-n">S${i+1}</div><div class="w-box locked"><input class="w-inp" type="text" value="${esc(wVal)}" disabled><div class="w-unit-lbl">${esc(ex.unit)}</div></div><div class="set-x">×</div><div class="reps-grp locked"><button class="r-adj" disabled tabindex="-1">−</button><div class="r-val">${rVal}</div><div class="r-unit">${rU}</div><button class="r-adj" disabled tabindex="-1">+</button></div><button class="unlock-btn" onclick="unlockSet('${ex.id}',${i})" title="Editar serie">🔓</button></div>`;}
           else{bh+=`<div class="set-row"><div class="set-n">S${i+1}</div><div class="w-box"><input class="w-inp" type="text" inputmode="decimal" id="w-${ex.id}-${i}" value="${esc(wVal)}" placeholder="${esc(wPlaceholder)}" oninput="updW('${ex.id}',${i},this.value)" onfocus="this.select()"><div class="w-unit-lbl">${esc(ex.unit)}</div></div><div class="set-x">×</div><div class="reps-grp"><button class="r-adj" onclick="adjR('${ex.id}',${i},-1)" tabindex="-1">−</button><div class="r-val" id="rv-${ex.id}-${i}">${rVal}</div><div class="r-unit">${rU}</div><button class="r-adj" onclick="adjR('${ex.id}',${i},1)" tabindex="-1">+</button></div><button class="confirm-btn" onclick="confSet('${ex.id}',${i})" tabindex="-1">✓</button></div>`;}
         });
@@ -909,7 +918,16 @@ function toggleEx(id){
   if(AS?.states[id]?.skipped)return;
   AE=AE===id?null:id;saveAS();renderSess();if(AE)setTimeout(()=>scrollToEx(AE),80);
 }
-function updW(id,i,val){const st=AS?.states[id];if(!st)return;st.sets[i].w=parseW(val);saveASsoon();}
+function updW(id,i,val){const st=AS?.states[id];if(!st)return;st.sets[i].w=parseW(val);saveASsoon();ergSplitUpd(id,i);}
+// v3.11.0: ergómetros (SkiErg/RowErg, unidad 'm') — metros + tiempo + paladas tecleados, como en el monitor
+function isErg(ex){return !!ex&&ex.unit==='m';}
+function ergSec(v){const d=String(v||'').replace(/\D/g,'').replace(/^0+(?=\d)/,'').slice(0,4);if(!d)return null;if(d.length<=2)return parseInt(d,10);return parseInt(d.slice(0,-2),10)*60+parseInt(d.slice(-2),10);}
+function ergFmtSec(sec){if(!sec&&sec!==0)return'';return`${Math.floor(sec/60)}:${String(sec%60).padStart(2,'0')}`;}
+function ergSplit(m,sec){if(!m||!sec)return null;const p=Math.round(sec*500/m);return`${Math.floor(p/60)}:${String(p%60).padStart(2,'0')}/500m`;}
+function ergSplitUpd(id,i){const el=document.getElementById(`es-${id}-${i}`);const st=AS?.states[id];if(!el||!st)return;const x=st.sets[i];const sp=ergSplit(x.w,x.reps);el.textContent=sp?`ritmo ${sp}`:'';}
+function updT(id,i,el){const d=el.value.replace(/\D/g,'').replace(/^0+(?=\d)/,'').slice(0,4);el.value=d.length<=2?d:`${d.slice(0,-2)}:${d.slice(-2)}`;const st=AS?.states[id];if(!st)return;st.sets[i].reps=ergSec(el.value);saveASsoon();ergSplitUpd(id,i);}
+function updSpm(id,i,val){const st=AS?.states[id];if(!st)return;const n=parseInt(String(val).replace(/\D/g,''),10);st.sets[i].spm=n>0?n:null;saveASsoon();}
+function ergSetStr(x,i){const sp=ergSplit(x.w,x.reps);return`S${i+1}: ${x.w}m en ${ergFmtSec(x.reps)}${sp?' · '+sp:''}${x.spm?' · '+x.spm+' s/m':''}`;}
 function adjR(id,i,d){
   const st=AS?.states[id];if(!st||st.sets[i].ok)return;
   const cur=st.sets[i].reps!==null?parseInt(st.sets[i].reps):0;
@@ -920,6 +938,8 @@ function updNotes(id,val){if(AS?.states[id]){AS.states[id].notes=val;saveASsoon(
 function confSet(id,i){
   const st=AS.states[id];if(!st)return;
   const wInp=document.getElementById(`w-${id}-${i}`);if(wInp)st.sets[i].w=parseW(wInp.value)||st.sets[i].w||0;
+  const tInp=document.getElementById(`t-${id}-${i}`);
+  if(tInp){st.sets[i].reps=ergSec(tInp.value);if(!st.sets[i].w){toast('⚠ Introduce los metros');return;}if(!st.sets[i].reps){toast('⚠ Introduce el tiempo (ej. 100 → 1:00)');return;}}
   const reps=st.sets[i].reps;
   if(reps===null||reps===undefined||reps<=0){toast('⚠ Introduce las repeticiones antes de confirmar');return;}
   st.sets[i].ok=true;vib(50);saveAS();
@@ -955,6 +975,10 @@ function finishSession(){
         continue;
       }
       const conf=st.sets.filter(s=>s.ok);
+      if(isErg(ex)){
+        bd.exercises.push({id:ex.id,name:ex.name,skipped:false,weight:conf.length?`${conf[0].w}m`:'—',sets:conf.map((x,i)=>ergSetStr(x,i)).join(' / ')||'—',notes:st.notes||'',setData:conf.map(x=>({weight:x.w,reps:x.reps,unit:'m',time:ergFmtSec(x.reps),split:ergSplit(x.w,x.reps),spm:x.spm||null}))});
+        continue;
+      }
       bd.exercises.push({id:ex.id,name:ex.name,skipped:false,weight:conf.length?`${conf[0].w}${ex.unit.includes('/')?ex.unit:'kg'}`:'—',sets:conf.map((s,i)=>`S${i+1}: ${s.w}${ex.unit.includes('/')?ex.unit:'kg'}×${s.reps||'?'}`).join(' / ')||'—',notes:st.notes||'',setData:conf.map(s=>({weight:s.w,reps:s.reps}))});
     }
     if(bd.exercises.length)sess.blocks.push(bd);
